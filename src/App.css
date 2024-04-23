@@ -1,7 +1,54 @@
-.App {
-  text-align: center;
+
+/* This is my formatting */
+
+/* Header formatting */
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: white;
+  padding: 2rem;
+  max-height: 88px;
 }
 
+header img {
+  max-width: 294px;
+  max-height: 88px;
+  aspect-ratio: auto;
+}
+
+.navigation {
+  align-self: center;
+  justify-content: space-around;
+ }
+ 
+.header nav {
+  padding: 1rem;
+  align-content: center;
+  }
+
+.header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  
+ }
+
+ .header li {
+  display: inline;
+  padding: 1rem;
+ }
+
+ .header a {
+  color: #495E57;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+   }
+
+
+
+/* This was the formatting already here to start with */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
