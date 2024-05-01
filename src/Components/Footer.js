@@ -1,7 +1,18 @@
 function Footer () {
     return (
-        <footer>
-            Footer
+        < footer className="footer">
+            <div className="logo">
+                Logo
+            </div>
+            <div>
+                Links
+            </div>
+            <div>
+                contact
+            </div>
+            <div>
+                Social media
+            </div>
         </footer>
     )
 }

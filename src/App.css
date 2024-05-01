@@ -49,6 +49,20 @@ header img {
     color: #F4CE14;
   }
 
+/* This will format the footer */
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #495E57;
+  padding: 2rem;
+  max-height: 379px;
+}
+
+.logo {
+  width: 370 px;
+  background-color: #EDEFEE;
+}
 
 /* This was the formatting already here to start with */
 .App-logo {
