@@ -14,7 +14,8 @@
 header img {
   max-width: 294px;
   max-height: 88px;
-  aspect-ratio: auto;
+  align-self: center;
+  
 }
 
 .navigation {
@@ -49,9 +50,87 @@ header img {
     color: #F4CE14;
   }
 
+/* This will format the footer */
+footer {
+  display: flex;
+  max-height: 379px;
+  width: 100%;
+  justify-content: space-between;
+  
+}
+
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  max-width: 370px;
+  max-height: 379px; 
+  background-color: #EDEFEE;
+  padding: 2rem;
+
+}
+
+footer img {
+  max-width: 315.44px;
+  max-height: 178px;
+  align-self: center;
+
+}
+
+footer h3 {
+  color: #F4CE14;
+  /* font-size: 1.6em; */
+  text-transform: uppercase;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+  background-color: #495E57;
+  width: 100%;
+}
+
+footer a {
+  text-decoration: none;
+  color: #FFFFFF;
+  line-height: 2rem;
+}
+
+footer a:hover {
+  color: #F4CE14;
+}
+footer p {
+  color: #FFFFFF;
+  line-height: 1.5rem;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  background-color: #495E57;
+  width: 100%;
+
+}
+
+.footer-social {
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #495E57;
+  color: #FFFFFF;
+  width: 100%;
+}
+
+/* This adds a space between the icons on the footer */
+.svg-inline--fa {
+  margin: 2rem;
+}
+
 
 /* This was the formatting already here to start with */
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -84,4 +163,4 @@ header img {
   to {
     transform: rotate(360deg);
   }
-}
+} */
