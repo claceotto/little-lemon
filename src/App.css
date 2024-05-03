@@ -54,6 +54,9 @@ header img {
 footer {
   display: flex;
   max-height: 379px;
+  width: 100%;
+  justify-content: space-between;
+  
 }
 
 .footer-logo {
@@ -62,7 +65,8 @@ footer {
   max-width: 370px;
   max-height: 379px; 
   background-color: #EDEFEE;
-  padding: 1rem;
+  padding: 2rem;
+
 }
 
 footer img {
@@ -70,12 +74,6 @@ footer img {
   max-height: 178px;
   align-self: center;
 
-}
-
-.footer-text {
-  display: flex;
-  background-color: #495E57;
-  padding: 1em;
 }
 
 footer h3 {
@@ -87,7 +85,9 @@ footer h3 {
 .footer-links {
   display: flex;
   flex-direction: column;
-  padding-right: 5rem;
+  padding: 1rem 2rem;
+  background-color: #495E57;
+  width: 100%;
 }
 
 footer a {
@@ -107,15 +107,30 @@ footer p {
 .footer-contact {
   display: flex;
   flex-direction: column;
-  padding-right: 5rem;
+  padding-top: 1rem;
+  background-color: #495E57;
+  width: 100%;
+
+}
+
+.footer-social {
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #495E57;
+  color: #FFFFFF;
+  width: 100%;
+}
+
+/* This adds a space between the icons on the footer */
+.svg-inline--fa {
+  margin: 2rem;
 }
 
 
-
-
-
 /* This was the formatting already here to start with */
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -148,4 +163,4 @@ footer p {
   to {
     transform: rotate(360deg);
   }
-}
+} */

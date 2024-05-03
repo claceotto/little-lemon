@@ -1,5 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope} from "@fortawesome/free-solid-svg-icons"
+
 
 function Footer() {
   return (
@@ -7,7 +9,7 @@ function Footer() {
       <div className="footer-logo">
         <img src="../images/Logo.jpg" alt="Little Lemon Logo" />
       </div>
-      <div className="footer-text">
+      {/* <div className="footer-text"> */}
         <div className="footer-links">
           <h3>Little Lemon</h3>
           <a href="/home">Home</a>
@@ -37,9 +39,11 @@ function Footer() {
             info@little-lemon.com
           </p>
         </div>
-        <div className="footer-social"></div>
+        <div className="footer-social">
         <FontAwesomeIcon icon={faFacebook} />
-      </div>
+        <FontAwesomeIcon icon={faInstagram} />
+        <FontAwesomeIcon icon={faEnvelope} />
+        </div>
     </footer>
   );
 }
