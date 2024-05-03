@@ -124,7 +124,7 @@ footer p {
 }
 
 /* This adds a space between the icons on the footer */
-.svg-inline--fa {
+.footer-icon {
   margin: 2rem;
 }
 

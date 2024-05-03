@@ -17,7 +17,7 @@ function Footer() {
           <a href="/menu">Menu</a>
           <a href="/reservations">Reservations</a>
           <a href="/order-online">Order Online</a>
-          <a href="/login">login</a>
+          <a href="/login">Login</a>
         </div>
         <div className="footer-contact">
           <h3>Contact</h3>
@@ -40,9 +40,9 @@ function Footer() {
           </p>
         </div>
         <div className="footer-social">
-        <FontAwesomeIcon icon={faFacebook} />
-        <FontAwesomeIcon icon={faInstagram} />
-        <FontAwesomeIcon icon={faEnvelope} />
+        <FontAwesomeIcon className="footer-icon" icon={faFacebook} />
+        <FontAwesomeIcon className="footer-icon" icon={faInstagram} />
+        <FontAwesomeIcon className="footer-icon" icon={faEnvelope} />
         </div>
     </footer>
   );
