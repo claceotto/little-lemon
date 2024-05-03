@@ -1,6 +1,4 @@
 
-/* This is my formatting */
-
 /* Header formatting */
 .header {
   display: flex;
@@ -15,8 +13,8 @@ header img {
   max-width: 294px;
   max-height: 88px;
   align-self: center;
-  
 }
+
 
 .navigation {
   align-self: center;
@@ -56,7 +54,6 @@ footer {
   max-height: 379px;
   width: 100%;
   justify-content: space-between;
-  
 }
 
 .footer-logo {
@@ -66,14 +63,46 @@ footer {
   max-height: 379px; 
   background-color: #EDEFEE;
   padding: 2rem;
-
 }
 
-footer img {
+.bg-logo {
   max-width: 315.44px;
   max-height: 178px;
   align-self: center;
+}
 
+.sm-logo {
+  max-width: 100px;
+  align-self: center;
+}
+
+
+/* Desktop footer image */
+@media (min-width: 600px) {
+.sm-fotter-logo {
+  display: none;
+}
+
+.bg-footer-logo {
+  display: flex;
+  justify-content: center;
+  background-color: #EDEFEE;
+  padding: 2rem;
+}
+}
+
+/* Mobile footer image */
+@media (max-width: 600px) {
+  .bg-footer-logo {
+    display: none;
+  }
+
+  .sm-fotter-logo {
+    display: flex;
+    justify-content: center;
+    background-color: #EDEFEE;
+    padding: 1rem;
+}
 }
 
 footer h3 {
@@ -99,6 +128,7 @@ footer a {
 footer a:hover {
   color: #F4CE14;
 }
+
 footer p {
   color: #FFFFFF;
   line-height: 1.5rem;
@@ -114,7 +144,7 @@ footer p {
 }
 
 .footer-social {
-  font-size: 5rem;
+  font-size: 4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -127,6 +157,24 @@ footer p {
 .footer-icon {
   margin: 2rem;
 }
+
+/* Mobile footer settings */
+@media (max-width: 600px) {
+  .footer-social {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #495E57;
+    color: #FFFFFF;
+    width: 100%;
+  }
+
+  .footer-icon {
+    margin: 1rem;
+  }
+}
+
 
 
 /* This was the formatting already here to start with */
