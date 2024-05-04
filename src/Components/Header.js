@@ -1,30 +1,24 @@
+import DesktopNav from "./DesktopNav";
+import Hamburger from "./Hamburger";
+import MobileNav from "./MobileNav";
+import { useState } from "react";
+
 function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleToglle = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
       <header className="header">
         <img src="../images/small-logo.jpg" alt="Little Lemon logo" />
-        <nav className="navigation">
-          <ul>
-            <li>
-              <a href="/home">Home</a>
-            </li>
-            <li>
-              <a href="/about">About</a>
-            </li>
-            <li>
-              <a href="/blog">Menu</a>
-            </li>
-            <li>
-              <a href="/reservations">Reservations</a>
-            </li>
-            <li>
-              <a href="/order-online">Order online</a>
-            </li>
-            <li>
-              <a href="/login">Login</a>
-            </li>
-          </ul>
-        </nav>
+        <DesktopNav />
+        <div className="hamburger" onClick={handleToglle}>
+          <Hamburger isOpen={isOpen} />
+          {isOpen ? <MobileNav /> : undefined}
+        </div>
       </header>
     </>
   );
