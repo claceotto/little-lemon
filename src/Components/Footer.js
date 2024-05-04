@@ -12,7 +12,6 @@ function Footer() {
           className="bg-logo"
         />
       </div>
-
       <div className="sm-fotter-logo">
         <img
           src="../images/Vertical-logo.png"
@@ -20,25 +19,20 @@ function Footer() {
           className="sm-logo"
         />
       </div>
-
       <div className="footer-links">
-        <h3>Little Lemon</h3>
+        <h3>Navigation</h3>
         <a href="/home">Home</a>
         <a href="/about">About</a>
         <a href="/menu">Menu</a>
         <a href="/reservations">Reservations</a>
-        <a href="/order-online">Order Online</a>
+        <a href="/order-online">Online orders</a>
         <a href="/login">Login</a>
       </div>
       <div className="footer-contact">
         <h3>Contact</h3>
-        <p>
-          Limoeiro Avenue
-          <br />
-          Citrus City
-          <br />
-          Isle of Man
-        </p>
+        <p>Limoeiro Avenue</p>
+        <p>Citrus City</p>
+        <p>Isle of Man</p>
         <p>
           Telephone:
           <br />
