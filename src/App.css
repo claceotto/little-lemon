@@ -193,6 +193,7 @@ footer h3 {
   padding: 1rem 2rem;
   background-color: #495E57;
   width: 100%;
+  line-height: 1.5rem;
 }
 
 footer a {
@@ -207,7 +208,6 @@ footer a:hover {
 
 footer p {
   color: #FFFFFF;
-  line-height: 1.5rem;
 }
 
 .footer-contact {
@@ -217,6 +217,7 @@ footer p {
   padding-top: 1rem;
   background-color: #495E57;
   width: 100%;
+  line-height: 1.5rem;
   
 }
 
@@ -247,32 +248,36 @@ footer p {
     color: #FFFFFF;
     width: 100%;
     justify-content: center;
+    grid-gap: 1rem;
   }
 
   .footer-links {
     grid-area: naviation;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem 2rem;
+    display: grid;
     background-color: #495E57;
-    width: 100%;
-
-    align-items: center;
+    justify-items: center;
+    padding: 0;
+   
   }
   
   .footer-contact {
     grid-area: contact;
-    display: flex;
-    flex-direction: column;
+    display: grid;
     padding-top: 1rem;
     background-color: #495E57;
     width: 100%;
-    align-items: center;
+    justify-items: center;
+    padding: 0;
+  }
+
+  .footer-contact > p {
+    text-align: center;
   }
 
   .footer-icon {
     margin: 1rem;
   }
+
 }
 
 

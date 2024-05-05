@@ -30,19 +30,21 @@ function Footer() {
       </div>
       <div className="footer-contact">
         <h3>Contact</h3>
-        <p>Limoeiro Avenue</p>
-        <p>Citrus City</p>
-        <p>Isle of Man</p>
+        <p>
+          Limoeiro Avenue
+          <br />
+          Citrus City
+          <br />
+          Isle of Man
+        </p>
+
         <p>
           Telephone:
           <br />
           000-0000
         </p>
-        <p>
-          E-mail:
-          <br />
-          info@little-lemon.com
-        </p>
+
+        <p>info@little-lemon.com</p>
       </div>
       <div className="footer-social">
         <FontAwesomeIcon className="footer-icon" icon={faFacebook} />
