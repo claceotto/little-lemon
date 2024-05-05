@@ -13,8 +13,19 @@ function Header() {
   return (
     <>
       <header className="header">
-        <img src="../images/small-logo.jpg" alt="Little Lemon logo" />
-        <DesktopNav />
+        <div>
+          <img
+            src="../images/small-logo.jpg"
+            alt="Little Lemon logo"
+            className="header-bg-image"
+          />
+          <img
+            src="../images/lemon.png"
+            alt="Little Lemon logo"
+            className="header-sm-image"
+          />
+        </div>
+        <DesktopNav className="header-links" />
         <div className="hamburger" onClick={handleToglle}>
           <Hamburger isOpen={isOpen} />
           {isOpen ? <MobileNav /> : undefined}

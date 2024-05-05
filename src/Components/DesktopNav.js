@@ -15,7 +15,7 @@ function DesktopNav() {
           <a href="/reservations">Reservations</a>
         </li>
         <li>
-          <a href="/order-online">Order online</a>
+          <a href="/order-online">Online orders</a>
         </li>
         <li>
           <a href="/login">Login</a>
