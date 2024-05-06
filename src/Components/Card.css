@@ -1,0 +1,51 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #495E57;
+    border-radius: 20px;
+    max-width: 270px;
+}
+
+.card-image {
+    max-width: 270px;
+    border-radius: 20px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem 0.5rem 0rem; /*top | left and right | bottom*/
+    
+}
+.card-header h5 {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.price {
+    color: #F57F48;
+}
+
+.card-text {
+    overflow-wrap: break-word;
+    padding: 0rem 0.5rem 0rem; /*top | left and right | bottom*/
+}
+
+.card-text p {
+    margin-top: 0rem;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.card-footer h5 {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0 1rem 1rem 0; /* top | right | bottom | left */
+}
+
+.card-footer-icon {
+    font-size: 1.3rem;
+}
