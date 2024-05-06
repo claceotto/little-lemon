@@ -1,3 +1,7 @@
+.about {
+    max-height: 32rem;
+}
+
 .about-article {
     background-color: #495E57;
     padding: 2rem;
