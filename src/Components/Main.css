@@ -103,6 +103,24 @@ padding: 2%;
      }
     .mobile-about-image {
         display: none
+     }
     }
- 
-   }
+
+.specials-title {
+  display: flex; 
+  justify-content: space-around;
+  padding-top: 2rem;
+}
+
+.specials-title h1 {
+  margin: 0rem;
+  font-size: 2rem;
+}
+
+.specials-cards {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 2rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
