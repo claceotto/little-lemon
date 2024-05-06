@@ -1,3 +1,4 @@
+import "./Header.css";
 import DesktopNav from "./DesktopNav";
 import Hamburger from "./Hamburger";
 import MobileNav from "./MobileNav";
