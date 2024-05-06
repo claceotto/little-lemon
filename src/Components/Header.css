@@ -1,0 +1,143 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    padding: 2rem;
+  }
+  
+  .header-bg-image {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    align-self: center;
+  }
+  
+  .header-sm-image {
+    width: 100%;
+    height: auto;
+    max-width: 50px;
+    align-self: center;
+  }
+  
+  /* Desktop header image */
+  @media (min-width: 1000px) {
+    .header-sm-image {
+      display: none;
+    }
+    
+    .header-bg-image {
+      display: flex;
+      justify-content: center;
+    }
+    }
+  
+  /* Tablet header image */
+    @media (max-width: 1000px) {
+      .header-sm-image {
+        display: flex;
+        justify-content: center;
+      }
+      
+      .header-bg-image {
+        display: none;
+      }
+      }
+  
+  /* Mobile header image */
+  @media (max-width: 747px) {
+    .header-sm-image {
+      display: none
+    }
+   
+  .header-bg-image {
+      display: flex;
+      justify-content: center;
+    }
+    }
+  
+  .desktop-nav {
+    align-self: center;
+    justify-content: space-around;
+  }
+  
+  .desktop-nav nav {
+    padding: 1rem;
+    align-content: center;
+  }
+  
+  .desktop-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .mobile-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+   .desktop-nav li {
+    display: inline;
+    padding: 1rem;
+  }
+  
+  .mobile-nav li {
+    padding: 0.5rem;
+  }
+  
+   .desktop-nav a {
+    color: #495E57;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    }
+  
+    .mobile-nav a {
+     color: #495E57;
+     text-transform: uppercase;
+     font-weight: bold;
+     text-decoration: none;
+  }
+  
+    .header a:hover {
+      color: #F4CE14;
+    }
+  
+  .header-links {
+    align-self: self-end;
+  }
+  
+    /* Mobile header style */
+  .hamburger {
+      display: none;
+    }
+  
+  .mobile-nav { 
+    position: fixed; /* Sit on top of the page content */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 140px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }
+  
+   @media (max-width: 747px) {
+      .hamburger {
+        display:block;
+        padding-top: 10px;
+        margin-left: 10px;
+        z-index: 10;
+        color: #495E57;
+      }
+  
+    .desktop-nav {
+      display: none;
+    }
+  }
+  

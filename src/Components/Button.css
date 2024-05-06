@@ -1,0 +1,22 @@
+button {
+    background-color: #F4CE14;
+    border: none;
+    padding: 10px 32px;
+    text-align: center;
+    font-size: large;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+/* This will style the on-hover effect */
+button {
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: #EE9972;
+}
+
+button:active {
+    transform: scale(0.9);
+}
