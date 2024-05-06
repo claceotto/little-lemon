@@ -4,7 +4,7 @@ import Button from "./Button";
 function Main() {
   return (
     <main>
-      <article>
+      <article className="about">
         <div className="about-article">
           <div className="about-text">
             <h1>Little Lemon</h1>
