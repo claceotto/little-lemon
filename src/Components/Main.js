@@ -1,6 +1,7 @@
 import "./Main.css";
 import Button from "./Button";
 import Card from "./Card";
+import TestimonialCard from "./TestimonialCard";
 
 function Main() {
   return (
@@ -63,7 +64,14 @@ function Main() {
           />
         </div>
       </article>
-      <article>Testimonials</article>
+      <article className="testimonials">
+        <div className="testimonials-title">
+          <h1>Testimonials</h1>
+        </div>
+        <div className="testimonials-cards">
+          <TestimonialCard />
+        </div>
+      </article>
       <article>About</article>
     </main>
   );

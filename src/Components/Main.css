@@ -124,3 +124,14 @@ padding: 2%;
   flex-wrap: wrap;
   gap: 2rem;
 }
+
+.testimonials {
+    margin-top: 2.3rem;
+    background-color: #495E57;
+}
+
+.testimonials h1 {
+    font-size: 4rem;
+    color: #F4CE14;
+    
+}
