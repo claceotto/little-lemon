@@ -9,8 +9,12 @@
 .card-image {
     max-width: 270px;
     border-radius: 20px;
+
 }
 
+.card-image-container {
+    min-height: 200px;
+}
 .card-header {
     display: flex;
     justify-content: space-between;
@@ -28,6 +32,7 @@
 
 .card-text {
     overflow-wrap: break-word;
+    min-height: 120px;
     padding: 0rem 0.5rem 0rem; /*top | left and right | bottom*/
 }
 
@@ -38,6 +43,7 @@
 .card-footer {
     display: flex;
     justify-content: center;
+    align-items: flex-end;
 }
 
 .card-footer h5 {
@@ -49,4 +55,6 @@
 
 .card-footer-icon {
     font-size: 1.3rem;
+    margin: 0 0 1rem 0;/* top | right | bottom | left */
+    
 }

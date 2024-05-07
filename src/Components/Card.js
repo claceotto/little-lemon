@@ -5,7 +5,9 @@ import { faPersonBiking } from "@fortawesome/free-solid-svg-icons";
 function Card({ src, title, price, description }) {
   return (
     <div className="card-container">
+      <div className="card-image-container">
       <img src={src} alt="greek salad" className="card-image" />
+      </div>
       <div className="card-header">
         <h5>{title}</h5>
         <h5 className="price">{price}</h5>

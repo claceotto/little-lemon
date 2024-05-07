@@ -54,7 +54,7 @@ function Main() {
             }
           />
           <Card
-            src={"../images/lemon dessert.jpg"}
+            src={"../images/lemon dessert 2.jpg"}
             title={"Lemon dessert"}
             price={"£5.00"}
             description={
