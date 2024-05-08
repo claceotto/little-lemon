@@ -1,12 +1,36 @@
 .tcard-container {
     border: 2px solid #495E57;
     border-radius: 20px;
-    max-width: 200px;
+    max-width: 250px;
+    min-width: 250px;
     background-color:#EDEFEE;
     padding: 1rem;
 }
 
-.tcard-header h5{
+.tcard-title h5{
     font-size: 1.2rem;
-    margin: 0;
+    margin: 0.7rem 0;  /* top and bottom | left and right */
+}
+
+.tcard-rating {
+    font-size: 1.2rem;
+    color: #F4CE14;
+}
+.tcard-avatar-container {
+    display: flex;
+    align-items: center;
+}
+
+.tcard-avatar {
+    max-width: 70px;
+    border-radius: 100%;
+}
+
+.tcard-avatar-container p {
+    margin: 0.5rem 0.5rem 0;  /* top | left and right | bottom */
+
+}
+
+.tcard-text {
+    font-weight: bold;
 }

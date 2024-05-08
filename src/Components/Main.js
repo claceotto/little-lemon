@@ -69,7 +69,30 @@ function Main() {
           <h1>Testimonials</h1>
         </div>
         <div className="testimonials-cards">
-          <TestimonialCard />
+          <TestimonialCard
+            rating={5}
+            src={"../images/avataaars1.png"}
+            name={"Patricia"}
+            testimonial={"We had a fantastic meal."}
+          />
+          <TestimonialCard
+            rating={4}
+            src={"../images/avataaars2.png"}
+            name={"Linda"}
+            testimonial={"Great dinner at Little Lemon."}
+          />
+          <TestimonialCard
+            rating={4}
+            src={"../images/avataaars3.png"}
+            name={"Robert"}
+            testimonial={"Great food and lovely place!"}
+          />
+          <TestimonialCard
+            rating={5}
+            src={"../images/avataaars4.png"}
+            name={"Kevin"}
+            testimonial={"Best meal we had in a while."}
+          />
         </div>
       </article>
       <article>About</article>

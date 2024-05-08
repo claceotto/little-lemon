@@ -1,42 +1,21 @@
 import "./TestimonialCard.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-regular-svg-icons";
+import Stars from "./Stars";
 
-
-function TestimonialCard({ src, price, description }) {
+function TestimonialCard({ rating, src, name, testimonial }) {
   return (
     <div className="tcard-container">
-        <div className="tcard-title">
-            <h5>Rating</h5>
-        </div>
-        <div className="tcard-rating">
-            <div className="0-rating">        
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-            </div>
-            <div className="1-rating">
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-            </div>
-        </div>
-       
-
-      <div className="card-image-container">
-      <img src={src} alt="greek salad" className="card-image" />
+      <div className="tcard-title">
+        <h5>Rating:</h5>
       </div>
-
+      <div className="tcard-rating">
+        <Stars rating={rating} />
+      </div>
+      <div className="tcard-avatar-container">
+        <img src={src} alt="avatar" className="tcard-avatar" />
+        <p>{name}</p>
+      </div>
       <div className="tcard-text">
-        <p>{description}</p>
-      </div>
-      <div className="tcard-footer">
-        <h5>Order for delivery!</h5>
-    
+        <p>{testimonial}</p>
       </div>
     </div>
   );
