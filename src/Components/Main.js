@@ -1,5 +1,6 @@
 import "./Main.css";
 import Button from "./Button";
+import Card from "./Card";
 
 function Main() {
   return (
@@ -30,8 +31,38 @@ function Main() {
           />
         </div>
       </article>
-
-      <article>This weeks specials</article>
+      <article className="specials">
+        <div className="specials-title">
+          <h1>This week's specials</h1>
+          <Button btext={"Online Menu"} />
+        </div>
+        <div className="specials-cards">
+          <Card
+            src={"../images/greek salad.jpg"}
+            title={"Greed salad"}
+            price={"£12.99"}
+            description={
+              "The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons. "
+            }
+          />
+          <Card
+            src={"../images/Bruchetta.jpg"}
+            title={"Bruschetta"}
+            price={"£5.99"}
+            description={
+              "Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil"
+            }
+          />
+          <Card
+            src={"../images/lemon dessert 2.jpg"}
+            title={"Lemon dessert"}
+            price={"£5.00"}
+            description={
+              "This come straight from grandma's recipe book, every last ingredient has been sourced and is as authentic as can be imagined."
+            }
+          />
+        </div>
+      </article>
       <article>Testimonials</article>
       <article>About</article>
     </main>
