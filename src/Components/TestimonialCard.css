@@ -19,6 +19,8 @@
 .tcard-avatar-container {
     display: flex;
     align-items: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .tcard-avatar {
@@ -28,7 +30,6 @@
 
 .tcard-avatar-container p {
     margin: 0.5rem 0.5rem 0;  /* top | left and right | bottom */
-
 }
 
 .tcard-text {
