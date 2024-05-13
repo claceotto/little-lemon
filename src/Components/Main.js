@@ -6,26 +6,24 @@ import TestimonialCard from "./TestimonialCard";
 function Main() {
   return (
     <main>
-      <article className="about">
-        <div className="about-article">
-          <div className="about-text">
-            <h1>Little Lemon</h1>
-            <h2>Isle of Man</h2>
-            <p>
-              We are a family owned Mediterranean restaurant,
-              <br />
-              focused on traditional recipes served with a modern twist.
-            </p>
-            <Button btext={"Reserve a table"} />
-          </div>
-          <div className="mobile-about-image">
-            <img
-              src="../images/waiter.jpg"
-              alt="waiter carring a tray of bruscheta"
-            />
-          </div>
+      <article className="hero-article">
+        <div className="hero-text">
+          <h1>Little Lemon</h1>
+          <h2>Isle of Man</h2>
+          <p>
+            We are a family owned Mediterranean restaurant,
+            <br />
+            focused on traditional recipes served with a modern twist.
+          </p>
+          <Button btext={"Reserve a table"} />
         </div>
-        <div className="desktop-about-image">
+        <div className="mobile-hero-image">
+          <img
+            src="../images/waiter.jpg"
+            alt="waiter carring a tray of bruscheta"
+          />
+        </div>
+        <div className="desktop-hero-image">
           <img
             src="../images/waiter.jpg"
             alt="waiter carring a tray of bruscheta"
@@ -34,12 +32,12 @@ function Main() {
       </article>
       <article className="specials">
         <div className="specials-title">
-          <h1>This week's specials</h1>
+          <h1>Weekly specials</h1>
         </div>
         <div className="specials-cards">
           <Card
             src={"../images/greek salad.jpg"}
-            title={"Greed salad"}
+            title={"Greek salad"}
             price={"£12.99"}
             description={
               "The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons. "
