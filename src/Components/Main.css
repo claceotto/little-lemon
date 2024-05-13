@@ -6,7 +6,6 @@
     background-color: #495E57;
     padding: 2rem;
     display: flex;
-    /* justify-content: flex-start; */
     height: 20rem;
     padding-left: 10%;
 }
@@ -26,7 +25,10 @@ padding: 2%;
         height: auto;        
      }
     }
-
+.about button {
+    position: relative;
+    z-index: 3;
+}
 .about-article h1 {
     font-size: 4rem;
     color: #F4CE14;
