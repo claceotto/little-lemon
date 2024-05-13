@@ -35,7 +35,6 @@ function Main() {
       <article className="specials">
         <div className="specials-title">
           <h1>This week's specials</h1>
-          <Button btext={"Online Menu"} />
         </div>
         <div className="specials-cards">
           <Card

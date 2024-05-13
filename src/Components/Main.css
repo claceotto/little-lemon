@@ -106,16 +106,28 @@ padding: 2%;
      }
     }
 
+.specials {
+    padding: -1rem 2rem 2rem; /* top | left and right | bottom */
+    /* margin: -1rem 2rem 2rem; top | left and right | bottom */
+}
+
+@media (max-width: 850px) {
+    .specials  {
+        padding: 0.5rem;
+        margin: 2rem;
+    }
+}
+
 
 .specials-title {
   display: flex; 
-  justify-content: space-around;
-  padding-top: 2rem;
+  justify-content: flex-start;
+  
 }
 
 .specials-title h1 {
-  margin: 0rem;
-  font-size: 2rem;
+    font-size: 3rem;
+    margin-top: 0rem;
 }
 
 .specials-cards {
@@ -135,9 +147,10 @@ padding: 2%;
 }
 
 .testimonials h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     color: #F4CE14;
     margin-top: 1rem;
+    
 
 }
 
