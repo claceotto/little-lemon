@@ -1,4 +1,4 @@
-import "./Main.css";
+import "./HomePage.css";
 import Button from "./Button";
 import Card from "./Card";
 import TestimonialCard from "./TestimonialCard";
@@ -35,6 +35,7 @@ function Main() {
           <h1>Weekly specials</h1>
         </div>
         <div className="specials-cards">
+          {/* Map through an object with the specials instead of creating them individually */}
           <Card
             src={"../images/greek salad.jpg"}
             title={"Greek salad"}

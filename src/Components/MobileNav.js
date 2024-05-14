@@ -1,3 +1,5 @@
+import Nav from "./Nav";
+
 function MobileNav() {
   return (
     <nav className="mobile-nav">
