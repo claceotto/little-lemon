@@ -116,3 +116,42 @@
     justify-content: space-around;
     margin-bottom: 2rem;
 }
+
+.about {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0 4rem; /* top | right | bottom | left */
+    margin-top: 1rem;
+}
+
+.about h1 {
+    font-size: 3rem;
+    margin: 1rem 0; /* top and bottom | left and right */
+    
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+}
+
+.about-content img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    align-self: center;
+    border-radius: 20px;
+    box-shadow: 4px 4px 4px #00000026;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-text p {
+    max-width: 50%;
+    align-self: center;
+
+}
