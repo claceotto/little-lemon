@@ -95,6 +95,21 @@
   margin-bottom: 2rem;
 }
 
+@media (max-width: 534px) {
+
+    .specials {
+        margin: 1rem;
+        padding: 1rem;
+    }
+    .specials-cards {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+
 .testimonials {
     margin-top: 2.3rem;
     background-color: #495E57;
@@ -113,19 +128,32 @@
     flex-direction: row;
     gap: 2rem;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-bottom: 2rem;
+}
+
+@media (max-width: 534px) {
+
+    .testimonials {
+        padding: 1rem;
+    }
+    .testimonials-cards {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
 }
 
 .about {
     display: flex;
     flex-direction: column;
-    padding: 0 0 0 4rem; /* top | right | bottom | left */
     margin-top: 1rem;
 }
 
 .about h1 {
     font-size: 3rem;
+    padding: 0 0 0 4rem; /* top | right | bottom | left */
     margin: 1rem 0; /* top and bottom | left and right */
     
 }
@@ -134,24 +162,28 @@
     display: flex;
     justify-content: space-around;
     padding: 2rem;
+    gap: 2rem;
 }
 
-.about-content img {
+.about-image {
     width: 100%;
+    max-width: 500px;
     height: auto;
-    max-width: 400px;
     align-self: center;
     border-radius: 20px;
     box-shadow: 4px 4px 4px #00000026;
-}
+    }
 
 .about-text {
-    display: flex;
-    flex-direction: column;
+    align-self: center;
+    min-width: 50%;
 }
 
-.about-text p {
-    max-width: 50%;
-    align-self: center;
-
+@media (max-width: 767px) {
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        gap: 2rem;
+    }
 }

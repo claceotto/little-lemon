@@ -7,6 +7,13 @@
     padding: 1rem;
 }
 
+@media (max-width:655px) {
+    .tcard-container {
+        max-width: auto;
+        min-width: auto;
+}
+}
+
 .tcard-title h5{
     font-size: 1.2rem;
     margin: 0.7rem 0;  /* top and bottom | left and right */
