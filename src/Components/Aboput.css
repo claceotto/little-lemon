@@ -1,0 +1,42 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.about h1 {
+    font-size: 3rem;
+    padding: 0 0 0 4rem; /* top | right | bottom | left */
+    margin: 1rem 0; /* top and bottom | left and right */
+    
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.about-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    align-self: center;
+    border-radius: 20px;
+    box-shadow: 4px 4px 4px #00000026;
+    }
+
+.about-text {
+    align-self: center;
+    min-width: 50%;
+}
+
+@media (max-width: 767px) {
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        gap: 2rem;
+    }
+}

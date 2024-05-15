@@ -1,7 +1,6 @@
 import "./Header.css";
 import Nav from "./Nav";
 import Hamburger from "./Hamburger";
-import MobileNav from "./MobileNav";
 import { useState } from "react";
 
 function Header() {
@@ -26,10 +25,10 @@ function Header() {
             className="header-sm-image"
           />
         </div>
-        <Nav className="header-links" />
+        <Nav cName={"desktop-nav"} />
         <div className="hamburger" onClick={handleToglle}>
           <Hamburger isOpen={isOpen} />
-          {isOpen ? <MobileNav /> : undefined}
+          {isOpen ? <Nav cName={"mobile-nav"} /> : undefined}
         </div>
       </header>
     </>

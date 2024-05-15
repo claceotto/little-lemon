@@ -1,0 +1,40 @@
+.specials {
+    margin: 2rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.specials-title {
+  display: flex; 
+  justify-content: flex-start;
+  color: #495E57;
+}
+
+.specials-title h1 {
+    font-size: 3rem;
+    margin-top: 0rem;
+}
+
+.specials-cards {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 2rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 534px) {
+
+    .specials {
+        margin: 1rem;
+        padding: 1rem;
+    }
+    .specials-cards {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+}

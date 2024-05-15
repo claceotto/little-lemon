@@ -1,6 +1,6 @@
-function DesktopNav() {
+function DesktopNav({ cName }) {
   return (
-    <nav className="desktop-nav">
+    <nav className={cName}>
       <ul>
         <li>
           <a href="/home">Home</a>
