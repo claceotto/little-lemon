@@ -11,7 +11,31 @@ h1 {
   font-size: 3rem;
 }
 
+.main-h1 {
+  font-size: 4rem;
+  color: #F4CE14;
+  margin: 0 auto;
+}
 
+.main-h2 {
+  margin: 0 auto;
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+
+.main-p {
+  font-size: 1.1rem;
+  margin: 2rem auto;
+  color: #ffffff;
+}
+
+.green-article {
+  background-color: #495E57;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-around;
+}
 
 
 /* This was the formatting already here to start with */

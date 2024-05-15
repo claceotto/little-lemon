@@ -8,6 +8,7 @@ import About from "./Components/About";
 import OnlineOrders from "./Components/OnlineOders";
 import Login from "./Components/Login";
 import Specials from "./Components/Specials";
+import BookingDetails from "./Components/BookingDetails";
 
 export default function App() {
   return (

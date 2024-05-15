@@ -32,9 +32,10 @@ export default function Specials() {
         <h1>Weekly specials</h1>
       </div>
       <div className="specials-cards">
-        {specials.map((special) => {
+        {specials.map((special, index) => {
           return (
             <Card
+              key={index}
               src={special.src}
               title={special.title}
               price={special.price}

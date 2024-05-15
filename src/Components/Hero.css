@@ -6,24 +6,6 @@
     height: 20rem;
 }
 
-.hero-article h1 {
-    font-size: 4rem;
-    color: #F4CE14;
-    margin: 0 auto;
-}
-
-.hero-article h2 {
-    margin: 0 auto;
-    color: #ffffff;
-    font-size: 2rem;
-}
-
-.hero-article p {
-    font-size: 1.1rem;
-    margin: 2rem auto;
-    color: #ffffff;
-   } 
-
 .mobile-hero-image{
     display: none;
 }

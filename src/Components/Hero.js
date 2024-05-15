@@ -5,9 +5,9 @@ export default function Hero() {
   return (
     <article className="hero-article">
       <div className="hero-text">
-        <h1>Little Lemon</h1>
-        <h2>Isle of Man</h2>
-        <p>
+        <h1 className="main-h1">Little Lemon</h1>
+        <h2 className="main-h2">Isle of Man</h2>
+        <p className="main-p">
           We are a family owned Mediterranean restaurant,
           <br />
           focused on traditional recipes served with a modern twist.
