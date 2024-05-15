@@ -87,21 +87,14 @@
     padding: 0.5rem;
   }
   
-   .desktop-nav a {
+  nav a {
     color: #495E57;
     text-transform: uppercase;
     font-weight: bold;
     text-decoration: none;
-    }
-  
-    .mobile-nav a {
-     color: #495E57;
-     text-transform: uppercase;
-     font-weight: bold;
-     text-decoration: none;
   }
   
-    .header a:hover {
+  .header a:hover {
       color: #F4CE14;
     }
   
