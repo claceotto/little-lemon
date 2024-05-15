@@ -1,7 +1,7 @@
 import "./Specials.css";
 import Card from "./Card";
 
-export default function specials() {
+export default function Specials() {
   const specials = [
     {
       src: "../images/greek salad.jpg",

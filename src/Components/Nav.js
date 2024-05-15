@@ -1,24 +1,26 @@
+import { Link } from "react-router-dom";
+
 function DesktopNav({ cName }) {
   return (
     <nav className={cName}>
       <ul>
         <li>
-          <a href="/home">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="/about">About</a>
+          <Link to="/about">About</Link>
         </li>
         <li>
-          <a href="/blog">Menu</a>
+          <Link to="/menu">Menu</Link>
         </li>
         <li>
-          <a href="/reservations">Reservations</a>
+          <Link to="/reservation">Reservation</Link>
         </li>
         <li>
-          <a href="/order-online">Online orders</a>
+          <Link to="/online-orders">Online orders</Link>
         </li>
         <li>
-          <a href="/login">Login</a>
+          <Link to="/login">Login</Link>
         </li>
       </ul>
     </nav>

@@ -6,6 +6,7 @@
 
 .about h1 {
     font-size: 3rem;
+    color: #495E57;
     padding: 0 0 0 4rem; /* top | right | bottom | left */
     margin: 1rem 0; /* top and bottom | left and right */
     
@@ -25,7 +26,7 @@
     align-self: center;
     border-radius: 20px;
     box-shadow: 4px 4px 4px #00000026;
-    }
+}
 
 .about-text {
     align-self: center;
