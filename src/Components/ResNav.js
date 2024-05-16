@@ -1,13 +1,15 @@
-import { Link } from "react-router-dom";
+import "./ResNav.css";
+import CircleBtn from "./CircleBtn";
 
 export default function ResNav() {
   return (
     <nav>
       <ul>
-        <li>
-          <Link to="/reservation/booking-details">1</Link>
-          <Link to="/reservation/contact">2</Link>
-          <Link to="/reservation/confirmation">3</Link>
+        <li className="res-nav">
+          <CircleBtn activeClass={"active-circle"} btnNumber={"1"} />
+          {/* <div className="bar">asdfa</div> */}
+          <CircleBtn activeClass={"inactive-circle"} btnNumber={"2"} />
+          <CircleBtn activeClass={"inactive-circle"} btnNumber={"3"} />
         </li>
       </ul>
     </nav>

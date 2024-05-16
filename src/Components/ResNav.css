@@ -1,0 +1,40 @@
+.res-nav {
+    display: flex; 
+    justify-content: space-around;
+    margin: 1rem;
+  }
+
+
+  .active-number {
+    color: black;
+    z-index: 3;
+  }
+
+  .active-circle {
+    background-color: #F4CE14;
+    color: black;
+    padding: 1rem 1.4rem;
+    border-radius: 100%;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .inactive-circle {
+    background-color: #495E57;
+    color: white;
+    padding: 1rem 1.4rem;
+    border-radius: 100%;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  /* .bar {
+    border: solid;
+    border-color: #495E57;
+    border-width: 2px;
+    border-radius: 20%;
+    width: 20px;
+
+  } */

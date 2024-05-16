@@ -1,14 +1,13 @@
 import "./App.css";
 import Header from "./Components/Header";
-import HomePage from "./Components/HomePage";
+import HomePage from "./Components/Pages/HomePage";
 import Footer from "./Components/Footer";
 import { Route, Routes } from "react-router-dom";
-import Reservation from "./Components/Reservation";
-import About from "./Components/About";
-import OnlineOrders from "./Components/OnlineOders";
+import Reservation from "./Components/Pages/Reservation";
+import About from "./Components/Pages/About";
+import OnlineOrders from "./Components/Pages/OnlineOders";
 import Login from "./Components/Login";
-import Specials from "./Components/Specials";
-import BookingDetails from "./Components/BookingDetails";
+import Specials from "./Components/Pages/Specials";
 
 export default function App() {
   return (

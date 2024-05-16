@@ -1,7 +1,7 @@
 import "./Button.css";
 
 function Button({ btext }) {
-  return <button>{btext}</button>;
+  return <button className="styled-button">{btext}</button>;
 }
 
 export default Button;

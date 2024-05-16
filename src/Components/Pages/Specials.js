@@ -1,5 +1,5 @@
 import "./Specials.css";
-import Card from "./Card";
+import Card from "../Card";
 
 export default function Specials() {
   const specials = [
