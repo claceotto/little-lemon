@@ -38,3 +38,11 @@
     width: 20px;
 
   } */
+
+  .styled-button:hover {
+    background-color: #EE9972;
+}
+
+.styled-button:active {
+    transform: scale(0.9);
+}

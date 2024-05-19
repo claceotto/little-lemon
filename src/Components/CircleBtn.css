@@ -1,0 +1,11 @@
+.active-circle:active {
+    transform: scale(0.9);
+}
+
+.inactive-circle:active {
+    transform: scale(0.9);
+}
+
+.inactive-circle:hover {
+    background-color: #EE9972;
+}

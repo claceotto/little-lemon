@@ -1,3 +1,8 @@
-export default function CircleBtn({ activeClass, btnNumber }) {
-  return <button className={activeClass}>{btnNumber}</button>;
+import "./CircleBtn.css";
+export default function CircleBtn({ activeClass, btnNumber, onClick }) {
+  return (
+    <button className={activeClass} onClick={onClick}>
+      {btnNumber}
+    </button>
+  );
 }
