@@ -40,8 +40,6 @@ export default function ResNav() {
           />
         </li>
       </ul>
-      <p>Active state below</p>
-      <p>{activeCircle}</p>
     </nav>
   );
 }
