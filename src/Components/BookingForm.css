@@ -1,0 +1,49 @@
+.reservation {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    margin: 1rem;
+}
+
+.res-title {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: black;
+
+}
+
+.circle {
+    display: flex;
+    background-color: #F4CE14;
+    color: black;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-title {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+
+}
+
+.date, .time, .guests, .sitting, .ocasion, .special-req {
+    grid-column-start: 1;
+    grid-column-end: 9;
+}
+
+.nextbtn {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.backbtn {
+    grid-column-start: 7;
+    grid-column-end: 8; 
+}
