@@ -1,6 +1,7 @@
 import "./BookingForm.css";
 import Button from "../../../../Components/Button";
 import Calendar from "./Calendar";
+import Time from "./Time";
 
 export default function BookingForm() {
   return (
@@ -21,6 +22,18 @@ export default function BookingForm() {
             What time?
           </label>
         </div>
+        <label for="time">Choose a pet:</label>
+
+        <select name="pets" id="pet-select">
+          <option value="">--Please choose an option--</option>
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="hamster">Hamster</option>
+          <option value="parrot">Parrot</option>
+          <option value="spider">Spider</option>
+          <option value="goldfish">Goldfish</option>
+        </select>
+        <Time />
         <select name="res-time" id="res-time" required>
           <option>17:00</option>
           <option>18:00</option>
