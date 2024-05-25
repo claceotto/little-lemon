@@ -1,0 +1,19 @@
+.MuiDateCalendar-root {
+    margin: 0rem 0rem 0rem 3rem; /* top | right | bottom | left */
+}
+
+.MuiPickersDay-root.Mui-selected {
+    background-color: #495E57;
+}
+
+.MuiPickersDay-root.Mui-selected:hover {
+    background-color: #495E57;
+}
+
+.MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
+    background-color: #495E57;
+}
+
+.MuiButtonBase-root-MuiPickersDay-root.Mui-selected:hover {
+    background-color: #495E57;
+}
