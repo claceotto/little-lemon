@@ -1,5 +1,5 @@
 import "./ResNav.css";
-import CircleBtn from "./CircleBtn";
+import CircleBtn from "../../../Components/CircleBtn";
 import { useState, useCallback } from "react";
 
 export default function ResNav() {

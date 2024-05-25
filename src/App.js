@@ -3,7 +3,7 @@ import Header from "./Components/Header";
 import HomePage from "./Components/Pages/HomePage";
 import Footer from "./Components/Footer";
 import { Route, Routes } from "react-router-dom";
-import Reservation from "./Components/Pages/Reservation";
+import Reservation from "./Components/Pages/Reservation/Reservation";
 import About from "./Components/Pages/About";
 import OnlineOrders from "./Components/Pages/OnlineOders";
 import Login from "./Components/Login";

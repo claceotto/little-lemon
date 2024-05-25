@@ -9,7 +9,6 @@
     font-size: 1.7rem;
     font-weight: bold;
     color: black;
-
 }
 
 .circle {
@@ -47,3 +46,29 @@
     grid-column-start: 7;
     grid-column-end: 8; 
 }
+
+/* This will style the calendar */
+
+.MuiDateCalendar-root {
+    margin: 0 0 0 3rem; /* top | right | bottom | left */
+}
+
+.MuiPickersDay-root.Mui-selected {
+    background-color: #495E57;
+}
+
+.MuiPickersDay-root.Mui-selected:hover {
+    background-color: #495E57;
+}
+
+.MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
+    background-color: #495E57;
+}
+
+.MuiButtonBase-root-MuiPickersDay-root.Mui-selected:hover {
+    background-color: #495E57;
+}
+
+/* MuiButtonBase-root MuiPickersDay-root Mui-selected MuiPickersDay-dayWithMargin css-1u23akw-MuiButtonBase-root-MuiPickersDay-root */
+
+/* MuiButtonBase-root MuiPickersDay-root Mui-selected MuiPickersDay-dayWithMargin MuiPickersDay-today css-jgls56-MuiButtonBase-root-MuiPickersDay-root */
