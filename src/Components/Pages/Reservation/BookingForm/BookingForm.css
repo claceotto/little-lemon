@@ -47,28 +47,39 @@
     grid-column-end: 8; 
 }
 
-/* This will style the calendar */
-
-.MuiDateCalendar-root {
-    margin: 0 0 0 3rem; /* top | right | bottom | left */
+.drop-down {
+    margin: 1rem 0rem; /* top and bottom | left and right */
+    padding: 0.5rem 1rem 0.5rem 0; /* top | right | bottom | left */
+    min-width: 160px;
+    appearance: none; /*This will remove the standard arrow*/
+    background-image: url(../../../../../public/images/chevron-down-solid-green.svg);
+    background-repeat: no-repeat;
+    background-size: 17px;
+    background-color: #EDEFEE;
+    background-position: 90%;
+    color: #495E57;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 24px;
+    text-align: center;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 4px 4px 4px #00000026;
+    border-radius: 20px;
+    max-width: 270px;
 }
 
-.MuiPickersDay-root.Mui-selected {
+option {
+    background-color: #EDEFEE;
+    color: #495E57;
+    font-size: 16px;
+    font-weight: bold;
+    /* line-height: 60px; */
+    text-align: center;
+}
+
+.has-value-selected {
     background-color: #495E57;
+    background-image: url(../../../../../public/images/chevron-down-solid-white.svg);
+    color: #ffffff;
 }
-
-.MuiPickersDay-root.Mui-selected:hover {
-    background-color: #495E57;
-}
-
-.MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
-    background-color: #495E57;
-}
-
-.MuiButtonBase-root-MuiPickersDay-root.Mui-selected:hover {
-    background-color: #495E57;
-}
-
-/* MuiButtonBase-root MuiPickersDay-root Mui-selected MuiPickersDay-dayWithMargin css-1u23akw-MuiButtonBase-root-MuiPickersDay-root */
-
-/* MuiButtonBase-root MuiPickersDay-root Mui-selected MuiPickersDay-dayWithMargin MuiPickersDay-today css-jgls56-MuiButtonBase-root-MuiPickersDay-root */

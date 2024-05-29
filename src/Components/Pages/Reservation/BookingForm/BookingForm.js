@@ -1,9 +1,15 @@
 import "./BookingForm.css";
 import Button from "../../../../Components/Button";
 import Calendar from "./Calendar";
-import Time from "./Time";
+import { useCallback, useState } from "react";
 
 export default function BookingForm() {
+  const [reservationTime, setReservationTime] = useState("");
+
+  const handleReservationTimeChange = useCallback((e) => {
+    const target = e.currentTarget || e.target;
+    setReservationTime(target.value);
+  }, []);
   return (
     <form className="reservation">
       <div className="date">
@@ -22,25 +28,22 @@ export default function BookingForm() {
             What time?
           </label>
         </div>
-        <label for="time">Choose a pet:</label>
-
-        <select name="pets" id="pet-select">
-          <option value="">--Please choose an option--</option>
-          <option value="dog">Dog</option>
-          <option value="cat">Cat</option>
-          <option value="hamster">Hamster</option>
-          <option value="parrot">Parrot</option>
-          <option value="spider">Spider</option>
-          <option value="goldfish">Goldfish</option>
-        </select>
-        <Time />
-        <select name="res-time" id="res-time" required>
-          <option>17:00</option>
-          <option>18:00</option>
-          <option>19:00</option>
-          <option>20:00</option>
-          <option>21:00</option>
-          <option>22:00</option>
+        <select
+          name="res-time"
+          id="res-time"
+          className={`drop-down ${
+            !!reservationTime ? "has-value-selected" : ""
+          }`}
+          required
+          value={reservationTime}
+          onChange={handleReservationTimeChange}
+        >
+          <option value="">Please Select</option>
+          <option value="17">17:00</option>
+          <option value="18">18:00</option>
+          <option value="19">19:00</option>
+          <option value="20">20:00</option>
+          <option value="21">21:00</option>
         </select>
       </div>
       <div className="guests">
