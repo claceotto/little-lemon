@@ -1,6 +1,7 @@
 .reservation {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    /* grid-template-columns: repeat(12, 1fr); */
+    grid-template-columns: 70px repeat(11, 1fr);
     grid-template-rows: auto;
     margin: 1rem;
 }
@@ -25,17 +26,44 @@
     align-items: center;
 }
 
-.form-title {
+/* .form-title {
     display: flex;
     align-items: center;
     gap: 1.2rem;
 
+} */
+
+/* .form-title {
+    grid-column-start: 1;
+    grid-column-end: 12;
+} */
+
+.circle {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    align-self: center;
 }
 
-.date, .time, .guests, .sitting, .ocasion, .special-req {
-    grid-column-start: 1;
-    grid-column-end: 9;
+.res-title {
+    grid-column-start: 2;
+    grid-column-end: 12;
+    align-self: center;
 }
+
+.grid-2 {
+    grid-column-start: 2;
+    grid-column-end: auto;
+}
+
+.text-area {
+    grid-column-start: 2;
+    grid-column-end: 8;
+    margin-bottom: 2rem;
+}
+/* .grid-1, .date, .time, .guests, .sitting, .ocasion, .special-req {
+    grid-column-start: 1;
+    grid-column-end: 12;
+} */
 
 .nextbtn {
     grid-column-start: 2;
@@ -48,9 +76,10 @@
 }
 
 .drop-down {
-    margin: 1rem 0rem; /* top and bottom | left and right */
+    display: flex;
+    margin: 1rem 0rem 1rem 0rem; /* top | right | bottom | left */
     padding: 0.5rem 1rem 0.5rem 0; /* top | right | bottom | left */
-    min-width: 160px;
+    min-width: 180px;
     appearance: none; /*This will remove the standard arrow*/
     background-image: url(../../../../../public/images/chevron-down-solid-green.svg);
     background-repeat: no-repeat;
@@ -58,21 +87,24 @@
     background-color: #EDEFEE;
     background-position: 90%;
     color: #495E57;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     line-height: 24px;
     text-align: center;
     border: none;
     border-radius: 20px;
     box-shadow: 4px 4px 4px #00000026;
-    border-radius: 20px;
     max-width: 270px;
+    grid-column-start: 2;
+    grid-column-end: auto;
+
+
 }
 
 option {
     background-color: #EDEFEE;
     color: #495E57;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     /* line-height: 60px; */
     text-align: center;
@@ -83,3 +115,62 @@ option {
     background-image: url(../../../../../public/images/chevron-down-solid-white.svg);
     color: #ffffff;
 }
+
+.styled-counter {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin: 1rem 0rem 1rem 0rem; /* top | right | bottom | left */
+    height: 45px;
+    grid-column-start: 2;
+    grid-column-end: auto;
+}
+
+.number-counter {
+    padding: 0.5rem 0; /* top and bottom | left and right */
+    min-width: 125px;
+    background-color: #EDEFEE;
+    color: #495E57;
+    font-size: 20px;
+    font-weight: bold;
+    /* line-height: 24px; */
+    text-align: center;
+    border: none;
+    /* border-radius: 20px; */
+    /* box-shadow: 4px 4px 4px #00000026; */
+    max-width: 270px;
+}
+
+.number-counter-btn {
+    padding: 0.5rem 0; /* top and bottom | left and right */
+    min-width: 62px;
+    background-color: #495E57;
+    color: #EDEFEE ;
+    font-size: 20px;
+    font-weight: bold;
+    /* line-height: 24px; */
+    text-align: center;
+    border: none;
+    /* border-radius: 20px; */
+    /* box-shadow: 4px 4px 4px #00000026; */
+    max-width: 270px;
+}
+
+.btn-left {
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.btn-right {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px ;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
