@@ -2,8 +2,8 @@
     display: flex; 
     justify-content: space-around;
     margin: 1rem;
-  }
 
+  }
 
   .active-number {
     color: black;
@@ -18,6 +18,8 @@
     border: none;
     font-size: 1.5rem;
     font-weight: bold;
+    align-self: center;
+    grid-area: number;
   }
 
   .inactive-circle {
@@ -28,6 +30,8 @@
     border: none;
     font-size: 1.5rem;
     font-weight: bold;
+    grid-area: number;
+    align-self: center;
   }
 
   /* .bar {
@@ -46,3 +50,15 @@
 .styled-button:active {
     transform: scale(0.9);
 }
+
+.nav-group {
+  justify-self: center;
+  align-self: center;
+}
+
+.nav-group {
+ display: flex;
+ flex-direction: column;
+
+}
+
