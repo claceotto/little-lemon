@@ -6,7 +6,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { StyledEngineProvider } from "@mui/material/styles";
 
-export default function Calendar() {
+export default function Calendar({ name, id, value, onChange }) {
   const today = dayjs();
   const maxDay = dayjs().add(12, "month");
   const [cleared, setCleared] = useState(false);
@@ -25,7 +25,16 @@ export default function Calendar() {
   return (
     <StyledEngineProvider injectFirst>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DateCalendar minDate={today} maxDate={maxDay} size={4} required />
+        <DateCalendar
+          minDate={today}
+          maxDate={maxDay}
+          size={4}
+          id={id}
+          name={name}
+          value={value}
+          onChange={onChange}
+          required
+        />
       </LocalizationProvider>
     </StyledEngineProvider>
   );

@@ -4,7 +4,7 @@ import { useState, useCallback } from "react";
 
 export default function ResNav() {
   const [activeCircle, setActiveCircle] = useState("circle1");
-  const handleBtnClick = useCallback(
+  const handleCircleClick = useCallback(
     (circle) => () => {
       setActiveCircle(circle);
       console.log(activeCircle);
@@ -22,7 +22,7 @@ export default function ResNav() {
                 activeCircle === "circle1" ? "active-circle" : "inactive-circle"
               }
               btnNumber={"1"}
-              onClick={handleBtnClick("circle1")}
+              onClick={handleCircleClick("circle1")}
             />
             <p>Booking details</p>
           </div>
@@ -32,7 +32,7 @@ export default function ResNav() {
                 activeCircle === "circle2" ? "active-circle" : "inactive-circle"
               }
               btnNumber={"2"}
-              onClick={handleBtnClick("circle2")}
+              onClick={handleCircleClick("circle2")}
             />
             <p>Contact details</p>
           </div>
@@ -42,7 +42,7 @@ export default function ResNav() {
                 activeCircle === "circle3" ? "active-circle" : "inactive-circle"
               }
               btnNumber={"3"}
-              onClick={handleBtnClick("circle3")}
+              onClick={handleCircleClick("circle3")}
             />
             <p>Confirmation</p>
           </div>

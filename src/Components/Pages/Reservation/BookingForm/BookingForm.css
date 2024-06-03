@@ -81,6 +81,7 @@
 .nextbtn {
     grid-column-start: 7;
     grid-column-end: 8;
+    justify-self: right;
 }
 
 .backbtn {
@@ -153,15 +154,14 @@ option {
 }
 .number-counter {
     padding: 0.5rem 0; /* top and bottom | left and right */
-    min-width: 125px;
+    min-width: 100px;
+    max-width: 150px;
     background-color: #EDEFEE;
     color: #495E57;
     font-size: 20px;
     font-weight: bold;
     text-align: center;
     border: none;
-    /* box-shadow: 4px 4px 4px #00000026; */
-    max-width: 270px;
 }
 
 .number-counter-btn {
