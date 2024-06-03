@@ -118,11 +118,11 @@ export default function BookingForm() {
       />
       {/* </div> */}
 
-      <div className="nextbtn">
-        <Button btext={"Next"} />
-      </div>
       <div className="backbtn">
         <Button btext={"Back"} />
+      </div>
+      <div className="nextbtn">
+        <Button btext={"Next"} />
       </div>
     </form>
   );

@@ -16,6 +16,7 @@ export default function ResNav() {
     <nav>
       <ul>
         <li className="res-nav">
+          <div>
           <CircleBtn
             activeClass={
               activeCircle === "circle1" ? "active-circle" : "inactive-circle"
@@ -23,6 +24,9 @@ export default function ResNav() {
             btnNumber={"1"}
             onClick={handleBtnClick("circle1")}
           />
+          <p>Booking details</p>
+          </div>
+          <div>
           {/* <div className="bar">asdfa</div> */}
           <CircleBtn
             activeClass={
@@ -31,6 +35,9 @@ export default function ResNav() {
             btnNumber={"2"}
             onClick={handleBtnClick("circle2")}
           />
+          <p>Contact details</p>
+          </div>
+          <div>
           <CircleBtn
             activeClass={
               activeCircle === "circle3" ? "active-circle" : "inactive-circle"
@@ -38,6 +45,8 @@ export default function ResNav() {
             btnNumber={"3"}
             onClick={handleBtnClick("circle3")}
           />
+          <p>Confirmation</p>
+          </div>
         </li>
       </ul>
     </nav>

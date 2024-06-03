@@ -66,13 +66,13 @@
 } */
 
 .nextbtn {
-    grid-column-start: 2;
-    grid-column-end: 3;
+    grid-column-start: 7;
+    grid-column-end: 8;
 }
 
 .backbtn {
-    grid-column-start: 7;
-    grid-column-end: 8; 
+    grid-column-start: 2;
+    grid-column-end: 3; 
 }
 
 .drop-down {
