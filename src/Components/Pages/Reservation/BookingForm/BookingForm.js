@@ -19,7 +19,7 @@ export default function BookingForm() {
         When?
       </label>
       {/* </div> */}
-      <div className="grid-2">
+      <div className="content">
         <Calendar />
       </div>
       {/* </div> */}
@@ -73,16 +73,33 @@ export default function BookingForm() {
       {/* <div className="sitting"> */}
       {/* <div className="form-title"> */}
       <span className="circle">4</span>
-      <p className="res-title">Where would you like to sit?</p>
+      <legend className="res-title">Where would you like to sit?</legend>
       {/* </div> */}
-      <div className="grid-2">
-        <div>
-          <input type="radio" id="html" name="sittingPlace" value="outside" />
-          <label htmlFor="outside">Outside</label>
+      <div className="content">
+        <div className="radio-container">
+          <input
+            type="radio"
+            id="outside"
+            name="sittingPlace"
+            value="outside"
+            className="radio"
+            required
+          />
+          <label htmlFor="outside" className="label">
+            Outside
+          </label>
         </div>
-        <div>
-          <input type="radio" id="inside" name="sittingPlace" value="inside" />
-          <label htmlFor="inside">Inside</label>
+        <div className="radio-container">
+          <input
+            type="radio"
+            id="inside"
+            name="sittingPlace"
+            value="inside"
+            className="radio"
+          />
+          <label htmlFor="inside" className="label">
+            Inside
+          </label>
         </div>
       </div>
       {/* </div> */}

@@ -1,7 +1,32 @@
-.res-banner {
+/* .res-banner {
     display: block;
     background-color: #495E57;
     padding: 2rem;
-    margin: 2rem 0; /* top and bottom | left and right */
-  }
+    margin: 2rem 0; top and bottom | left and right */
+  /* } */
   
+  .res-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #495E57;
+    padding: 2rem;
+  }
+
+  .banner-text {
+    margin: 0;
+    } 
+
+    @media (max-width: 600px) {
+      .res-banner .main-h1 {
+        font-size: 45px;
+      }
+
+      .res-banner .main-h2 {
+        font-size: 25px;
+      }
+
+      .res-banner {
+        padding: 1rem;
+      }        
+    }
