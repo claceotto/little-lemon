@@ -125,7 +125,6 @@ option {
     color: #495E57;
     font-size: 18px;
     font-weight: bold;
-    /* line-height: 60px; */
     text-align: center;
 }
 
@@ -134,6 +133,7 @@ option {
     background-image: url(../../../../../public/images/chevron-down-solid-white.svg);
     color: #ffffff;
 }
+
 
 .styled-counter {
     display: flex;
@@ -225,4 +225,11 @@ input::-webkit-inner-spin-button {
 
 .radio:checked {
     border: 6px solid black;
+  }
+
+  .error {
+    color: red;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    margin-top: 0rem;
   }
