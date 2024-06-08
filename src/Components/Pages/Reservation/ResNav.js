@@ -28,11 +28,10 @@ export default function ResNav({
     (circle) => () => {
       if (isPartOneValid) {
         setActiveCircle(`circle${circle}`);
+        handleCircleOneNav(circle);
       } else {
         partOneValidation();
       }
-
-      handleCircleOneNav(circle);
     },
     [handleCircleOneNav, isPartOneValid, partOneValidation]
   );
