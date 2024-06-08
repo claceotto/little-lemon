@@ -22,5 +22,14 @@
 }
 
 .disabled {
-    background-color: blue;
+    background-color: #ebdfa8;
+    color: #5e5d5d;
+}
+
+.disabled:hover {
+    background-color: #ebdfa8 !important;
+}
+
+.disabled:active {
+    transform: none !important;
 }
