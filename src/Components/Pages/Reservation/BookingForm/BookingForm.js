@@ -339,17 +339,88 @@ export default function BookingForm() {
             <div className="section-2-title">
               <h1 className="res-title">Tell us about you</h1>
             </div>
-            <label htmlFor="name" className="res-title">
-              What is your name?{" "}
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              // value=""
-              // onChange={handleGuestChange}
-              required
-            />
+            <div className="log-in">
+              <h1 className="res-title">Already registered?</h1>
+              <p>Sign in</p>
+              <label htmlFor="email">E-mail:</label>
+              <input
+                className="styled-input"
+                type="email"
+                id="email"
+                name="email"
+                // value=""
+                // onChange={handleGuestChange}
+              />
+              <label htmlFor="password">Passowrd:</label>
+              <input
+                className="styled-input"
+                type="password"
+                id="password"
+                name="password"
+                //value
+                //onChange
+              />
+            </div>
+            <div className="btn-container-left">
+              <Button btext={"Back"} disabled={false} handleClick={""} />
+              <Button btext={"Log in"} disabled={false} handleClick={""} />
+            </div>
+
+            <div className="guest">
+              <h className="res-title">Don't have an account?</h>
+              <p>
+                Enter your details to get started or if you prefer to reserve
+                without registering.
+              </p>
+              <label htmlFor="first-name">First name:</label>
+              <input
+                className="styled-input"
+                type="text"
+                id="first-name"
+                name="first-name"
+                //value
+                //onChange
+                required
+              />
+              <label htmlFor="last-name">Last name:</label>
+              <input
+                className="styled-input"
+                type="text"
+                id="last-name"
+                name="last-name"
+                //value
+                //onChange
+                required
+              />
+              <label htmlFor="email">E-mail:</label>
+              <input
+                className="styled-input"
+                type="email"
+                id="email"
+                name="email"
+                // value=""
+                // onChange={handleGuestChange}
+                required
+              />
+              <label htmlFor="telephone">Telephone:</label>
+              <small>Format: 07624-000000</small>
+              <input
+                className="styled-input"
+                type="tel"
+                pattern="[0-9]{5}-[0-9]{6}"
+                id="email"
+                name="email"
+                // value=""
+                // onChange={}
+              />
+              <small>
+                We will only contact you if necessary regarding your reservation
+              </small>
+            </div>
+            <div className="btn-container-right">
+              <Button btext={"Back"} disabled={false} handleClick={""} />
+              <Button btext={"Next"} disabled={false} handleClick={""} />
+            </div>
           </>
         ) : null}
       </form>
