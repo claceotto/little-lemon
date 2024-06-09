@@ -17,9 +17,17 @@ export default function BookingForm() {
   const [occasion, setOccasion] = useState("");
   const [isOccasionValid, setIsOccasionValid] = useState(true);
   const [isPartOneValid, setIsPartOneValid] = useState(false);
-  const [section, setSection] = useState(1);
+  const [section, setSection] = useState(2);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [telephone, setTelephone] = useState("");
   //consider setting up gobal state for sections...it might make the
   //navigation and next button control simpler?
+
+  //To do:
+  //Add validation to section 2
+  //Look if it's possible to improve telephone number input
 
   useEffect(() => {
     if (
@@ -154,6 +162,27 @@ export default function BookingForm() {
   const handleCircleOneNav = (number) => {
     setSection(number);
   };
+
+  //Section 2
+  const handleFirstNameChange = useCallback((e) => {
+    const target = e.currentTarget || e.target;
+    setFirstName(target.value);
+  }, []);
+
+  const handleLastNameChange = useCallback((e) => {
+    const target = e.currentTarget || e.target;
+    setLastName(target.value);
+  }, []);
+
+  const handleEmailChange = useCallback((e) => {
+    const target = e.currentTarget || e.target;
+    setEmail(target.value);
+  }, []);
+
+  const handleTelephoneChange = useCallback((e) => {
+    const target = e.currentTarget || e.target;
+    setTelephone(target.value);
+  }, []);
 
   return (
     <>
@@ -342,12 +371,12 @@ export default function BookingForm() {
             <div className="log-in">
               <h1 className="res-title">Already registered?</h1>
               <p>Sign in</p>
-              <label htmlFor="email">E-mail:</label>
+              <label htmlFor="user-email">E-mail:</label>
               <input
                 className="styled-input"
                 type="email"
-                id="email"
-                name="email"
+                id="user-email"
+                name="user-email"
                 // value=""
                 // onChange={handleGuestChange}
               />
@@ -360,10 +389,10 @@ export default function BookingForm() {
                 //value
                 //onChange
               />
-            </div>
-            <div className="btn-container-left">
-              <Button btext={"Back"} disabled={false} handleClick={""} />
-              <Button btext={"Log in"} disabled={false} handleClick={""} />
+              <div className="btn-container-left">
+                <Button btext={"Back"} disabled={false} handleClick={""} />
+                <Button btext={"Log in"} disabled={false} handleClick={""} />
+              </div>
             </div>
 
             <div className="guest">
@@ -378,8 +407,8 @@ export default function BookingForm() {
                 type="text"
                 id="first-name"
                 name="first-name"
-                //value
-                //onChange
+                value={firstName}
+                onChange={handleFirstNameChange}
                 required
               />
               <label htmlFor="last-name">Last name:</label>
@@ -388,8 +417,8 @@ export default function BookingForm() {
                 type="text"
                 id="last-name"
                 name="last-name"
-                //value
-                //onChange
+                value={lastName}
+                onChange={handleLastNameChange}
                 required
               />
               <label htmlFor="email">E-mail:</label>
@@ -398,20 +427,20 @@ export default function BookingForm() {
                 type="email"
                 id="email"
                 name="email"
-                // value=""
-                // onChange={handleGuestChange}
+                value={email}
+                onChange={handleEmailChange}
                 required
               />
               <label htmlFor="telephone">Telephone:</label>
-              <small>Format: 07624-000000</small>
               <input
                 className="styled-input"
                 type="tel"
                 pattern="[0-9]{5}-[0-9]{6}"
-                id="email"
-                name="email"
-                // value=""
-                // onChange={}
+                id="telephone"
+                name="telephone"
+                placeholder="ex: 07624-000000"
+                value={telephone}
+                onChange={handleTelephoneChange}
               />
               <small>
                 We will only contact you if necessary regarding your reservation
