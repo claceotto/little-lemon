@@ -17,11 +17,15 @@ export default function BookingForm() {
   const [occasion, setOccasion] = useState("");
   const [isOccasionValid, setIsOccasionValid] = useState(true);
   const [isPartOneValid, setIsPartOneValid] = useState(false);
-  const [section, setSection] = useState(2);
+  const [section, setSection] = useState(1);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [telephone, setTelephone] = useState("");
+  const [inputEmail, setInputEmail] = useState("");
+  const [inputPassword, setInputPassword] = useState("");
+  const [isUser, setIsUser] = useState(false);
+  const [showLogInError, setShowLogInError] = useState(false);
   //consider setting up gobal state for sections...it might make the
   //navigation and next button control simpler?
 
@@ -183,6 +187,40 @@ export default function BookingForm() {
     const target = e.currentTarget || e.target;
     setTelephone(target.value);
   }, []);
+
+  //section 2 login
+  const handleInputEmail = useCallback((e) => {
+    const target = e.currentTarget || e.target;
+    setInputEmail(target.value);
+  }, []);
+
+  const handleInputPassword = useCallback((e) => {
+    const target = e.currentTarget || e.target;
+    setInputPassword(target.value);
+  }, []);
+
+  const handleLogin = () => {
+    const users = [
+      {
+        firstName: "Clarisse",
+        LastName: "Ceotto",
+        email: "clatimponi@gmail.com",
+        password: "1234",
+      },
+      {
+        firstName: "Felipe",
+        LastName: "Ceotto",
+        email: "ceottaki@gmail.com",
+        password: "1234",
+      },
+    ];
+    const userFound = users.find((user) => {
+      return inputEmail === user.email && inputPassword === user.password;
+    });
+    setIsUser(userFound !== undefined);
+    setShowLogInError(!isUser);
+    return userFound !== undefined;
+  };
 
   return (
     <>
@@ -371,14 +409,19 @@ export default function BookingForm() {
             <div className="log-in">
               <h1 className="res-title">Already registered?</h1>
               <p>Sign in</p>
+              {showLogInError ? (
+                <p className="error">
+                  Please provide valid email and password.
+                </p>
+              ) : null}
               <label htmlFor="user-email">E-mail:</label>
               <input
                 className="styled-input"
                 type="email"
                 id="user-email"
                 name="user-email"
-                // value=""
-                // onChange={handleGuestChange}
+                value={inputEmail}
+                onChange={handleInputEmail}
               />
               <label htmlFor="password">Passowrd:</label>
               <input
@@ -386,12 +429,20 @@ export default function BookingForm() {
                 type="password"
                 id="password"
                 name="password"
-                //value
-                //onChange
+                value={inputPassword}
+                onChange={handleInputPassword}
               />
               <div className="btn-container-left">
-                <Button btext={"Back"} disabled={false} handleClick={""} />
-                <Button btext={"Log in"} disabled={false} handleClick={""} />
+                <Button
+                  btext={"Back"}
+                  disabled={false}
+                  // handleClick={handleLogin}
+                />
+                <Button
+                  btext={"Log in"}
+                  disabled={false}
+                  handleClick={handleLogin}
+                />
               </div>
             </div>
 
