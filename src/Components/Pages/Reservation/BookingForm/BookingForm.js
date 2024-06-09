@@ -335,7 +335,10 @@ export default function BookingForm() {
         ) : null}
 
         {section === 2 ? (
-          <div className="section-2">
+          <>
+            <div className="section-2-title">
+              <h1 className="res-title">Tell us about you</h1>
+            </div>
             <label htmlFor="name" className="res-title">
               What is your name?{" "}
             </label>
@@ -347,7 +350,7 @@ export default function BookingForm() {
               // onChange={handleGuestChange}
               required
             />
-          </div>
+          </>
         ) : null}
       </form>
     </>

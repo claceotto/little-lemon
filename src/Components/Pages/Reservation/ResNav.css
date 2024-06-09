@@ -2,8 +2,19 @@
     display: flex; 
     justify-content: space-around;
     margin: 1rem;
-
+    list-style-type: none;
+    margin: 2rem 0; /*top and bottom | left and right*/
+    padding: 0;
+    word-wrap: normal;
   }
+
+
+li.nav-group {
+  float: left;
+  margin: 1rem;
+  align-items: baseline;
+}
+
 
   .active-number {
     color: black;

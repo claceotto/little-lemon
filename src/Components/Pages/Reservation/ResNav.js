@@ -46,39 +46,40 @@ export default function ResNav({
 
   return (
     <nav>
-      <ul>
-        <li className="res-nav">
-          <div className="nav-group">
-            <CircleBtn
-              activeClass={
-                activeCircle === "circle1" ? "active-circle" : "inactive-circle"
-              }
-              btnNumber={"1"}
-              onClick={handleCircleClick(1)}
-              // onClick={handleCircleOneClick}
-            />
-            <p>Booking details</p>
-          </div>
-          <div className="nav-group">
-            <CircleBtn
-              activeClass={
-                activeCircle === "circle2" ? "active-circle" : "inactive-circle"
-              }
-              btnNumber={"2"}
-              onClick={handleCircleClick(2)}
-            />
-            <p>Contact details</p>
-          </div>
-          <div className="nav-group">
-            <CircleBtn
-              activeClass={
-                activeCircle === "circle3" ? "active-circle" : "inactive-circle"
-              }
-              btnNumber={"3"}
-              onClick={handleCircleClick(3)}
-            />
-            <p>Confirmation</p>
-          </div>
+      <ul className="res-nav">
+        {/* <li className="res-nav"> */}
+        <li className="nav-group">
+          {/* <div className="nav-group"> */}
+          <CircleBtn
+            activeClass={
+              activeCircle === "circle1" ? "active-circle" : "inactive-circle"
+            }
+            btnNumber={"1"}
+            onClick={handleCircleClick(1)}
+            // onClick={handleCircleOneClick}
+          />
+          <p>Booking details</p>
+        </li>
+        {/* </div> */}
+        <li className="nav-group">
+          <CircleBtn
+            activeClass={
+              activeCircle === "circle2" ? "active-circle" : "inactive-circle"
+            }
+            btnNumber={"2"}
+            onClick={handleCircleClick(2)}
+          />
+          <p>Contact details</p>
+        </li>
+        <li className="nav-group">
+          <CircleBtn
+            activeClass={
+              activeCircle === "circle3" ? "active-circle" : "inactive-circle"
+            }
+            btnNumber={"3"}
+            onClick={handleCircleClick(3)}
+          />
+          <p>Confirmation</p>
         </li>
       </ul>
     </nav>
