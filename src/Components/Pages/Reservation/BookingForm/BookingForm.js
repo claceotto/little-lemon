@@ -19,11 +19,16 @@ export default function BookingForm() {
   const [isPartOneValid, setIsPartOneValid] = useState(false);
   const [section, setSection] = useState(2);
   const [firstName, setFirstName] = useState("");
+  const [isfirstNameValid, setIsFirstNameValid] = useState(true);
   const [lastName, setLastName] = useState("");
+  const [isLastNameValid, setIsLastNameValid] = useState(true);
   const [email, setEmail] = useState("");
+  const [isEmailValid, setIsEmailValid] = useState(true);
   const [telephone, setTelephone] = useState("");
+  const [isTelephoneValid, setIsTelephoneValid] = useState(true);
   const [inputEmail, setInputEmail] = useState("");
   const [inputPassword, setInputPassword] = useState("");
+
   // const [isUser, setIsUser] = useState(false);
   const [showLogInError, setShowLogInError] = useState(false);
   //consider setting up gobal state for sections...it might make the
@@ -160,7 +165,6 @@ export default function BookingForm() {
   const handleNextClick = () => {
     const newSection = section + 1;
     setSection(newSection);
-    console.log(section);
   };
 
   const handleCircleOneNav = (number) => {
@@ -173,20 +177,64 @@ export default function BookingForm() {
     setFirstName(target.value);
   }, []);
 
+  const handleFirstNameValidation = useCallback(
+    (e) => {
+      if (firstName !== "") {
+        setIsFirstNameValid(true);
+      } else {
+        setIsFirstNameValid(false);
+      }
+    },
+    [firstName]
+  );
+
   const handleLastNameChange = useCallback((e) => {
     const target = e.currentTarget || e.target;
     setLastName(target.value);
   }, []);
+
+  const handleLastNameValidation = useCallback(
+    (e) => {
+      if (lastName !== "") {
+        setIsLastNameValid(true);
+      } else {
+        setIsLastNameValid(false);
+      }
+    },
+    [lastName]
+  );
 
   const handleEmailChange = useCallback((e) => {
     const target = e.currentTarget || e.target;
     setEmail(target.value);
   }, []);
 
+  const handleEmailValidation = useCallback(
+    (e) => {
+      if (email !== "") {
+        setIsEmailValid(true);
+      } else {
+        setIsEmailValid(false);
+      }
+    },
+    [email]
+  );
+
   const handleTelephoneChange = useCallback((e) => {
     const target = e.currentTarget || e.target;
     setTelephone(target.value);
   }, []);
+
+  const handleTelephoneValidation = useCallback(
+    (e) => {
+      if (telephone !== "") {
+        setIsTelephoneValid(true);
+      } else {
+        setIsTelephoneValid(false);
+      }
+    },
+    [telephone]
+  );
 
   //section 2 login
   const handleInputEmail = useCallback((e) => {
@@ -221,9 +269,6 @@ export default function BookingForm() {
       return inputEmail === user.email && inputPassword === user.password;
     });
 
-    // const isUserFound = userFound !== undefined;
-    // setIsUser(isUserFound);
-    // setShowLogInError(!isUserFound);
     setShowLogInError(!userFound);
 
     if (userFound !== undefined) {
@@ -472,8 +517,12 @@ export default function BookingForm() {
                 name="first-name"
                 value={firstName}
                 onChange={handleFirstNameChange}
+                onBlur={handleFirstNameValidation}
                 required
               />
+              {!isfirstNameValid ? (
+                <p className="error">Please insert first name.</p>
+              ) : null}
               <label htmlFor="last-name">Last name:</label>
               <input
                 className="styled-input"
@@ -482,8 +531,12 @@ export default function BookingForm() {
                 name="last-name"
                 value={lastName}
                 onChange={handleLastNameChange}
+                onBlur={handleLastNameValidation}
                 required
               />
+              {!isLastNameValid ? (
+                <p className="error">Please insert last name.</p>
+              ) : null}
               <label htmlFor="email">E-mail:</label>
               <input
                 className="styled-input"
@@ -492,8 +545,12 @@ export default function BookingForm() {
                 name="email"
                 value={email}
                 onChange={handleEmailChange}
+                onBlur={handleEmailValidation}
                 required
               />
+              {!isEmailValid ? (
+                <p className="error">Please provide valid email address.</p>
+              ) : null}
               <label htmlFor="telephone">Telephone:</label>
               <input
                 className="styled-input"
@@ -504,7 +561,13 @@ export default function BookingForm() {
                 placeholder="ex: 07624-000000"
                 value={telephone}
                 onChange={handleTelephoneChange}
+                onBlur={handleTelephoneValidation}
               />
+              {!isTelephoneValid ? (
+                <p className="error">
+                  Please provide a valid telephone number.
+                </p>
+              ) : null}
               <small>
                 We will only contact you if necessary regarding your reservation
               </small>
