@@ -17,14 +17,14 @@ export default function BookingForm() {
   const [occasion, setOccasion] = useState("");
   const [isOccasionValid, setIsOccasionValid] = useState(true);
   const [isPartOneValid, setIsPartOneValid] = useState(false);
-  const [section, setSection] = useState(1);
+  const [section, setSection] = useState(2);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [telephone, setTelephone] = useState("");
   const [inputEmail, setInputEmail] = useState("");
   const [inputPassword, setInputPassword] = useState("");
-  const [isUser, setIsUser] = useState(false);
+  // const [isUser, setIsUser] = useState(false);
   const [showLogInError, setShowLogInError] = useState(false);
   //consider setting up gobal state for sections...it might make the
   //navigation and next button control simpler?
@@ -203,23 +203,35 @@ export default function BookingForm() {
     const users = [
       {
         firstName: "Clarisse",
-        LastName: "Ceotto",
+        lastName: "Ceotto",
         email: "clatimponi@gmail.com",
         password: "1234",
+        telephone: "07624-111111",
       },
       {
         firstName: "Felipe",
-        LastName: "Ceotto",
-        email: "ceottaki@gmail.com",
+        lastName: "Ceotto",
+        email: "ceottake@gmail.com",
         password: "1234",
+        telephone: "07624-222222",
       },
     ];
+
     const userFound = users.find((user) => {
       return inputEmail === user.email && inputPassword === user.password;
     });
-    setIsUser(userFound !== undefined);
-    setShowLogInError(!isUser);
-    return userFound !== undefined;
+
+    // const isUserFound = userFound !== undefined;
+    // setIsUser(isUserFound);
+    // setShowLogInError(!isUserFound);
+    setShowLogInError(!userFound);
+
+    if (userFound !== undefined) {
+      setFirstName(userFound.firstName);
+      setLastName(userFound.lastName);
+      setEmail(userFound.email);
+      setTelephone(userFound.telephone);
+    }
   };
 
   return (
@@ -447,7 +459,7 @@ export default function BookingForm() {
             </div>
 
             <div className="guest">
-              <h className="res-title">Don't have an account?</h>
+              <h1 className="res-title">Don't have an account?</h1>
               <p>
                 Enter your details to get started or if you prefer to reserve
                 without registering.
@@ -498,8 +510,16 @@ export default function BookingForm() {
               </small>
             </div>
             <div className="btn-container-right">
-              <Button btext={"Back"} disabled={false} handleClick={""} />
-              <Button btext={"Next"} disabled={false} handleClick={""} />
+              <Button
+                btext={"Back"}
+                disabled={false}
+                // handleClick={""}
+              />
+              <Button
+                btext={"Next"}
+                disabled={false}
+                // handleClick={""}
+              />
             </div>
           </>
         ) : null}
