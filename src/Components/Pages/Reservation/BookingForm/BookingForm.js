@@ -28,6 +28,7 @@ export default function BookingForm() {
   const [isTelephoneValid, setIsTelephoneValid] = useState(true);
   const [inputEmail, setInputEmail] = useState("");
   const [inputPassword, setInputPassword] = useState("");
+  const [isPartTwoValid, setIsPartTwoValid] = useState(false);
 
   // const [isUser, setIsUser] = useState(false);
   const [showLogInError, setShowLogInError] = useState(false);
@@ -50,6 +51,19 @@ export default function BookingForm() {
       setIsPartOneValid(false);
     }
   }, [reservationTime, numberOfGuests, occasion]);
+
+  useEffect(() => {
+    if (
+      firstName !== "" &&
+      lastName !== "" &&
+      email !== "" &&
+      telephone !== ""
+    ) {
+      setIsPartTwoValid(true);
+    } else {
+      setIsPartTwoValid(false);
+    }
+  }, [firstName, lastName, email, telephone]);
 
   const handleReservationDateChange = useCallback((newValue) => {
     // Why does this work??? That's what the MUI documentation had
@@ -580,7 +594,7 @@ export default function BookingForm() {
               />
               <Button
                 btext={"Next"}
-                disabled={false}
+                disabled={!isPartTwoValid}
                 // handleClick={""}
               />
             </div>
