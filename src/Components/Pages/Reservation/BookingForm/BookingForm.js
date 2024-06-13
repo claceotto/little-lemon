@@ -5,6 +5,8 @@ import { useCallback, useState, useEffect } from "react";
 import dayjs from "dayjs";
 import ResNav from "../ResNav";
 import { useNavigate } from "react-router-dom";
+import Confirmation from "./Confirmation";
+
 //This can be improved by creating one object which will contain all the values
 //from the form and one object with all the validation for the form.
 export default function BookingForm() {
@@ -628,6 +630,17 @@ export default function BookingForm() {
           </>
         ) : null}
       </form>
+      {section === 3 ? (
+        <>
+          {" "}
+          <Confirmation
+            firstName={firstName}
+            numberOfGuests={numberOfGuests}
+            date={"07/10/2024"}
+            email={email}
+          />
+        </>
+      ) : null}
     </>
   );
 }
