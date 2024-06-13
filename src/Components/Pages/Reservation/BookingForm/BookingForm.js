@@ -318,7 +318,7 @@ export default function BookingForm() {
     <>
       <ResNav
         isPartOneValid={isPartOneValid}
-        isPartTwoVAlid={isPartTwoValid}
+        isPartTwoValid={isPartTwoValid}
         partOneValidation={handlePartOneValidation}
         partTwoValidation={handlePartTwoValidation}
         section={section}

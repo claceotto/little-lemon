@@ -53,14 +53,6 @@ export default function ResNav({
     [isPartTwoValid, handleCircleNav, partTwoValidation]
   );
 
-  //I might need to have separate handleClicks for the
-  //circles as they may be doing different things.
-
-  // const handleCircleOneClick = useCallback(() => {
-  //   setActiveCircle("circle1");
-  //   handleCircleOneNav(1);
-  // }, [setActiveCircle, handleCircleOneNav]);
-
   return (
     <nav>
       <ul className="res-nav">
