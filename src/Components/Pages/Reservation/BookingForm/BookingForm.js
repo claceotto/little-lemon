@@ -4,6 +4,7 @@ import Calendar from "./Calendar";
 import { useCallback, useState, useEffect } from "react";
 import dayjs from "dayjs";
 import ResNav from "../ResNav";
+import { useNavigate } from "react-router-dom";
 //This can be improved by creating one object which will contain all the values
 //from the form and one object with all the validation for the form.
 export default function BookingForm() {
@@ -17,7 +18,7 @@ export default function BookingForm() {
   const [occasion, setOccasion] = useState("");
   const [isOccasionValid, setIsOccasionValid] = useState(true);
   const [isPartOneValid, setIsPartOneValid] = useState(false);
-  const [section, setSection] = useState(2);
+  const [section, setSection] = useState(1);
   const [firstName, setFirstName] = useState("");
   const [isfirstNameValid, setIsFirstNameValid] = useState(true);
   const [lastName, setLastName] = useState("");
@@ -29,6 +30,7 @@ export default function BookingForm() {
   const [inputEmail, setInputEmail] = useState("");
   const [inputPassword, setInputPassword] = useState("");
   const [isPartTwoValid, setIsPartTwoValid] = useState(false);
+  const navigate = useNavigate();
 
   // const [isUser, setIsUser] = useState(false);
   const [showLogInError, setShowLogInError] = useState(false);
@@ -36,7 +38,7 @@ export default function BookingForm() {
   //navigation and next button control simpler?
 
   //To do:
-  //Add validation to section 2
+  // Instead of having multiple constants for form control, amalgamete this into object
   //Look if it's possible to improve telephone number input
 
   useEffect(() => {
@@ -176,12 +178,31 @@ export default function BookingForm() {
     }
   }, [reservationTime, numberOfGuests, occasion]);
 
+  const handlePartTwoValidation = useCallback(() => {
+    if (firstName === "") {
+      setIsFirstNameValid(false);
+    }
+    if (lastName === "") {
+      setIsLastNameValid(false);
+    }
+    if (email === "") {
+      setIsEmailValid(false);
+    }
+    if (telephone === "") {
+      setIsTelephoneValid(false);
+    }
+  }, [firstName, lastName, email, telephone]);
+
   const handleNextClick = () => {
-    const newSection = section + 1;
-    setSection(newSection);
+    setSection(section + 1);
   };
 
-  const handleCircleOneNav = (number) => {
+  const handleBackClick = () => {
+    if (section > 1) setSection(section - 1);
+    else navigate("/");
+  };
+
+  const handleCircleNav = (number) => {
     setSection(number);
   };
 
@@ -297,9 +318,11 @@ export default function BookingForm() {
     <>
       <ResNav
         isPartOneValid={isPartOneValid}
+        isPartTwoVAlid={isPartTwoValid}
         partOneValidation={handlePartOneValidation}
+        partTwoValidation={handlePartTwoValidation}
         section={section}
-        handleCircleOneNav={handleCircleOneNav}
+        handleCircleNav={handleCircleNav}
       />
       <form className="reservation" onSubmit={handleSubmit}>
         {section === 1 ? (
@@ -460,7 +483,11 @@ export default function BookingForm() {
             />
 
             <div className="backbtn">
-              <Button btext={"Back"} />
+              <Button
+                btext={"Back"}
+                disabled={false}
+                handleClick={handleBackClick}
+              />
             </div>
             <div className="nextbtn">
               <Button
@@ -507,7 +534,7 @@ export default function BookingForm() {
                 <Button
                   btext={"Back"}
                   disabled={false}
-                  // handleClick={handleLogin}
+                  handleClick={handleBackClick}
                 />
                 <Button
                   btext={"Log in"}
@@ -590,12 +617,12 @@ export default function BookingForm() {
               <Button
                 btext={"Back"}
                 disabled={false}
-                // handleClick={""}
+                handleClick={handleBackClick}
               />
               <Button
                 btext={"Next"}
                 disabled={!isPartTwoValid}
-                // handleClick={""}
+                handleClick={handleNextClick}
               />
             </div>
           </>

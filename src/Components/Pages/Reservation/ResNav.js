@@ -4,9 +4,11 @@ import { useState, useCallback, useEffect } from "react";
 
 export default function ResNav({
   isPartOneValid,
+  isPartTwoValid,
   partOneValidation,
+  partTwoValidation,
   section,
-  handleCircleOneNav,
+  handleCircleNav,
 }) {
   const [activeCircle, setActiveCircle] = useState("circle1");
   //consider setting up gobal state for sections...
@@ -17,23 +19,38 @@ export default function ResNav({
     }
 
     setActiveCircle(`circle${section}`);
-    // if (section === 1) {
-    //   setActiveCircle("circle1");
-    // } else if (section === 2) {
-    //   setActiveCircle("circle2");
-    // }
   }, [section, activeCircle]);
 
-  const handleCircleClick = useCallback(
+  const handleCircleOneClick = useCallback(
+    (circle) => () => {
+      setActiveCircle(`circle${circle}`);
+      handleCircleNav(circle);
+    },
+    [handleCircleNav]
+  );
+
+  const handleCircleTwoClick = useCallback(
     (circle) => () => {
       if (isPartOneValid) {
         setActiveCircle(`circle${circle}`);
-        handleCircleOneNav(circle);
+        handleCircleNav(circle);
       } else {
         partOneValidation();
       }
     },
-    [handleCircleOneNav, isPartOneValid, partOneValidation]
+    [isPartOneValid, handleCircleNav, partOneValidation]
+  );
+
+  const handleCircleThreeClick = useCallback(
+    (circle) => () => {
+      if (isPartTwoValid) {
+        setActiveCircle(`circle${circle}`);
+        handleCircleNav(circle);
+      } else {
+        partTwoValidation();
+      }
+    },
+    [isPartTwoValid, handleCircleNav, partTwoValidation]
   );
 
   //I might need to have separate handleClicks for the
@@ -55,7 +72,7 @@ export default function ResNav({
               activeCircle === "circle1" ? "active-circle" : "inactive-circle"
             }
             btnNumber={"1"}
-            onClick={handleCircleClick(1)}
+            onClick={handleCircleOneClick(1)}
             // onClick={handleCircleOneClick}
           />
           <p>Booking details</p>
@@ -67,7 +84,7 @@ export default function ResNav({
               activeCircle === "circle2" ? "active-circle" : "inactive-circle"
             }
             btnNumber={"2"}
-            onClick={handleCircleClick(2)}
+            onClick={handleCircleTwoClick(2)}
           />
           <p>Contact details</p>
         </li>
@@ -77,7 +94,7 @@ export default function ResNav({
               activeCircle === "circle3" ? "active-circle" : "inactive-circle"
             }
             btnNumber={"3"}
-            onClick={handleCircleClick(3)}
+            onClick={handleCircleThreeClick(3)}
           />
           <p>Confirmation</p>
         </li>
