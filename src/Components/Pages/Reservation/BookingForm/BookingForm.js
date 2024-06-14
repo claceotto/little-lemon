@@ -198,7 +198,6 @@ export default function BookingForm() {
   const handleNextClick = () => {
     setSection(section + 1);
   };
-
   const handleBackClick = () => {
     if (section > 1) setSection(section - 1);
     else navigate("/");
@@ -466,7 +465,7 @@ export default function BookingForm() {
               <option value="anniversary">Anniversary</option>
               <option value="engagement">Engagement</option>
               <option value="work party">Work party</option>
-              <option value="other">Daily delighty</option>
+              <option value="other">Daily delight</option>
             </select>
             {!isOccasionValid ? (
               <p className="error">Please select an occasion.</p>
@@ -637,6 +636,8 @@ export default function BookingForm() {
             firstName={firstName}
             numberOfGuests={numberOfGuests}
             date={"07/10/2024"}
+            sitting={sittingPlace}
+            occasion={occasion}
             email={email}
           />
         </>
