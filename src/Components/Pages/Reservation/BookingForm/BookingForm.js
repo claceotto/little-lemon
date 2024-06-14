@@ -9,7 +9,11 @@ import Confirmation from "./Confirmation";
 
 //This can be improved by creating one object which will contain all the values
 //from the form and one object with all the validation for the form.
-export default function BookingForm({availableTimes}) {
+export default function BookingForm({
+  availableTimes,
+  onReservationTimeChange,
+  onReservationDateChange,
+}) {
   const [reservationDate, setReservationDate] = useState(dayjs());
   const [reservationTime, setReservationTime] = useState("");
   const [isTimeValid, setIsTimeValid] = useState(true);
@@ -69,19 +73,27 @@ export default function BookingForm({availableTimes}) {
     }
   }, [firstName, lastName, email, telephone]);
 
-  const handleHomeClick = ()=> {
-    navigate("/")
-  }
-  const handleReservationDateChange = useCallback((newValue) => {
-    // Why does this work??? That's what the MUI documentation had
-    //but I don't know why it works!
-    setReservationDate(newValue);
-  }, []);
+  const handleHomeClick = () => {
+    navigate("/");
+  };
+  const handleReservationDateChange = useCallback(
+    (newValue) => {
+      // Why does this work??? That's what the MUI documentation had
+      //but I don't know why it works!
+      setReservationDate(newValue);
+      onReservationDateChange({ type: "dateChange", newDate: newValue });
+    },
+    [onReservationDateChange]
+  );
 
-  const handleReservationTimeChange = useCallback((e) => {
-    const target = e.currentTarget || e.target;
-    setReservationTime(target.value);
-  }, []);
+  const handleReservationTimeChange = useCallback(
+    (e) => {
+      const target = e.currentTarget || e.target;
+      setReservationTime(target.value);
+      onReservationTimeChange(target.value);
+    },
+    [onReservationTimeChange]
+  );
 
   const handleReserveTimeValidation = useCallback(
     (e) => {
@@ -162,7 +174,6 @@ export default function BookingForm({availableTimes}) {
     [occasion]
   );
 
-
   const handlePartOneValidation = useCallback(() => {
     if (reservationTime === "") {
       setIsTimeValid(false);
@@ -199,7 +210,7 @@ export default function BookingForm({availableTimes}) {
     // else {
     // handleSubmit()
     // }
-    setSection(section + 1)
+    setSection(section + 1);
   };
 
   const handleBackClick = () => {
@@ -316,13 +327,13 @@ export default function BookingForm({availableTimes}) {
       setLastName(userFound.lastName);
       setEmail(userFound.email);
       setTelephone(userFound.telephone);
-      handleNextClick()
+      handleNextClick();
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-        // Change this to the confirmation page
+    // Change this to the confirmation page
   };
 
   return (
@@ -355,10 +366,10 @@ export default function BookingForm({availableTimes}) {
             <label htmlFor="res-time" className="res-title">
               What time?
             </label>
-            
-            <select 
+
+            <select
               className={`drop-down ${
-              !!reservationTime ? "has-value-selected" : ""
+                !!reservationTime ? "has-value-selected" : ""
               }`}
               id="res-time"
               name="res-time"
@@ -369,14 +380,14 @@ export default function BookingForm({availableTimes}) {
             >
               <option value="">Please Select</option>
               {availableTimes.map((time, index) => {
-                return (<option index={index} value={time}>{`${time}:00`}</option>)})
-            }
+                return (
+                  <option index={index} value={time}>{`${time}:00`}</option>
+                );
+              })}
             </select>
             {!isTimeValid ? (
               <p className="error">Please select the time.</p>
             ) : null}
-
-
 
             <span className="circle">3</span>
             <label htmlFor="guests" className="res-title">
@@ -646,16 +657,16 @@ export default function BookingForm({availableTimes}) {
           <Confirmation
             firstName={firstName}
             numberOfGuests={numberOfGuests}
-            date={dayjs(reservationDate).format('DD/MM/YYYY')}
+            date={dayjs(reservationDate).format("DD/MM/YYYY")}
             sitting={sittingPlace}
             occasion={occasion}
             email={email}
           />
-      <Button
-        btext={"Back to home page"}
-        disabled={false}
-        handleClick={handleHomeClick}
-      />
+          <Button
+            btext={"Back to home page"}
+            disabled={false}
+            handleClick={handleHomeClick}
+          />
         </div>
       ) : null}
     </>
