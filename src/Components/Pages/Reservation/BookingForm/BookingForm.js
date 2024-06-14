@@ -9,10 +9,9 @@ import Confirmation from "./Confirmation";
 
 //This can be improved by creating one object which will contain all the values
 //from the form and one object with all the validation for the form.
-export default function BookingForm() {
+export default function BookingForm({availableTimes}) {
   const [reservationDate, setReservationDate] = useState(dayjs());
   const [reservationTime, setReservationTime] = useState("");
-  const [availableTimes, setAvailableTimes] = useState(["17", "18", "19", "20", "21"]);
   const [isTimeValid, setIsTimeValid] = useState(true);
   const [numberOfGuests, setNumberOfGuests] = useState(1);
   const [isMinGuestNumber, setIsMinGuestNumber] = useState(false);
