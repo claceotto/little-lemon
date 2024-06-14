@@ -159,11 +159,6 @@ export default function BookingForm() {
     [occasion]
   );
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("Reservation made");
-    // Change this to the confirmation page
-  };
 
   const handlePartOneValidation = useCallback(() => {
     if (reservationTime === "") {
@@ -320,6 +315,11 @@ export default function BookingForm() {
       setTelephone(userFound.telephone);
       handleNextClick()
     }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+        // Change this to the confirmation page
   };
 
   return (
@@ -648,7 +648,7 @@ export default function BookingForm() {
           <Confirmation
             firstName={firstName}
             numberOfGuests={numberOfGuests}
-            date={"07/10/2024"}
+            date={dayjs(reservationDate).format('DD/MM/YYYY')}
             sitting={sittingPlace}
             occasion={occasion}
             email={email}
