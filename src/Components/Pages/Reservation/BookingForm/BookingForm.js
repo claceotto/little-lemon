@@ -356,32 +356,6 @@ export default function BookingForm() {
             <label htmlFor="res-time" className="res-title">
               What time?
             </label>
-
-            {/* The options in the booking time field should be displayed from a list 
-      of available times. For now, create a stateful array in the component named
-       availableTimes and use this state variable to populate the time select 
-       field options. */}
-            {/* <select
-              className={`drop-down ${
-                !!reservationTime ? "has-value-selected" : ""
-              }`}
-              id="res-time"
-              name="res-time"
-              value={reservationTime}
-              onChange={handleReservationTimeChange}
-              onBlur={handleReserveTimeValidation}
-              required
-            >
-              <option value="">Please Select</option>
-              <option value="17">17:00</option>
-              <option value="18">18:00</option>
-              <option value="19">19:00</option>
-              <option value="20">20:00</option>
-              <option value="21">21:00</option>
-            </select>
-            {!isTimeValid ? (
-              <p className="error">Please select the time.</p>
-            ) : null} */}
             
             <select 
               className={`drop-down ${
