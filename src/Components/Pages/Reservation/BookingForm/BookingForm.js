@@ -69,6 +69,9 @@ export default function BookingForm() {
     }
   }, [firstName, lastName, email, telephone]);
 
+  const handleHomeClick = ()=> {
+    navigate("/")
+  }
   const handleReservationDateChange = useCallback((newValue) => {
     // Why does this work??? That's what the MUI documentation had
     //but I don't know why it works!
@@ -201,7 +204,7 @@ export default function BookingForm() {
 
   const handleBackClick = () => {
     if (section > 1) setSection(section - 1);
-    else navigate("/");
+    else handleHomeClick();
   };
 
   const handleCircleNav = (number) => {
@@ -643,8 +646,7 @@ export default function BookingForm() {
         ) : null}
       </form>
       {section === 3 ? (
-        <>
-          {" "}
+        <div className="confirmation">
           <Confirmation
             firstName={firstName}
             numberOfGuests={numberOfGuests}
@@ -653,7 +655,12 @@ export default function BookingForm() {
             occasion={occasion}
             email={email}
           />
-        </>
+      <Button
+        btext={"Back to home page"}
+        disabled={false}
+        handleClick={handleHomeClick}
+      />
+        </div>
       ) : null}
     </>
   );

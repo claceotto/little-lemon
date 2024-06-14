@@ -6,7 +6,7 @@ Section 2 formatting needs tome work */
     /* grid-template-columns: repeat(12, 1fr); */
     grid-template-columns: 70px repeat(11, 1fr);
     grid-template-rows: auto;
-    margin: 1rem;
+    margin: 1rem
 }
 
 @media (max-width: 600px) {
@@ -324,4 +324,11 @@ input::-webkit-inner-spin-button {
 .styled-input {
     padding: 0.5rem;
     border-radius: 10px;
+}
+
+.confirmation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 1rem 3rem 1rem;
 }
