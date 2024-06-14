@@ -12,6 +12,7 @@ import Confirmation from "./Confirmation";
 export default function BookingForm() {
   const [reservationDate, setReservationDate] = useState(dayjs());
   const [reservationTime, setReservationTime] = useState("");
+  const [availableTimes, setAvailableTimes] = useState(["17", "18", "19", "20", "21"]);
   const [isTimeValid, setIsTimeValid] = useState(true);
   const [numberOfGuests, setNumberOfGuests] = useState(1);
   const [isMinGuestNumber, setIsMinGuestNumber] = useState(false);
@@ -360,7 +361,7 @@ export default function BookingForm() {
       of available times. For now, create a stateful array in the component named
        availableTimes and use this state variable to populate the time select 
        field options. */}
-            <select
+            {/* <select
               className={`drop-down ${
                 !!reservationTime ? "has-value-selected" : ""
               }`}
@@ -380,7 +381,29 @@ export default function BookingForm() {
             </select>
             {!isTimeValid ? (
               <p className="error">Please select the time.</p>
+            ) : null} */}
+            
+            <select 
+              className={`drop-down ${
+              !!reservationTime ? "has-value-selected" : ""
+              }`}
+              id="res-time"
+              name="res-time"
+              value={reservationTime}
+              onChange={handleReservationTimeChange}
+              onBlur={handleReserveTimeValidation}
+              required
+            >
+              <option value="">Please Select</option>
+              {availableTimes.map((time, index) => {
+                return (<option index={index} value={time}>{`${time}:00`}</option>)})
+            }
+            </select>
+            {!isTimeValid ? (
+              <p className="error">Please select the time.</p>
             ) : null}
+
+
 
             <span className="circle">3</span>
             <label htmlFor="guests" className="res-title">
