@@ -196,8 +196,14 @@ export default function BookingForm() {
   }, [firstName, lastName, email, telephone]);
 
   const handleNextClick = () => {
-    setSection(section + 1);
+    // if (section < 2) {
+    // setSection(section + 1) }
+    // else {
+    // handleSubmit()
+    // }
+    setSection(section + 1)
   };
+
   const handleBackClick = () => {
     if (section > 1) setSection(section - 1);
     else navigate("/");
@@ -312,6 +318,7 @@ export default function BookingForm() {
       setLastName(userFound.lastName);
       setEmail(userFound.email);
       setTelephone(userFound.telephone);
+      handleNextClick()
     }
   };
 
@@ -486,6 +493,7 @@ export default function BookingForm() {
             <div className="backbtn">
               <Button
                 btext={"Back"}
+                type={"button"}
                 disabled={false}
                 handleClick={handleBackClick}
               />
@@ -493,6 +501,7 @@ export default function BookingForm() {
             <div className="nextbtn">
               <Button
                 btext={"Next"}
+                type={"button"}
                 disabled={!isPartOneValid}
                 handleClick={handleNextClick}
               />
@@ -534,11 +543,13 @@ export default function BookingForm() {
               <div className="btn-container-left">
                 <Button
                   btext={"Back"}
+                  type={"button"}
                   disabled={false}
                   handleClick={handleBackClick}
                 />
                 <Button
                   btext={"Log in"}
+                  type={"submit"}
                   disabled={false}
                   handleClick={handleLogin}
                 />
@@ -617,11 +628,13 @@ export default function BookingForm() {
             <div className="btn-container-right">
               <Button
                 btext={"Back"}
+                type={"button"}
                 disabled={false}
                 handleClick={handleBackClick}
               />
               <Button
                 btext={"Next"}
+                type={"submit"}
                 disabled={!isPartTwoValid}
                 handleClick={handleNextClick}
               />

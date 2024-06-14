@@ -10,16 +10,24 @@ export default function ResNav({
   section,
   handleCircleNav,
 }) {
+
   const [activeCircle, setActiveCircle] = useState("circle1");
+  const [isDisabled, setIsDisabled] = useState(false)
   //consider setting up gobal state for sections...
 
   useEffect(() => {
     if (section < 1 || section > 3) {
       return;
     }
-
-    setActiveCircle(`circle${section}`);
+    setActiveCircle(`circle${section}`)
+    
   }, [section, activeCircle]);
+
+  useEffect(() => {
+    if (section === 3) {
+      setIsDisabled(true)
+    }
+  }, [section])
 
   const handleCircleOneClick = useCallback(
     (circle) => () => {
@@ -64,6 +72,7 @@ export default function ResNav({
               activeCircle === "circle1" ? "active-circle" : "inactive-circle"
             }
             btnNumber={"1"}
+            disabled={isDisabled}
             onClick={handleCircleOneClick(1)}
             // onClick={handleCircleOneClick}
           />
@@ -76,6 +85,7 @@ export default function ResNav({
               activeCircle === "circle2" ? "active-circle" : "inactive-circle"
             }
             btnNumber={"2"}
+            disabled={isDisabled}
             onClick={handleCircleTwoClick(2)}
           />
           <p>Contact details</p>
@@ -86,6 +96,7 @@ export default function ResNav({
               activeCircle === "circle3" ? "active-circle" : "inactive-circle"
             }
             btnNumber={"3"}
+            disabled={false}
             onClick={handleCircleThreeClick(3)}
           />
           <p>Confirmation</p>
