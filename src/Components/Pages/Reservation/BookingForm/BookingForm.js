@@ -12,7 +12,13 @@ import Confirmation from "./Confirmation";
 export default function BookingForm() {
   const [reservationDate, setReservationDate] = useState(dayjs());
   const [reservationTime, setReservationTime] = useState("");
-  const [availableTimes, setAvailableTimes] = useState(["17", "18", "19", "20", "21"]);
+  const [availableTimes, setAvailableTimes] = useState([
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+  ]);
   const [isTimeValid, setIsTimeValid] = useState(true);
   const [numberOfGuests, setNumberOfGuests] = useState(1);
   const [isMinGuestNumber, setIsMinGuestNumber] = useState(false);
@@ -70,9 +76,9 @@ export default function BookingForm() {
     }
   }, [firstName, lastName, email, telephone]);
 
-  const handleHomeClick = ()=> {
-    navigate("/")
-  }
+  const handleHomeClick = () => {
+    navigate("/");
+  };
   const handleReservationDateChange = useCallback((newValue) => {
     // Why does this work??? That's what the MUI documentation had
     //but I don't know why it works!
@@ -163,7 +169,6 @@ export default function BookingForm() {
     [occasion]
   );
 
-
   const handlePartOneValidation = useCallback(() => {
     if (reservationTime === "") {
       setIsTimeValid(false);
@@ -200,7 +205,7 @@ export default function BookingForm() {
     // else {
     // handleSubmit()
     // }
-    setSection(section + 1)
+    setSection(section + 1);
   };
 
   const handleBackClick = () => {
@@ -317,13 +322,13 @@ export default function BookingForm() {
       setLastName(userFound.lastName);
       setEmail(userFound.email);
       setTelephone(userFound.telephone);
-      handleNextClick()
+      handleNextClick();
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-        // Change this to the confirmation page
+    // Change this to the confirmation page
   };
 
   return (
@@ -339,7 +344,9 @@ export default function BookingForm() {
       <form className="reservation" onSubmit={handleSubmit}>
         {section === 1 ? (
           <>
-            <span className="circle">1</span>
+            <div className="span-container">
+              <span className="circle">1</span>
+            </div>
             <label htmlFor="res-date" className="res-title">
               When?
             </label>
@@ -352,14 +359,16 @@ export default function BookingForm() {
                 required
               />
             </div>
-            <span className="circle">2</span>
+            <div className="span-container">
+              <span className="circle">2</span>
+            </div>
             <label htmlFor="res-time" className="res-title">
               What time?
             </label>
-            
-            <select 
+
+            <select
               className={`drop-down ${
-              !!reservationTime ? "has-value-selected" : ""
+                !!reservationTime ? "has-value-selected" : ""
               }`}
               id="res-time"
               name="res-time"
@@ -370,16 +379,18 @@ export default function BookingForm() {
             >
               <option value="">Please Select</option>
               {availableTimes.map((time, index) => {
-                return (<option index={index} value={time}>{`${time}:00`}</option>)})
-            }
+                return (
+                  <option index={index} value={time}>{`${time}:00`}</option>
+                );
+              })}
             </select>
             {!isTimeValid ? (
               <p className="error">Please select the time.</p>
             ) : null}
 
-
-
-            <span className="circle">3</span>
+            <div className="span-container">
+              <span className="circle">3</span>
+            </div>
             <label htmlFor="guests" className="res-title">
               How many dinners?{" "}
             </label>
@@ -419,7 +430,9 @@ export default function BookingForm() {
               </p>
             ) : null}
 
-            <span className="circle">4</span>
+            <div className="span-container">
+              <span className="circle">4</span>
+            </div>
             <legend className="res-title">Where would you like to sit?</legend>
             <div className="content">
               <div className="radio-container">
@@ -453,7 +466,9 @@ export default function BookingForm() {
               </div>
             </div>
 
-            <span className="circle">5</span>
+            <div className="span-container">
+              <span className="circle">5</span>
+            </div>
             <label htmlFor="occasion" className="res-title">
               Special ocasion?
             </label>
@@ -478,7 +493,9 @@ export default function BookingForm() {
               <p className="error">Please select an occasion.</p>
             ) : null}
 
-            <span className="circle">6</span>
+            <div className="span-container">
+              <span className="circle">6</span>
+            </div>
             <label htmlFor="specialRequirements" className="res-title">
               Any special requirement?
             </label>
@@ -510,7 +527,7 @@ export default function BookingForm() {
         ) : null}
 
         {section === 2 ? (
-          <>
+          <div className="section-2-container">
             <div className="section-2-title">
               <h1 className="res-title">Tell us about you</h1>
             </div>
@@ -639,7 +656,7 @@ export default function BookingForm() {
                 handleClick={handleNextClick}
               />
             </div>
-          </>
+          </div>
         ) : null}
       </form>
       {section === 3 ? (
@@ -647,16 +664,16 @@ export default function BookingForm() {
           <Confirmation
             firstName={firstName}
             numberOfGuests={numberOfGuests}
-            date={dayjs(reservationDate).format('DD/MM/YYYY')}
+            date={dayjs(reservationDate).format("DD/MM/YYYY")}
             sitting={sittingPlace}
             occasion={occasion}
             email={email}
           />
-      <Button
-        btext={"Back to home page"}
-        disabled={false}
-        handleClick={handleHomeClick}
-      />
+          <Button
+            btext={"Back to home page"}
+            disabled={false}
+            handleClick={handleHomeClick}
+          />
         </div>
       ) : null}
     </>
