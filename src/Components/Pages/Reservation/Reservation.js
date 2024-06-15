@@ -4,17 +4,16 @@ import ResBanner from "./ResBanner";
 import BookingForm from "./BookingForm/BookingForm";
 
 const updateTimes = (state, action) => {
-  console.log(action);
+  // console.log(action);
   if (action.type === "dateChange") {
     if (action.newDate.$D === 1) {
       return ["17"];
     }
-
     return ["17", "18", "19", "20", "21"];
   }
 };
 
-export default function Reservation() {
+export default function Reservation({ navigate }) {
   const initializeTimes = () => {
     return ["17", "18", "19", "20", "21"];
   };
@@ -33,6 +32,7 @@ export default function Reservation() {
         availableTimes={availableTimes}
         onReservationTimeChange={handleReservationTimeChange}
         onReservationDateChange={dispatch}
+        navigate={navigate}
       />
     </>
   );

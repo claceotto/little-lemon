@@ -4,7 +4,7 @@ import Calendar from "./Calendar";
 import { useCallback, useState, useEffect } from "react";
 import dayjs from "dayjs";
 import ResNav from "../ResNav";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import Confirmation from "./Confirmation";
 
 //This can be improved by creating one object which will contain all the values
@@ -13,6 +13,7 @@ export default function BookingForm({
   availableTimes,
   onReservationTimeChange,
   onReservationDateChange,
+  navigate,
 }) {
   const [reservationDate, setReservationDate] = useState(dayjs());
   const [reservationTime, setReservationTime] = useState("");
@@ -36,7 +37,7 @@ export default function BookingForm({
   const [inputEmail, setInputEmail] = useState("");
   const [inputPassword, setInputPassword] = useState("");
   const [isPartTwoValid, setIsPartTwoValid] = useState(false);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   // const [isUser, setIsUser] = useState(false);
   const [showLogInError, setShowLogInError] = useState(false);
@@ -76,6 +77,7 @@ export default function BookingForm({
   const handleHomeClick = () => {
     navigate("/");
   };
+
   const handleReservationDateChange = useCallback(
     (newValue) => {
       // Why does this work??? That's what the MUI documentation had
@@ -215,7 +217,7 @@ export default function BookingForm({
 
   const handleBackClick = () => {
     if (section > 1) setSection(section - 1);
-    else handleHomeClick();
+    else navigate("/");
   };
 
   const handleCircleNav = (number) => {
@@ -380,9 +382,7 @@ export default function BookingForm({
             >
               <option value="">Please Select</option>
               {availableTimes.map((time, index) => {
-                return (
-                  <option index={index} value={time}>{`${time}:00`}</option>
-                );
+                return <option key={index} value={time}>{`${time}:00`}</option>;
               })}
             </select>
             {!isTimeValid ? (
