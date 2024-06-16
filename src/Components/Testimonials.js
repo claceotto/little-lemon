@@ -35,9 +35,10 @@ export default function Testimonials() {
         <h1>Testimonials</h1>
       </div>
       <div className="testimonials-cards">
-        {reviews.map((review) => {
+        {reviews.map((review, index) => {
           return (
             <TestimonialCard
+              key={index}
               rating={review.rating}
               src={review.src}
               name={review.name}

@@ -11,41 +11,60 @@ h1 {
   font-size: 3rem;
 }
 
-
-
-
-/* This was the formatting already here to start with */
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-h1 {
+  font-size: 4rem;
+  color: #F4CE14;
+  margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main-h2 {
+  margin: 0 auto;
+  color: #ffffff;
+  font-size: 2rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+.main-p {
+  font-size: 1.1rem;
+  margin: 2rem auto;
+  color: #ffffff;
 }
 
-.App-link {
-  color: #61dafb;
+/* This will style the drop downs for the website */
+
+.drop-down {
+  margin: 1rem 0rem; /* top and bottom | left and right */
+  padding: 0.5rem 1rem 0.5rem 0; /* top | right | bottom | left */
+  min-width: 160px;
+  appearance: none; /*This will remove the standard arrow*/
+  background-image: url(../public/images/chevron-down-solid-green.svg);
+  background-repeat: no-repeat;
+  background-size: 17px;
+  background-color: #EDEFEE;
+  background-position: 90%;
+  color: #495E57;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 24px;
+  text-align: center;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 4px 4px 4px #00000026;
+  border-radius: 20px;
+  max-width: 270px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
+option {
+  background-color: #EDEFEE;
+  color: #495E57;
+  font-size: 16px;
+  font-weight: bold;
+  /* line-height: 60px; */
+  text-align: center;
+}
+
+.has-value-selected {
+  background-color: #495E57;
+  background-image: url(../public/images/chevron-down-solid-white.svg);
+  color: #ffffff;
+}

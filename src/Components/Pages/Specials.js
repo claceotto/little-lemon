@@ -1,5 +1,5 @@
 import "./Specials.css";
-import Card from "./Card";
+import Card from "../Card";
 
 export default function Specials() {
   const specials = [
@@ -32,9 +32,10 @@ export default function Specials() {
         <h1>Weekly specials</h1>
       </div>
       <div className="specials-cards">
-        {specials.map((special) => {
+        {specials.map((special, index) => {
           return (
             <Card
+              key={index}
               src={special.src}
               title={special.title}
               price={special.price}

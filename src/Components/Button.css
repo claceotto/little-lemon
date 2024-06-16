@@ -1,4 +1,4 @@
-button {
+.styled-button {
     background-color: #F4CE14;
     border: none;
     padding: 10px 32px;
@@ -9,14 +9,27 @@ button {
 }
 
 /* This will style the on-hover effect */
-button {
+.styled-button {
     transition-duration: 0.4s;
 }
 
-button:hover {
+.styled-button:hover {
     background-color: #EE9972;
 }
 
-button:active {
+.styled-button:active {
     transform: scale(0.9);
+}
+
+.disabled {
+    background-color: #ebdfa8;
+    color: #5e5d5d;
+}
+
+.disabled:hover {
+    background-color: #ebdfa8 !important;
+}
+
+.disabled:active {
+    transform: none !important;
 }
