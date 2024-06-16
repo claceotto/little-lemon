@@ -3,17 +3,16 @@ Section 2 formatting needs tome work */
 
 .reservation {
     display: grid;
-    /* grid-template-columns: repeat(12, 1fr); */
-    grid-template-columns: 70px repeat(11, 1fr);
+    grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
-    margin: 1rem
+    margin: 1rem;
 }
 
 @media (max-width: 600px) {
     .reservation {
-        grid-template-columns: 70px repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         grid-template-rows: auto;
-        margin: 0.2rem;
+        margin: 0rem;
     }
 }
 
@@ -24,14 +23,6 @@ Section 2 formatting needs tome work */
     grid-column-start: 2;
     grid-column-end: 12;
     align-self: center;
-}
-
-@media (max-width: 600px) {
-    .res-title {
-        grid-column-start: 2;
-        grid-column-end: 4;
-        margin-top: 2rem;
-    }
 }
 
 
@@ -47,13 +38,18 @@ Section 2 formatting needs tome work */
     font-weight: bold;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
+    margin: auto;    
 }
 
-.circle {
+.span-container {
     grid-column-start: 1;
     grid-column-end: 1;
-    align-self: center;
+}
+
+@media (max-width: 600px) {
+    .span-container {
+        justify-self: start;
+    }
 }
 
 
@@ -134,7 +130,7 @@ Section 2 formatting needs tome work */
     box-shadow: 4px 4px 4px #00000026;
     max-width: 270px;
     grid-column-start: 2;
-    grid-column-end: auto;
+    grid-column-end: 4;
 }
 
 @media (max-width: 600px) {
@@ -272,7 +268,7 @@ input::-webkit-inner-spin-button {
 @media (max-width: 600px) {
     .section-2-title {
         grid-column-start: 1;
-
+        grid-column-end: 4;
     }
 }
 
@@ -288,6 +284,13 @@ input::-webkit-inner-spin-button {
     margin-bottom: 2rem;
 }
 
+@media (max-width: 600px) {
+    .section-2-title {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+}
+
 .log-in input {
     max-width: 400px;
 }
@@ -301,6 +304,13 @@ input::-webkit-inner-spin-button {
     margin-bottom: 3rem;
 }
 
+@media (max-width: 600px) {
+    .btn-container-lef {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+}
+
 .guest {
     grid-column-start: 8;
     grid-column-end: 12;
@@ -312,6 +322,13 @@ input::-webkit-inner-spin-button {
     margin-bottom: 2rem;
 }
 
+@media (max-width: 600px) {
+    .guest {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+}
+
 .btn-container-right {
     grid-column-start: 8;
     grid-column-end: 12;
@@ -321,10 +338,26 @@ input::-webkit-inner-spin-button {
     margin-bottom: 3rem;
 }
 
+@media (max-width: 600px) {
+    .btn-container-right {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+}
+
 .styled-input {
     padding: 0.5rem;
     border-radius: 10px;
 }
+
+@media (max-width: 600px) {
+    .section-2-container {
+        grid-column-start: 1;
+        grid-column-end: 5;
+        display: flex;
+        flex-direction: column;
+    }
+    }
 
 .confirmation {
     display: flex;
@@ -332,3 +365,4 @@ input::-webkit-inner-spin-button {
     align-items: center;
     margin: 1rem 1rem 3rem 1rem;
 }
+

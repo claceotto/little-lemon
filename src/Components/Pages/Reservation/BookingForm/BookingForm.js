@@ -351,7 +351,9 @@ export default function BookingForm({
       <form className="reservation" onSubmit={handleSubmit}>
         {section === 1 ? (
           <>
-            <span className="circle">1</span>
+            <div className="span-container">
+              <span className="circle">1</span>
+            </div>
             <label htmlFor="res-date" className="res-title">
               When?
             </label>
@@ -364,7 +366,9 @@ export default function BookingForm({
                 required
               />
             </div>
-            <span className="circle">2</span>
+            <div className="span-container">
+              <span className="circle">2</span>
+            </div>
             <label htmlFor="res-time" className="res-title">
               What time?
             </label>
@@ -382,14 +386,18 @@ export default function BookingForm({
             >
               <option value="">Please Select</option>
               {availableTimes.map((time, index) => {
-                return <option key={index} value={time}>{`${time}:00`}</option>;
+                return (
+                  <option index={index} value={time}>{`${time}:00`}</option>
+                );
               })}
             </select>
             {!isTimeValid ? (
               <p className="error">Please select the time.</p>
             ) : null}
 
-            <span className="circle">3</span>
+            <div className="span-container">
+              <span className="circle">3</span>
+            </div>
             <label htmlFor="guests" className="res-title">
               How many dinners?{" "}
             </label>
@@ -429,7 +437,9 @@ export default function BookingForm({
               </p>
             ) : null}
 
-            <span className="circle">4</span>
+            <div className="span-container">
+              <span className="circle">4</span>
+            </div>
             <legend className="res-title">Where would you like to sit?</legend>
             <div className="content">
               <div className="radio-container">
@@ -463,7 +473,9 @@ export default function BookingForm({
               </div>
             </div>
 
-            <span className="circle">5</span>
+            <div className="span-container">
+              <span className="circle">5</span>
+            </div>
             <label htmlFor="occasion" className="res-title">
               Special ocasion?
             </label>
@@ -488,7 +500,9 @@ export default function BookingForm({
               <p className="error">Please select an occasion.</p>
             ) : null}
 
-            <span className="circle">6</span>
+            <div className="span-container">
+              <span className="circle">6</span>
+            </div>
             <label htmlFor="specialRequirements" className="res-title">
               Any special requirement?
             </label>
@@ -520,7 +534,7 @@ export default function BookingForm({
         ) : null}
 
         {section === 2 ? (
-          <>
+          <div className="section-2-container">
             <div className="section-2-title">
               <h1 className="res-title">Tell us about you</h1>
             </div>
@@ -649,7 +663,7 @@ export default function BookingForm({
                 handleClick={handleNextClick}
               />
             </div>
-          </>
+          </div>
         ) : null}
       </form>
       {section === 3 ? (

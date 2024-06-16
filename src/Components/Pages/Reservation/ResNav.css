@@ -10,6 +10,12 @@
     word-wrap: normal;
   }
 
+  @media (max-width: 600px) {
+    .res-nav {
+      justify-content: space-between
+    }
+}
+
 li.nav-group {
   float: left;
   margin: 1rem;
@@ -19,6 +25,18 @@ li.nav-group {
 .active-number {
     color: black;
     z-index: 3;
+}
+
+.circle-container {
+  display: flex;
+  justify-content: center;
+}
+
+
+.circle-label-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
   .active-circle {
@@ -62,7 +80,7 @@ li.nav-group {
     transform: scale(0.9);
 }
 
-.nav-group {
+/* .nav-group {
   justify-self: center;
   align-self: center;
 }
@@ -71,5 +89,5 @@ li.nav-group {
  display: flex;
  flex-direction: column;
 
-}
+} */
 
