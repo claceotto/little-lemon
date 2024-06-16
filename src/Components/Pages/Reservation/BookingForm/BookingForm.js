@@ -4,21 +4,19 @@ import Calendar from "./Calendar";
 import { useCallback, useState, useEffect } from "react";
 import dayjs from "dayjs";
 import ResNav from "../ResNav";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import Confirmation from "./Confirmation";
 
 //This can be improved by creating one object which will contain all the values
 //from the form and one object with all the validation for the form.
-export default function BookingForm() {
+export default function BookingForm({
+  availableTimes,
+  onReservationTimeChange,
+  onReservationDateChange,
+  navigate,
+}) {
   const [reservationDate, setReservationDate] = useState(dayjs());
   const [reservationTime, setReservationTime] = useState("");
-  const [availableTimes, setAvailableTimes] = useState([
-    "17",
-    "18",
-    "19",
-    "20",
-    "21",
-  ]);
   const [isTimeValid, setIsTimeValid] = useState(true);
   const [numberOfGuests, setNumberOfGuests] = useState(1);
   const [isMinGuestNumber, setIsMinGuestNumber] = useState(false);
@@ -39,7 +37,7 @@ export default function BookingForm() {
   const [inputEmail, setInputEmail] = useState("");
   const [inputPassword, setInputPassword] = useState("");
   const [isPartTwoValid, setIsPartTwoValid] = useState(false);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   // const [isUser, setIsUser] = useState(false);
   const [showLogInError, setShowLogInError] = useState(false);
@@ -79,16 +77,25 @@ export default function BookingForm() {
   const handleHomeClick = () => {
     navigate("/");
   };
-  const handleReservationDateChange = useCallback((newValue) => {
-    // Why does this work??? That's what the MUI documentation had
-    //but I don't know why it works!
-    setReservationDate(newValue);
-  }, []);
 
-  const handleReservationTimeChange = useCallback((e) => {
-    const target = e.currentTarget || e.target;
-    setReservationTime(target.value);
-  }, []);
+  const handleReservationDateChange = useCallback(
+    (newValue) => {
+      // Why does this work??? That's what the MUI documentation had
+      //but I don't know why it works!
+      setReservationDate(newValue);
+      onReservationDateChange({ type: "dateChange", newDate: newValue });
+    },
+    [onReservationDateChange]
+  );
+
+  const handleReservationTimeChange = useCallback(
+    (e) => {
+      const target = e.currentTarget || e.target;
+      setReservationTime(target.value);
+      onReservationTimeChange(target.value);
+    },
+    [onReservationTimeChange]
+  );
 
   const handleReserveTimeValidation = useCallback(
     (e) => {
@@ -210,7 +217,7 @@ export default function BookingForm() {
 
   const handleBackClick = () => {
     if (section > 1) setSection(section - 1);
-    else handleHomeClick();
+    else navigate("/");
   };
 
   const handleCircleNav = (number) => {
