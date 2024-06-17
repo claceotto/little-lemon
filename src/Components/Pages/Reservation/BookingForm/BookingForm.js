@@ -4,8 +4,8 @@ import Calendar from "./Calendar";
 import { useCallback, useState, useEffect } from "react";
 import dayjs from "dayjs";
 import ResNav from "../ResNav";
-// import { useNavigate } from "react-router-dom";
 import Confirmation from "./Confirmation";
+/* global seededRandom, fetchAPI, submitAPI */
 
 //This can be improved by creating one object which will contain all the values
 //from the form and one object with all the validation for the form.
@@ -206,14 +206,18 @@ export default function BookingForm({
     }
   }, [firstName, lastName, email, telephone]);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    submitAPI(FormData);
+  };
+
   const handleNextClick = () => {
-    // if (section < 2) {
-    // setSection(section + 1) }
-    // else {
-    // handleSubmit()
-    // }
     setSection(section + 1);
   };
+  if (section === 3) {
+    handleSubmit();
+  }
+  // setSection(section + 1);
 
   const handleBackClick = () => {
     if (section > 1) setSection(section - 1);
@@ -331,11 +335,6 @@ export default function BookingForm({
       setTelephone(userFound.telephone);
       handleNextClick();
     }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Change this to the confirmation page
   };
 
   return (
