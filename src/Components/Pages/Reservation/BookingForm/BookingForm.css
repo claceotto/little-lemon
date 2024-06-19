@@ -254,7 +254,24 @@ input::-webkit-inner-spin-button {
     margin-top: 0rem;
   }
 
+  /* ***Section 2 styling*** */
   /* This will style the heading of section 2 */
+
+  .section-2-container {
+    grid-column-start: 1;
+    grid-column-end: 13;
+  }
+
+  @media (max-width: 600px) {
+    .section-2-container {
+        grid-column-start: 1;
+        grid-column-end: 5;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
   .section-2-title {
     font-size: 1.7rem;
     font-weight: bold;
@@ -265,12 +282,12 @@ input::-webkit-inner-spin-button {
     margin: 2rem auto; /* top and bottom | left and right */
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
     .section-2-title {
         grid-column-start: 1;
         grid-column-end: 4;
     }
-}
+} */
 
 /* This section will style the log in side */
 
@@ -350,14 +367,7 @@ input::-webkit-inner-spin-button {
     border-radius: 10px;
 }
 
-@media (max-width: 600px) {
-    .section-2-container {
-        grid-column-start: 1;
-        grid-column-end: 5;
-        display: flex;
-        flex-direction: column;
-    }
-    }
+
 
 .confirmation {
     display: flex;
