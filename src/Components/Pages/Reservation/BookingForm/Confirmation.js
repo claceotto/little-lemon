@@ -2,6 +2,7 @@ export default function Confirmation({
   firstName,
   numberOfGuests,
   date,
+  time,
   sitting,
   occasion,
   email,
@@ -12,7 +13,7 @@ export default function Confirmation({
 
       <h2>
         Your table for {numberOfGuests}{" "}
-        {numberOfGuests > 1 ? "people" : "person"} is booked on {date}, sitting{" "}
+        {numberOfGuests > 1 ? "people" : "person"} is booked on {date}, at {time}, sitting{" "}
         {sitting}.
       </h2>
       <h2>

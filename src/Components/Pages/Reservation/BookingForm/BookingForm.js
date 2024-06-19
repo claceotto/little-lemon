@@ -214,9 +214,9 @@ export default function BookingForm({
   const handleNextClick = () => {
     setSection(section + 1);
   };
-  if (section === 3) {
-    handleSubmit();
-  }
+  // if (section === 3) {
+  //   handleSubmit();
+  // }
   // setSection(section + 1);
 
   const handleBackClick = () => {
@@ -386,7 +386,7 @@ export default function BookingForm({
               <option value="">Please Select</option>
               {availableTimes.map((time, index) => {
                 return (
-                  <option index={index} value={time}>{`${time}:00`}</option>
+                  <option index={index} value={time}>{time}</option>
                 );
               })}
             </select>
@@ -671,6 +671,7 @@ export default function BookingForm({
             firstName={firstName}
             numberOfGuests={numberOfGuests}
             date={dayjs(reservationDate).format("DD/MM/YYYY")}
+            time={reservationTime}
             sitting={sittingPlace}
             occasion={occasion}
             email={email}
