@@ -4,8 +4,8 @@ import Calendar from "./Calendar";
 import { useCallback, useState, useEffect } from "react";
 import dayjs from "dayjs";
 import ResNav from "../ResNav";
-// import { useNavigate } from "react-router-dom";
 import Confirmation from "./Confirmation";
+/* global seededRandom, fetchAPI, submitAPI */
 
 //This can be improved by creating one object which will contain all the values
 //from the form and one object with all the validation for the form.
@@ -125,7 +125,6 @@ export default function BookingForm({
 
   const handleMinusGuest = useCallback(() => {
     const minusGuest = numberOfGuests - 1;
-    console.log(numberOfGuests);
     if (minusGuest <= 0) {
       setNumberOfGuests(0);
       setIsMinGuestNumber(true);
@@ -143,7 +142,6 @@ export default function BookingForm({
 
   const handlePlusGuest = useCallback(() => {
     const plusGuest = numberOfGuests + 1;
-    console.log(numberOfGuests);
     if (plusGuest >= 1 && plusGuest <= 10) {
       setNumberOfGuests(plusGuest);
       setIsMinGuestNumber(false);
@@ -206,12 +204,14 @@ export default function BookingForm({
     }
   }, [firstName, lastName, email, telephone]);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!!submitAPI(FormData) === true) {
+      setSection(3);
+    }
+  };
+
   const handleNextClick = () => {
-    // if (section < 2) {
-    // setSection(section + 1) }
-    // else {
-    // handleSubmit()
-    // }
     setSection(section + 1);
   };
 
@@ -300,7 +300,7 @@ export default function BookingForm({
     setInputPassword(target.value);
   }, []);
 
-  const handleLogin = () => {
+  const handleLogin = (e) => {
     const users = [
       {
         firstName: "Clarisse",
@@ -329,13 +329,9 @@ export default function BookingForm({
       setLastName(userFound.lastName);
       setEmail(userFound.email);
       setTelephone(userFound.telephone);
-      handleNextClick();
+      // handleNextClick();
+      handleSubmit(e);
     }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Change this to the confirmation page
   };
 
   return (
@@ -387,7 +383,9 @@ export default function BookingForm({
               <option value="">Please Select</option>
               {availableTimes.map((time, index) => {
                 return (
-                  <option index={index} value={time}>{`${time}:00`}</option>
+                  <option index={index} value={time}>
+                    {time}
+                  </option>
                 );
               })}
             </select>
@@ -573,7 +571,7 @@ export default function BookingForm({
                 />
                 <Button
                   btext={"Log in"}
-                  type={"submit"}
+                  type={"button"}
                   disabled={false}
                   handleClick={handleLogin}
                 />
@@ -660,7 +658,6 @@ export default function BookingForm({
                 btext={"Next"}
                 type={"submit"}
                 disabled={!isPartTwoValid}
-                handleClick={handleNextClick}
               />
             </div>
           </div>
@@ -672,6 +669,7 @@ export default function BookingForm({
             firstName={firstName}
             numberOfGuests={numberOfGuests}
             date={dayjs(reservationDate).format("DD/MM/YYYY")}
+            time={reservationTime}
             sitting={sittingPlace}
             occasion={occasion}
             email={email}
