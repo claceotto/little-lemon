@@ -25,7 +25,7 @@ export default function BookingForm({
   const [occasion, setOccasion] = useState("");
   const [isOccasionValid, setIsOccasionValid] = useState(true);
   const [isPartOneValid, setIsPartOneValid] = useState(false);
-  const [section, setSection] = useState(1);
+  const [section, setSection] = useState(2);
   const [firstName, setFirstName] = useState("");
   const [isfirstNameValid, setIsFirstNameValid] = useState(true);
   const [lastName, setLastName] = useState("");
@@ -214,10 +214,6 @@ export default function BookingForm({
   const handleNextClick = () => {
     setSection(section + 1);
   };
-  // if (section === 3) {
-  //   handleSubmit();
-  // }
-  // setSection(section + 1);
 
   const handleBackClick = () => {
     if (section > 1) setSection(section - 1);
@@ -386,7 +382,9 @@ export default function BookingForm({
               <option value="">Please Select</option>
               {availableTimes.map((time, index) => {
                 return (
-                  <option index={index} value={time}>{time}</option>
+                  <option index={index} value={time}>
+                    {time}
+                  </option>
                 );
               })}
             </select>
@@ -533,13 +531,14 @@ export default function BookingForm({
         ) : null}
 
         {section === 2 ? (
-          <div className="section-2-container">
+          // <div className="section-2-container">
+          <>
             <div className="section-2-title">
               <h1 className="res-title">Tell us about you</h1>
             </div>
             <div className="log-in">
               <h1 className="res-title">Already registered?</h1>
-              <p>Sign in</p>
+              <h3>Sign in</h3>
               {showLogInError ? (
                 <p className="error">
                   Please provide valid email and password.
@@ -581,10 +580,10 @@ export default function BookingForm({
 
             <div className="guest">
               <h1 className="res-title">Don't have an account?</h1>
-              <p>
+              <h3>
                 Enter your details to get started or if you prefer to reserve
                 without registering.
-              </p>
+              </h3>
               <label htmlFor="first-name">First name:</label>
               <input
                 className="styled-input"
@@ -662,7 +661,7 @@ export default function BookingForm({
                 handleClick={handleNextClick}
               />
             </div>
-          </div>
+          </>
         ) : null}
       </form>
       {section === 3 ? (
