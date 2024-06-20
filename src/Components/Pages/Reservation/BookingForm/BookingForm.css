@@ -329,12 +329,17 @@ input::-webkit-inner-spin-button {
     border-radius: 10px;
 }
 
-
-
 .confirmation {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 1rem 1rem 3rem 1rem;
+    
+}
+
+@media (max-width: 600px) {
+    .confirmation {
+     margin: 0 0 1.5rem 0;
+    }
 }
 

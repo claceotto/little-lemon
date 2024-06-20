@@ -25,7 +25,7 @@ export default function BookingForm({
   const [occasion, setOccasion] = useState("");
   const [isOccasionValid, setIsOccasionValid] = useState(true);
   const [isPartOneValid, setIsPartOneValid] = useState(false);
-  const [section, setSection] = useState(2);
+  const [section, setSection] = useState(1);
   const [firstName, setFirstName] = useState("");
   const [isfirstNameValid, setIsFirstNameValid] = useState(true);
   const [lastName, setLastName] = useState("");
