@@ -206,7 +206,8 @@ export default function BookingForm({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!!submitAPI(FormData) === true) {
+    // Make FormData an object with the actual form data
+    if (!!submitAPI({ FormData }) === true) {
       setSection(3);
     }
   };
