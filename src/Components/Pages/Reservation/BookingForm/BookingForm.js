@@ -125,7 +125,6 @@ export default function BookingForm({
 
   const handleMinusGuest = useCallback(() => {
     const minusGuest = numberOfGuests - 1;
-    console.log(numberOfGuests);
     if (minusGuest <= 0) {
       setNumberOfGuests(0);
       setIsMinGuestNumber(true);
@@ -143,7 +142,6 @@ export default function BookingForm({
 
   const handlePlusGuest = useCallback(() => {
     const plusGuest = numberOfGuests + 1;
-    console.log(numberOfGuests);
     if (plusGuest >= 1 && plusGuest <= 10) {
       setNumberOfGuests(plusGuest);
       setIsMinGuestNumber(false);
@@ -208,16 +206,14 @@ export default function BookingForm({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    submitAPI(FormData);
+    if (!!submitAPI(FormData) === true) {
+      setSection(3);
+    }
   };
 
   const handleNextClick = () => {
     setSection(section + 1);
   };
-  // if (section === 3) {
-  //   handleSubmit();
-  // }
-  // setSection(section + 1);
 
   const handleBackClick = () => {
     if (section > 1) setSection(section - 1);
@@ -304,7 +300,7 @@ export default function BookingForm({
     setInputPassword(target.value);
   }, []);
 
-  const handleLogin = () => {
+  const handleLogin = (e) => {
     const users = [
       {
         firstName: "Clarisse",
@@ -333,7 +329,8 @@ export default function BookingForm({
       setLastName(userFound.lastName);
       setEmail(userFound.email);
       setTelephone(userFound.telephone);
-      handleNextClick();
+      // handleNextClick();
+      handleSubmit(e);
     }
   };
 
@@ -386,7 +383,9 @@ export default function BookingForm({
               <option value="">Please Select</option>
               {availableTimes.map((time, index) => {
                 return (
-                  <option index={index} value={time}>{time}</option>
+                  <option index={index} value={time}>
+                    {time}
+                  </option>
                 );
               })}
             </select>
@@ -572,7 +571,7 @@ export default function BookingForm({
                 />
                 <Button
                   btext={"Log in"}
-                  type={"submit"}
+                  type={"button"}
                   disabled={false}
                   handleClick={handleLogin}
                 />
@@ -659,7 +658,6 @@ export default function BookingForm({
                 btext={"Next"}
                 type={"submit"}
                 disabled={!isPartTwoValid}
-                handleClick={handleNextClick}
               />
             </div>
           </div>
