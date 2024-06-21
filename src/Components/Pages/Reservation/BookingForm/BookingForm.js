@@ -13,6 +13,7 @@ export default function BookingForm({
   availableTimes,
   onReservationTimeChange,
   onReservationDateChange,
+  onSubmit,
   navigate,
 }) {
   const [reservationDate, setReservationDate] = useState(dayjs());
@@ -204,12 +205,33 @@ export default function BookingForm({
     }
   }, [firstName, lastName, email, telephone]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!!submitAPI(FormData) === true) {
+  const handleSubmit = useCallback((e) => {
+   const isSubmitted = onSubmit(e, { 
+    date: reservationDate, 
+    time: reservationTime, 
+    dinners: numberOfGuests, 
+    sitting: sittingPlace, 
+    occasion: occasion, 
+    firstName: firstName, 
+    lastName: lastName, 
+    email: email, 
+    telephone: telephone, } )
+
+    if (!!isSubmitted === true) {
       setSection(3);
     }
-  };
+  }, [
+    reservationDate, 
+    reservationTime, 
+    numberOfGuests, 
+    sittingPlace, 
+    occasion,
+    firstName,
+    lastName,
+    email,
+    telephone,
+    onSubmit,
+  ] );
 
   const handleNextClick = () => {
     setSection(section + 1);
@@ -383,7 +405,7 @@ export default function BookingForm({
               <option value="">Please Select</option>
               {availableTimes.map((time, index) => {
                 return (
-                  <option index={index} value={time}>
+                  <option key={index} value={time}>
                     {time}
                   </option>
                 );
