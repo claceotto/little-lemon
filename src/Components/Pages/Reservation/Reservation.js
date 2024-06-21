@@ -1,8 +1,8 @@
 import "./Reservation.css";
-import { useCallback, useReducer, useState } from "react";
+import { useCallback, useReducer } from "react";
 import ResBanner from "./ResBanner";
 import BookingForm from "./BookingForm/BookingForm";
-import { faBullseye } from "@fortawesome/free-solid-svg-icons/faBullseye";
+
 
 /* global seededRandom, fetchAPI, submitAPI */
 
