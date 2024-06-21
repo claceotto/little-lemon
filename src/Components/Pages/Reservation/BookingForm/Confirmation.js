@@ -17,9 +17,9 @@ export default function Confirmation({
         {sitting}.
       </h2>
       <h2>
-        {occasion !== "other"
+        {occasion !== ""
           ? `We look forward to celebrate your ${occasion} with you! `
-          : "We look forward seeing you! "}{" "}
+          : "We look forward seeing you! "}
       </h2>
       <h2>A confirmation email has been sent to {email}.</h2>
     </div>

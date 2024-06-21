@@ -24,7 +24,6 @@ export default function BookingForm({
   const [isMaxGuestNumber, setIsMaxGuestNumber] = useState(false);
   const [sittingPlace, setSittingPlace] = useState("inside");
   const [occasion, setOccasion] = useState("");
-  const [isOccasionValid, setIsOccasionValid] = useState(true);
   const [isPartOneValid, setIsPartOneValid] = useState(false);
   const [section, setSection] = useState(1);
   const [firstName, setFirstName] = useState("");
@@ -53,14 +52,14 @@ export default function BookingForm({
     if (
       reservationTime !== "" &&
       numberOfGuests >= 1 &&
-      numberOfGuests <= 10 &&
-      occasion !== ""
-    ) {
+      numberOfGuests <= 10
+    ) 
+    {
       setIsPartOneValid(true);
     } else {
       setIsPartOneValid(false);
     }
-  }, [reservationTime, numberOfGuests, occasion]);
+  }, [reservationTime, numberOfGuests]);
 
   useEffect(() => {
     if (
@@ -164,17 +163,6 @@ export default function BookingForm({
     setOccasion(target.value);
   }, []);
 
-  const handleOccasionValidation = useCallback(
-    (e) => {
-      if (occasion === "") {
-        setIsOccasionValid(false);
-      } else {
-        setIsOccasionValid(true);
-      }
-    },
-    [occasion]
-  );
-
   const handlePartOneValidation = useCallback(() => {
     if (reservationTime === "") {
       setIsTimeValid(false);
@@ -185,10 +173,8 @@ export default function BookingForm({
     if (numberOfGuests > 10) {
       setIsMaxGuestNumber(true);
     }
-    if (occasion === "") {
-      setIsOccasionValid(false);
-    }
-  }, [reservationTime, numberOfGuests, occasion]);
+
+  }, [reservationTime, numberOfGuests]);
 
   const handlePartTwoValidation = useCallback(() => {
     if (firstName === "") {
@@ -506,19 +492,13 @@ export default function BookingForm({
               name="occasion"
               value={occasion}
               onChange={handleOccasionChange}
-              onBlur={handleOccasionValidation}
-              required
             >
               <option value="">Please Select</option>
               <option value="birthday">Birthday</option>
               <option value="anniversary">Anniversary</option>
               <option value="engagement">Engagement</option>
               <option value="work party">Work party</option>
-              <option value="other">Daily delight</option>
             </select>
-            {!isOccasionValid ? (
-              <p className="error">Please select an occasion.</p>
-            ) : null}
 
             <div className="span-container">
               <span className="circle">6</span>
