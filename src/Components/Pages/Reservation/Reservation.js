@@ -1,7 +1,8 @@
 import "./Reservation.css";
-import { useCallback, useReducer } from "react";
+import { useCallback, useReducer, useState } from "react";
 import ResBanner from "./ResBanner";
 import BookingForm from "./BookingForm/BookingForm";
+import { faBullseye } from "@fortawesome/free-solid-svg-icons/faBullseye";
 
 /* global seededRandom, fetchAPI, submitAPI */
 
@@ -25,6 +26,15 @@ export default function Reservation({ navigate }) {
   const handleReservationTimeChange = useCallback((reservationTime) => {
     // TODO: Something. Maybe it will block off the time from the available times..?
   }, []);
+  
+
+  const handleSubmit = (e, formData) => {
+    e.preventDefault();
+    
+    if (!!submitAPI(formData) === true) {
+      return true;
+    } else {return false}
+  };
 
   return (
     <>
@@ -33,6 +43,7 @@ export default function Reservation({ navigate }) {
         availableTimes={availableTimes}
         onReservationTimeChange={handleReservationTimeChange}
         onReservationDateChange={dispatch}
+        onSubmit={handleSubmit}
         navigate={navigate}
       />
     </>
