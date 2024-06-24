@@ -49,12 +49,7 @@ export default function BookingForm({
   //Look if it's possible to improve telephone number input
 
   useEffect(() => {
-    if (
-      reservationTime !== "" &&
-      numberOfGuests >= 1 &&
-      numberOfGuests <= 10
-    ) 
-    {
+    if (reservationTime !== "" && numberOfGuests >= 1 && numberOfGuests <= 10) {
       setIsPartOneValid(true);
     } else {
       setIsPartOneValid(false);
@@ -173,7 +168,6 @@ export default function BookingForm({
     if (numberOfGuests > 10) {
       setIsMaxGuestNumber(true);
     }
-
   }, [reservationTime, numberOfGuests]);
 
   const handlePartTwoValidation = useCallback(() => {
@@ -191,33 +185,37 @@ export default function BookingForm({
     }
   }, [firstName, lastName, email, telephone]);
 
-  const handleSubmit = useCallback((e) => {
-   const isSubmitted = onSubmit(e, { 
-    date: reservationDate, 
-    time: reservationTime, 
-    dinners: numberOfGuests, 
-    sitting: sittingPlace, 
-    occasion: occasion, 
-    firstName: firstName, 
-    lastName: lastName, 
-    email: email, 
-    telephone: telephone, } )
+  const handleSubmit = useCallback(
+    (e) => {
+      const isSubmitted = onSubmit(e, {
+        date: reservationDate,
+        time: reservationTime,
+        dinners: numberOfGuests,
+        sitting: sittingPlace,
+        occasion: occasion,
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        telephone: telephone,
+      });
 
-    if (!!isSubmitted === true) {
-      setSection(3);
-    }
-  }, [
-    reservationDate, 
-    reservationTime, 
-    numberOfGuests, 
-    sittingPlace, 
-    occasion,
-    firstName,
-    lastName,
-    email,
-    telephone,
-    onSubmit,
-  ] );
+      if (!!isSubmitted === true) {
+        setSection(3);
+      }
+    },
+    [
+      reservationDate,
+      reservationTime,
+      numberOfGuests,
+      sittingPlace,
+      occasion,
+      firstName,
+      lastName,
+      email,
+      telephone,
+      onSubmit,
+    ]
+  );
 
   const handleNextClick = () => {
     setSection(section + 1);

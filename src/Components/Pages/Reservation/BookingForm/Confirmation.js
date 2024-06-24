@@ -13,8 +13,8 @@ export default function Confirmation({
 
       <h2>
         Your table for {numberOfGuests}{" "}
-        {numberOfGuests > 1 ? "people" : "person"} is booked on {date}, at {time}, sitting{" "}
-        {sitting}.
+        {numberOfGuests > 1 ? "people" : "person"} is booked on {date}, at{" "}
+        {time}, sitting {sitting}.
       </h2>
       <h2>
         {occasion !== ""
