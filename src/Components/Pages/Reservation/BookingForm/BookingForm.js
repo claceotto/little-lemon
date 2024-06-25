@@ -45,8 +45,11 @@ export default function BookingForm({
   //navigation and next button control simpler?
 
   //To do:
+  //Fix issue with clicking on the circle 3 'Confimration' with section 2 completed. It navigates to confirmation but form does
+  //not submit. Perhaps this button should not be clickable?
   // Instead of having multiple constants for form control, amalgamete this into object
   //Look if it's possible to improve telephone number input
+  //Improve email address validation
 
   useEffect(() => {
     if (reservationTime !== "" && numberOfGuests >= 1 && numberOfGuests <= 10) {
@@ -226,6 +229,7 @@ export default function BookingForm({
     else navigate("/");
   };
 
+  //Need to fix this so the form will submit if user clicks on 3
   const handleCircleNav = (number) => {
     setSection(number);
   };
@@ -381,6 +385,7 @@ export default function BookingForm({
               }`}
               id="res-time"
               name="res-time"
+              data-testid="res-time"
               value={reservationTime}
               onChange={handleReservationTimeChange}
               onBlur={handleReserveTimeValidation}
@@ -417,6 +422,7 @@ export default function BookingForm({
               <input
                 type="number"
                 className="number-counter"
+                data-testid="guest-number"
                 id="guests"
                 name="guests"
                 placeholder={numberOfGuests}
@@ -526,6 +532,7 @@ export default function BookingForm({
                 type={"button"}
                 disabled={!isPartOneValid}
                 handleClick={handleNextClick}
+                dataTestId={"nextbtn"}
               />
             </div>
           </>
@@ -590,6 +597,7 @@ export default function BookingForm({
                 className="styled-input"
                 type="text"
                 id="first-name"
+                data-testid="first-name"
                 name="first-name"
                 value={firstName}
                 onChange={handleFirstNameChange}
@@ -604,6 +612,7 @@ export default function BookingForm({
                 className="styled-input"
                 type="text"
                 id="last-name"
+                data-testid="last-name"
                 name="last-name"
                 value={lastName}
                 onChange={handleLastNameChange}
@@ -618,6 +627,7 @@ export default function BookingForm({
                 className="styled-input"
                 type="email"
                 id="email"
+                data-testid="email"
                 name="email"
                 value={email}
                 onChange={handleEmailChange}
@@ -633,6 +643,7 @@ export default function BookingForm({
                 type="tel"
                 pattern="[0-9]{5}-[0-9]{6}"
                 id="telephone"
+                data-testid="telephone"
                 name="telephone"
                 placeholder="ex: 07624-000000"
                 value={telephone}
@@ -659,6 +670,7 @@ export default function BookingForm({
                 btext={"Next"}
                 type={"submit"}
                 disabled={!isPartTwoValid}
+                dataTestId={"nextbtn"}
               />
             </div>
           </>
