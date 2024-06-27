@@ -357,27 +357,35 @@ export default function BookingForm({
       <form className="reservation" onSubmit={handleSubmit}>
         {section === 1 ? (
           <>
+          <fieldset className="fieldset-sec1">
+            <legend className="legend-sec1">
             <div className="span-container">
               <span className="circle">1</span>
             </div>
             <label htmlFor="res-date" className="res-title">
               When?
             </label>
+            </legend>
             <div className="content">
               <Calendar
                 id={"res-date"}
                 name={"res-date"}
                 value={reservationDate}
                 onChange={handleReservationDateChange}
-                required
+                required"
               />
-            </div>
-            <div className="span-container">
-              <span className="circle">2</span>
-            </div>
-            <label htmlFor="res-time" className="res-title">
-              What time?
-            </label>
+             </div>
+            </fieldset>
+
+            <fieldset className="fieldset-sec1">
+              <legend className="legend-sec1">
+                <div className="span-container">
+                  <span className="circle">2</span>
+                </div>
+              <label htmlFor="res-time" className="res-title">
+                What time?
+              </label>
+            </legend>
 
             <select
               className={`drop-down ${
@@ -400,9 +408,11 @@ export default function BookingForm({
                 );
               })}
             </select>
+            </fieldset>
             {!isTimeValid ? (
               <p className="error">Please select the time.</p>
             ) : null}
+           
 
             <div className="span-container">
               <span className="circle">3</span>

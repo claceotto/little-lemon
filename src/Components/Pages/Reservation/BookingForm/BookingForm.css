@@ -1,7 +1,4 @@
 .reservation {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto;
     margin: 1rem;
 }
 
@@ -12,6 +9,22 @@
         margin: 0rem;
     }
 }
+
+/*This will style the <fieldset> elements in section 1*/
+.fieldset-sec1 {
+    border: none;
+    display: grid;
+    grid-template-columns:  repeat(12, 1fr);
+    grid-template-rows: auto;
+    
+}
+
+/* This will style the display of the <legend> elements in section 1 */
+.legend-sec1 {
+    display: grid;
+    column-gap: 1.5rem;
+}  
+
 
 .res-title {
     font-size: 1.7rem;
@@ -34,7 +47,7 @@
     font-weight: bold;
     justify-content: center;
     align-items: center;
-    margin: auto;    
+    margin: auto;
 }
 
 .span-container {
