@@ -3,7 +3,6 @@ import { useCallback, useReducer } from "react";
 import ResBanner from "./ResBanner";
 import BookingForm from "./BookingForm/BookingForm";
 
-
 /* global seededRandom, fetchAPI, submitAPI */
 
 export const updateTimes = (state, action) => {
@@ -26,14 +25,15 @@ export default function Reservation({ navigate }) {
   const handleReservationTimeChange = useCallback((reservationTime) => {
     // TODO: Something. Maybe it will block off the time from the available times..?
   }, []);
-  
 
   const handleSubmit = (e, formData) => {
     e.preventDefault();
-    
+
     if (!!submitAPI(formData) === true) {
       return true;
-    } else {return false}
+    } else {
+      return false;
+    }
   };
 
   return (
