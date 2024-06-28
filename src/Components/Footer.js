@@ -1,5 +1,5 @@
 import "./Footer.css";
-
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -23,12 +23,24 @@ function Footer() {
       </div>
       <div className="footer-links">
         <p className="footer-heading">Navigation</p>
-        <a href="/home">Home</a>
-        <a href="/about">About</a>
-        <a href="/menu">Menu</a>
-        <a href="/reservations">Reservations</a>
-        <a href="/order-online">Online orders</a>
-        <a href="/login">Login</a>
+        <a>
+          <Link to="/">Home</Link>
+        </a>
+        <a>
+          <Link to="/about">About</Link>
+        </a>
+        <a>
+          <Link to="/menu">Menu</Link>
+        </a>
+        <a>
+          <Link to="/reservation">Reservation</Link>
+        </a>
+        <a>
+          <Link to="/online-orders">Online orders</Link>
+        </a>
+        <a>
+          <Link to="/login">Login</Link>
+        </a>
       </div>
       <div className="footer-contact">
         <p className="footer-heading">Contact</p>
