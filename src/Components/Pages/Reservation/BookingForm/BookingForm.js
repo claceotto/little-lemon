@@ -566,14 +566,14 @@ export default function BookingForm({
         ) : null}
 
         {section === 2 ? (
-          // <div className="section-2-container">
           <>
             <div className="section-2-title">
               <h1 className="res-title">Tell us about you</h1>
             </div>
             <div className="log-in">
               <h1 className="res-title">Already registered?</h1>
-              <h3>Sign in</h3>
+              <fieldset className="fieldset-sec2">
+                <legend className="legend-sec2">Sign in</legend>
               {showLogInError ? (
                 <p className="error">
                   Please provide valid email and password.
@@ -597,6 +597,7 @@ export default function BookingForm({
                 value={inputPassword}
                 onChange={handleInputPassword}
               />
+              
               <div className="btn-container-left">
                 <Button
                   btext={"Back"}
@@ -611,14 +612,15 @@ export default function BookingForm({
                   handleClick={handleLogin}
                 />
               </div>
+              </fieldset>
             </div>
 
             <div className="guest">
               <h1 className="res-title">Don't have an account?</h1>
-              <h3>
-                Enter your details to get started or if you prefer to reserve
-                without registering.
-              </h3>
+              <fieldset className="fieldset-sec2"> 
+                <legend className="legend-sec2">
+                  Continue as Guest
+                </legend>
               <label htmlFor="first-name">First name:</label>
               <input
                 className="styled-input"
@@ -685,7 +687,7 @@ export default function BookingForm({
               <small>
                 We will only contact you if necessary regarding your reservation
               </small>
-            </div>
+            
             <div className="btn-container-right">
               <Button
                 btext={"Back"}
@@ -700,6 +702,10 @@ export default function BookingForm({
                 dataTestId={"nextbtn"}
               />
             </div>
+            </fieldset>
+
+            </div>
+            
           </>
         ) : null}
       </form>

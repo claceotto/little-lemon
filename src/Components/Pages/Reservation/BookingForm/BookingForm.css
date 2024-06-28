@@ -272,6 +272,21 @@ input::-webkit-inner-spin-button {
 
   /* ***Section 2 styling*** */
 
+  /* Section 2 fieldset styling */
+  .fieldset-sec2 {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem 
+  }
+
+/* Section 2 legend styling */
+  .legend-sec2 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
 .section-2-title {
     font-size: 1.7rem;
     font-weight: bold;
@@ -309,7 +324,7 @@ input::-webkit-inner-spin-button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 3rem;
+    margin: 1rem 0 3rem 0;
 }
 
 @media (max-width: 600px) {
@@ -338,7 +353,7 @@ input::-webkit-inner-spin-button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 3rem;
+    margin: 1rem 0 3rem 0;
 }
 
 @media (max-width: 600px) {
