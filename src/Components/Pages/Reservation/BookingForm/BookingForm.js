@@ -357,87 +357,100 @@ export default function BookingForm({
       <form className="reservation" onSubmit={handleSubmit}>
         {section === 1 ? (
           <>
-            <div className="span-container">
-              <span className="circle">1</span>
-            </div>
-            <label htmlFor="res-date" className="res-title">
-              When?
-            </label>
-            <div className="content">
-              <Calendar
-                id={"res-date"}
-                name={"res-date"}
-                value={reservationDate}
-                onChange={handleReservationDateChange}
-                required
-              />
-            </div>
-            <div className="span-container">
-              <span className="circle">2</span>
-            </div>
-            <label htmlFor="res-time" className="res-title">
-              What time?
-            </label>
+            <fieldset className="fieldset-sec1">
+              <legend className="legend-sec1">
+                <div className="span-container">
+                  <span className="circle">1</span>
+                </div>
+                <label htmlFor="res-date" className="res-title">
+                  When?
+                </label>
+              </legend>
+              <div className="content">
+                <Calendar
+                  id={"res-date"}
+                  name={"res-date"}
+                  value={reservationDate}
+                  onChange={handleReservationDateChange}
+                  required
+                />
+              </div>
+            </fieldset>
 
-            <select
-              className={`drop-down ${
-                !!reservationTime ? "has-value-selected" : ""
-              }`}
-              id="res-time"
-              name="res-time"
-              data-testid="res-time"
-              value={reservationTime}
-              onChange={handleReservationTimeChange}
-              onBlur={handleReserveTimeValidation}
-              required
-            >
-              <option value="">Please Select</option>
-              {availableTimes.map((time, index) => {
-                return (
-                  <option key={index} value={time}>
-                    {time}
-                  </option>
-                );
-              })}
-            </select>
+            <fieldset className="fieldset-sec1">
+              <legend className="legend-sec1">
+                <div className="span-container">
+                  <span className="circle">2</span>
+                </div>
+                <label htmlFor="res-time" className="res-title">
+                  What time?
+                </label>
+              </legend>
+
+              <select
+                className={`drop-down ${
+                  !!reservationTime ? "has-value-selected" : ""
+                }`}
+                id="res-time"
+                name="res-time"
+                data-testid="res-time"
+                value={reservationTime}
+                onChange={handleReservationTimeChange}
+                onBlur={handleReserveTimeValidation}
+                required
+              >
+                <option value="">Please Select</option>
+                {availableTimes.map((time, index) => {
+                  return (
+                    <option key={index} value={time}>
+                      {time}
+                    </option>
+                  );
+                })}
+              </select>
+            </fieldset>
             {!isTimeValid ? (
               <p className="error">Please select the time.</p>
             ) : null}
 
-            <div className="span-container">
-              <span className="circle">3</span>
-            </div>
-            <label htmlFor="guests" className="res-title">
-              How many dinners?{" "}
-            </label>
+            <fieldset className="fieldset-sec1">
+              <legend className="legend-sec1">
+                <div className="span-container">
+                  <span className="circle">3</span>
+                </div>
+                <label htmlFor="guests" className="res-title">
+                  How many dinners?{" "}
+                </label>
+              </legend>
 
-            <div className="styled-counter">
-              <button
-                type="button"
-                className="number-counter-btn btn-left"
-                onClick={handleMinusGuest}
-              >
-                -
-              </button>
-              <input
-                type="number"
-                className="number-counter"
-                data-testid="guest-number"
-                id="guests"
-                name="guests"
-                placeholder={numberOfGuests}
-                value={numberOfGuests}
-                onChange={handleGuestChange}
-                required
-              />
-              <button
-                type="button"
-                className="number-counter-btn btn-right"
-                onClick={handlePlusGuest}
-              >
-                +
-              </button>
-            </div>
+              <div className="styled-counter">
+                <button
+                  type="button"
+                  className="number-counter-btn btn-left"
+                  onClick={handleMinusGuest}
+                >
+                  -
+                </button>
+                <input
+                  type="number"
+                  className="number-counter"
+                  data-testid="guest-number"
+                  id="guests"
+                  name="guests"
+                  placeholder={numberOfGuests}
+                  value={numberOfGuests}
+                  onChange={handleGuestChange}
+                  required
+                />
+                <button
+                  type="button"
+                  className="number-counter-btn btn-right"
+                  onClick={handlePlusGuest}
+                >
+                  +
+                </button>
+              </div>
+            </fieldset>
             {isMinGuestNumber ? (
               <p className="error">You must have at least 1 guest.</p>
             ) : null}
@@ -447,76 +460,89 @@ export default function BookingForm({
               </p>
             ) : null}
 
-            <div className="span-container">
-              <span className="circle">4</span>
-            </div>
-            <legend className="res-title">Where would you like to sit?</legend>
-            <div className="content">
-              <div className="radio-container">
-                <input
-                  type="radio"
-                  id="outside"
-                  name="sittingPlace"
-                  value="outside"
-                  className="radio"
-                  checked={sittingPlace === "outside"}
-                  onChange={handleSittingPlaceChange}
-                  required
-                />
-                <label htmlFor="outside" className="label">
-                  Outside
-                </label>
+            <fieldset className="fieldset-sec1">
+              <legend className="legend-sec1">
+                <div className="span-container">
+                  <span className="circle">4</span>
+                </div>
+                <div className="res-title">Where would you like to sit?</div>
+              </legend>
+              <div className="content">
+                <div className="radio-container">
+                  <input
+                    type="radio"
+                    id="outside"
+                    name="sittingPlace"
+                    value="outside"
+                    className="radio"
+                    checked={sittingPlace === "outside"}
+                    onChange={handleSittingPlaceChange}
+                    required
+                  />
+                  <label htmlFor="outside" className="label">
+                    Outside
+                  </label>
+                </div>
+                <div className="radio-container">
+                  <input
+                    type="radio"
+                    id="inside"
+                    name="sittingPlace"
+                    value="inside"
+                    className="radio"
+                    checked={sittingPlace === "inside"}
+                    onChange={handleSittingPlaceChange}
+                  />
+                  <label htmlFor="inside" className="label">
+                    Inside
+                  </label>
+                </div>
               </div>
-              <div className="radio-container">
-                <input
-                  type="radio"
-                  id="inside"
-                  name="sittingPlace"
-                  value="inside"
-                  className="radio"
-                  checked={sittingPlace === "inside"}
-                  onChange={handleSittingPlaceChange}
-                />
-                <label htmlFor="inside" className="label">
-                  Inside
+            </fieldset>
+
+            <fieldset className="fieldset-sec1">
+              <legend className="legend-sec1">
+                <div className="span-container">
+                  <span className="circle">5</span>
+                </div>
+                <label htmlFor="occasion" className="res-title">
+                  Special ocasion?
                 </label>
-              </div>
-            </div>
+              </legend>
+              <select
+                className={`drop-down ${
+                  !!occasion ? "has-value-selected" : ""
+                }`}
+                id="occasion"
+                name="occasion"
+                value={occasion}
+                onChange={handleOccasionChange}
+              >
+                <option value="">Please Select</option>
+                <option value="birthday">Birthday</option>
+                <option value="anniversary">Anniversary</option>
+                <option value="engagement">Engagement</option>
+                <option value="work party">Work party</option>
+              </select>
+            </fieldset>
 
-            <div className="span-container">
-              <span className="circle">5</span>
-            </div>
-            <label htmlFor="occasion" className="res-title">
-              Special ocasion?
-            </label>
+            <fieldset className="fieldset-sec1">
+              <legend className="legend-sec1">
+                <div className="span-container">
+                  <span className="circle">6</span>
+                </div>
+                <label htmlFor="specialRequirements" className="res-title">
+                  Any special requirement?
+                </label>
+              </legend>
 
-            <select
-              className={`drop-down ${!!occasion ? "has-value-selected" : ""}`}
-              id="occasion"
-              name="occasion"
-              value={occasion}
-              onChange={handleOccasionChange}
-            >
-              <option value="">Please Select</option>
-              <option value="birthday">Birthday</option>
-              <option value="anniversary">Anniversary</option>
-              <option value="engagement">Engagement</option>
-              <option value="work party">Work party</option>
-            </select>
-
-            <div className="span-container">
-              <span className="circle">6</span>
-            </div>
-            <label htmlFor="specialRequirements" className="res-title">
-              Any special requirement?
-            </label>
-
-            <textarea
-              id="specialRequirements"
-              name="specialRequirements"
-              rows="10"
-              className="text-area"
-            />
+              <textarea
+                id="specialRequirements"
+                name="specialRequirements"
+                rows="10"
+                className="text-area"
+              />
+            </fieldset>
 
             <div className="backbtn">
               <Button
@@ -539,139 +565,142 @@ export default function BookingForm({
         ) : null}
 
         {section === 2 ? (
-          // <div className="section-2-container">
           <>
             <div className="section-2-title">
-              <h1 className="res-title">Tell us about you</h1>
+              <p className="res-title">Tell us about you</p>
             </div>
             <div className="log-in">
-              <h1 className="res-title">Already registered?</h1>
-              <h3>Sign in</h3>
-              {showLogInError ? (
-                <p className="error">
-                  Please provide valid email and password.
-                </p>
-              ) : null}
-              <label htmlFor="user-email">E-mail:</label>
-              <input
-                className="styled-input"
-                type="email"
-                id="user-email"
-                name="user-email"
-                value={inputEmail}
-                onChange={handleInputEmail}
-              />
-              <label htmlFor="password">Passowrd:</label>
-              <input
-                className="styled-input"
-                type="password"
-                id="password"
-                name="password"
-                value={inputPassword}
-                onChange={handleInputPassword}
-              />
-              <div className="btn-container-left">
-                <Button
-                  btext={"Back"}
-                  type={"button"}
-                  disabled={false}
-                  handleClick={handleBackClick}
+              <p className="res-title">Already registered?</p>
+              <fieldset className="fieldset-sec2">
+                <legend className="legend-sec2">Sign in</legend>
+                {showLogInError ? (
+                  <p className="error">
+                    Please provide valid email and password.
+                  </p>
+                ) : null}
+                <label htmlFor="user-email">E-mail:</label>
+                <input
+                  className="styled-input"
+                  type="email"
+                  id="user-email"
+                  name="user-email"
+                  value={inputEmail}
+                  onChange={handleInputEmail}
                 />
-                <Button
-                  btext={"Log in"}
-                  type={"button"}
-                  disabled={false}
-                  handleClick={handleLogin}
+                <label htmlFor="password">Passowrd:</label>
+                <input
+                  className="styled-input"
+                  type="password"
+                  id="password"
+                  name="password"
+                  value={inputPassword}
+                  onChange={handleInputPassword}
                 />
-              </div>
+
+                <div className="btn-container-left">
+                  <Button
+                    btext={"Back"}
+                    type={"button"}
+                    disabled={false}
+                    handleClick={handleBackClick}
+                  />
+                  <Button
+                    btext={"Log in"}
+                    type={"button"}
+                    disabled={false}
+                    handleClick={handleLogin}
+                  />
+                </div>
+              </fieldset>
             </div>
 
             <div className="guest">
-              <h1 className="res-title">Don't have an account?</h1>
-              <h3>
-                Enter your details to get started or if you prefer to reserve
-                without registering.
-              </h3>
-              <label htmlFor="first-name">First name:</label>
-              <input
-                className="styled-input"
-                type="text"
-                id="first-name"
-                data-testid="first-name"
-                name="first-name"
-                value={firstName}
-                onChange={handleFirstNameChange}
-                onBlur={handleFirstNameValidation}
-                required
-              />
-              {!isfirstNameValid ? (
-                <p className="error">Please insert first name.</p>
-              ) : null}
-              <label htmlFor="last-name">Last name:</label>
-              <input
-                className="styled-input"
-                type="text"
-                id="last-name"
-                data-testid="last-name"
-                name="last-name"
-                value={lastName}
-                onChange={handleLastNameChange}
-                onBlur={handleLastNameValidation}
-                required
-              />
-              {!isLastNameValid ? (
-                <p className="error">Please insert last name.</p>
-              ) : null}
-              <label htmlFor="email">E-mail:</label>
-              <input
-                className="styled-input"
-                type="email"
-                id="email"
-                data-testid="email"
-                name="email"
-                value={email}
-                onChange={handleEmailChange}
-                onBlur={handleEmailValidation}
-                required
-              />
-              {!isEmailValid ? (
-                <p className="error">Please provide valid email address.</p>
-              ) : null}
-              <label htmlFor="telephone">Telephone:</label>
-              <input
-                className="styled-input"
-                type="tel"
-                pattern="[0-9]{5}-[0-9]{6}"
-                id="telephone"
-                data-testid="telephone"
-                name="telephone"
-                placeholder="ex: 07624-000000"
-                value={telephone}
-                onChange={handleTelephoneChange}
-                onBlur={handleTelephoneValidation}
-              />
-              {!isTelephoneValid ? (
-                <p className="error">
-                  Please provide a valid telephone number.
-                </p>
-              ) : null}
-              <small>
-                We will only contact you if necessary regarding your reservation
-              </small>
-            </div>
-            <div className="btn-container-right">
-              <Button
-                btext={"Back"}
-                type={"button"}
-                disabled={false}
-                handleClick={handleBackClick}
-              />
-              <Button
-                btext={"Next"}
-                type={"submit"}
-                disabled={!isPartTwoValid}
-                dataTestId={"nextbtn"}
-              />
+              <p className="res-title">Don't have an account?</p>
+              <fieldset className="fieldset-sec2">
+                <legend className="legend-sec2">Continue as Guest</legend>
+                <label htmlFor="first-name">First name:</label>
+                <input
+                  className="styled-input"
+                  type="text"
+                  id="first-name"
+                  data-testid="first-name"
+                  name="first-name"
+                  value={firstName}
+                  onChange={handleFirstNameChange}
+                  onBlur={handleFirstNameValidation}
+                  required
+                />
+                {!isfirstNameValid ? (
+                  <p className="error">Please insert first name.</p>
+                ) : null}
+                <label htmlFor="last-name">Last name:</label>
+                <input
+                  className="styled-input"
+                  type="text"
+                  id="last-name"
+                  data-testid="last-name"
+                  name="last-name"
+                  value={lastName}
+                  onChange={handleLastNameChange}
+                  onBlur={handleLastNameValidation}
+                  required
+                />
+                {!isLastNameValid ? (
+                  <p className="error">Please insert last name.</p>
+                ) : null}
+                <label htmlFor="email">E-mail:</label>
+                <input
+                  className="styled-input"
+                  type="email"
+                  id="email"
+                  data-testid="email"
+                  name="email"
+                  value={email}
+                  onChange={handleEmailChange}
+                  onBlur={handleEmailValidation}
+                  required
+                />
+                {!isEmailValid ? (
+                  <p className="error">Please provide valid email address.</p>
+                ) : null}
+                <label htmlFor="telephone">Telephone:</label>
+                <input
+                  className="styled-input"
+                  type="tel"
+                  pattern="[0-9]{5}-[0-9]{6}"
+                  id="telephone"
+                  data-testid="telephone"
+                  name="telephone"
+                  placeholder="ex: 07624-000000"
+                  value={telephone}
+                  onChange={handleTelephoneChange}
+                  onBlur={handleTelephoneValidation}
+                />
+                {!isTelephoneValid ? (
+                  <p className="error">
+                    Please provide a valid telephone number.
+                  </p>
+                ) : null}
+                <small>
+                  We will only contact you if necessary regarding your
+                  reservation
+                </small>
+
+                <div className="btn-container-right">
+                  <Button
+                    btext={"Back"}
+                    type={"button"}
+                    disabled={false}
+                    handleClick={handleBackClick}
+                  />
+                  <Button
+                    btext={"Next"}
+                    type={"submit"}
+                    disabled={!isPartTwoValid}
+                    dataTestId={"nextbtn"}
+                  />
+                </div>
+              </fieldset>
             </div>
           </>
         ) : null}

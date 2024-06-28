@@ -62,10 +62,8 @@ export default function ResNav({
   return (
     <nav>
       <ul className="res-nav">
-        {/* <li className="res-nav"> */}
         <li className="nav-group">
-          {/* <div className="nav-group"> */}
-          <div className="circle-container">
+            <div className="circle-container">
             <CircleBtn
               activeClass={
                 activeCircle === "circle1" ? "active-circle" : "inactive-circle"
@@ -73,14 +71,12 @@ export default function ResNav({
               btnNumber={"1"}
               disabled={isDisabled}
               onClick={handleCircleOneClick(1)}
-              // onClick={handleCircleOneClick}
             />
           </div>
           <div className="circle-label-container">
             <p>Booking details</p>
           </div>
         </li>
-        {/* </div> */}
         <li className="nav-group">
           <div className="circle-container">
             <CircleBtn

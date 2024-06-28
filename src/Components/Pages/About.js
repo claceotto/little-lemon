@@ -1,9 +1,10 @@
 import "./About.css";
 
-export default function About() {
+export default function About({ isInnerpage }) {
   return (
     <article className="about">
-      <h1>About us</h1>
+      {isInnerpage ? <h2>About us</h2> : <h1>About us</h1>}
+      {/* <h1>About us</h1> */}
       <div className="about-content">
         <div className="about-text">
           <p>

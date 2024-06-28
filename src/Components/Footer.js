@@ -22,7 +22,7 @@ function Footer() {
         />
       </div>
       <div className="footer-links">
-        <h3>Navigation</h3>
+        <p className="footer-heading">Navigation</p>
         <a href="/home">Home</a>
         <a href="/about">About</a>
         <a href="/menu">Menu</a>
@@ -31,7 +31,7 @@ function Footer() {
         <a href="/login">Login</a>
       </div>
       <div className="footer-contact">
-        <h3>Contact</h3>
+        <p className="footer-heading">Contact</p>
         <p>
           Limoeiro Avenue
           <br />

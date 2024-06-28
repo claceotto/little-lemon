@@ -7,9 +7,9 @@ function Main() {
   return (
     <main>
       <Hero />
-      <Specials />
-      <Testimonials />
-      <About />
+      <Specials isInnerpage={true} />
+      <Testimonials isInnerpage={true} />
+      <About isInnerpage={true} />
     </main>
   );
 }

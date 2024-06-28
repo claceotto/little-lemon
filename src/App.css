@@ -1,6 +1,6 @@
-
 * {
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 body {
@@ -13,7 +13,7 @@ h1 {
 
 .main-h1 {
   font-size: 4rem;
-  color: #F4CE14;
+  color: #f4ce14;
   margin: 0 auto;
 }
 
@@ -22,7 +22,6 @@ h1 {
   color: #ffffff;
   font-size: 2rem;
 }
-
 
 .main-p {
   font-size: 1.1rem;
@@ -40,9 +39,9 @@ h1 {
   background-image: url(../public/images/chevron-down-solid-green.svg);
   background-repeat: no-repeat;
   background-size: 17px;
-  background-color: #EDEFEE;
+  background-color: #edefee;
   background-position: 90%;
-  color: #495E57;
+  color: #495e57;
   font-size: 16px;
   font-weight: bold;
   line-height: 24px;
@@ -55,8 +54,8 @@ h1 {
 }
 
 option {
-  background-color: #EDEFEE;
-  color: #495E57;
+  background-color: #edefee;
+  color: #495e57;
   font-size: 16px;
   font-weight: bold;
   /* line-height: 60px; */
@@ -64,7 +63,7 @@ option {
 }
 
 .has-value-selected {
-  background-color: #495E57;
+  background-color: #495e57;
   background-image: url(../public/images/chevron-down-solid-white.svg);
   color: #ffffff;
 }
