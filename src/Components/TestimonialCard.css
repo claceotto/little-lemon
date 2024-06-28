@@ -1,44 +1,44 @@
 .tcard-container {
-    border: 2px solid #495E57;
-    border-radius: 20px;
-    max-width: 250px;
-    min-width: 250px;
-    background-color:#EDEFEE;
-    padding: 1rem;
+  border: 2px solid #495e57;
+  border-radius: 20px;
+  max-width: 250px;
+  min-width: 250px;
+  background-color: #edefee;
+  padding: 1rem;
 }
 
-@media (max-width:655px) {
-    .tcard-container {
-        max-width: auto;
-        min-width: auto;
-}
+@media (max-width: 655px) {
+  .tcard-container {
+    max-width: auto;
+    min-width: auto;
+  }
 }
 
-.tcard-title h5{
-    font-size: 1.2rem;
-    margin: 0.7rem 0;  /* top and bottom | left and right */
+.tcard-title {
+  font-size: 1.2rem;
+  margin: 0.7rem 0; /*top and bottom | left and right  */
 }
 
 .tcard-rating {
-    font-size: 1.2rem;
-    color: #F4CE14;
+  font-size: 1.2rem;
+  color: #f4ce14;
 }
 .tcard-avatar-container {
-    display: flex;
-    align-items: center;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .tcard-avatar {
-    max-width: 70px;
-    border-radius: 100%;
+  max-width: 70px;
+  border-radius: 100%;
 }
 
 .tcard-avatar-container p {
-    margin: 0.5rem 0.5rem 0;  /* top | left and right | bottom */
+  margin: 0.5rem 0.5rem 0; /* top | left and right | bottom */
 }
 
 .tcard-text {
-    font-weight: bold;
+  font-weight: bold;
 }

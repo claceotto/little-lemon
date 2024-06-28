@@ -4,8 +4,8 @@ import Stars from "./Stars";
 function TestimonialCard({ rating, src, name, testimonial }) {
   return (
     <div className="tcard-container">
-      <div className="tcard-title">
-        <h5>Rating:</h5>
+      <div>
+        <h5 className="tcard-title">Rating:</h5>
       </div>
       <div className="tcard-rating">
         <Stars rating={rating} />

@@ -9,14 +9,14 @@ function Card({ src, title, price, description }) {
         <img src={src} alt={title} className="card-image" />
       </div>
       <div className="card-header">
-        <h5>{title}</h5>
-        <h5 className="price">{price}</h5>
+        <p className="card-title">{title}</p>
+        <p className="price">{price}</p>
       </div>
       <div className="card-text">
         <p>{description}</p>
       </div>
       <div className="card-footer">
-        <h5>Order for delivery!</h5>
+        <p className="card-footer-text">Order for delivery!</p>
         <FontAwesomeIcon icon={faPersonBiking} className="card-footer-icon" />
       </div>
     </div>

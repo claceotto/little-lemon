@@ -1,60 +1,71 @@
 .card-container {
-    display: flex;
-    flex-direction: column;
-    box-shadow: 4px 4px 4px #00000026;
-    border-radius: 20px;
-    max-width: 270px;
-    background-color: #eeebeb;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 4px 4px #00000026;
+  border-radius: 20px;
+  max-width: 270px;
+  background-color: #eeebeb;
 }
 
 .card-image {
-    max-width: 270px;
-    border-radius: 20px;
-
+  max-width: 270px;
+  border-radius: 20px;
 }
 
 .card-image-container {
-    min-height: 200px;
+  min-height: 200px;
 }
 .card-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 0rem 0.7rem 0rem; /*top | left and right | bottom*/
-    
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 0.7rem 0rem; /*top | left and right | bottom*/
 }
 .card-header h5 {
-    font-weight: bold;
-    font-size: 1.2rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 1.67rem 0 1.67rem 0;
+  font-weight: bold;
 }
 
 .price {
-    color: #F57F48;
+  color: #f57f48;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 1.67rem 0 1.67rem 0;
+  font-weight: bold;
 }
 
 .card-text {
-    overflow-wrap: break-word;
-    min-height: 120px;
-    padding: 0rem 0.7rem 0rem; /*top | left and right | bottom*/
+  overflow-wrap: break-word;
+  min-height: 120px;
+  padding: 0rem 0.7rem 0rem; /*top | left and right | bottom*/
 }
 
 .card-text p {
-    margin-top: 0rem;
+  margin-top: 0rem;
 }
 
 .card-footer {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 0rem 0.7rem 0rem;
 }
 
-.card-footer h5 {
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin: 0 1rem 1rem 0; /* top | right | bottom | left */
-    align-self: flex-end;
+.card-footer-text {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0 1rem 1rem 0; /* top | right | bottom | left */
+  align-self: flex-end;
+  font-weight: bold;
 }
 
 .card-footer-icon {
-    font-size: 1.3rem;
-    margin: 0 0 1rem 0;/* top | right | bottom | left */
+  font-size: 1.3rem;
+  margin: 0 0 1rem 0; /* top | right | bottom | left */
 }
