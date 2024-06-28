@@ -372,7 +372,7 @@ export default function BookingForm({
                 name={"res-date"}
                 value={reservationDate}
                 onChange={handleReservationDateChange}
-                required"
+                required
               />
              </div>
             </fieldset>
@@ -414,12 +414,15 @@ export default function BookingForm({
             ) : null}
            
 
-            <div className="span-container">
-              <span className="circle">3</span>
-            </div>
-            <label htmlFor="guests" className="res-title">
-              How many dinners?{" "}
-            </label>
+           <fieldset className="fieldset-sec1">
+            <legend className="legend-sec1">
+              <div className="span-container">
+                <span className="circle">3</span>
+              </div>
+              <label htmlFor="guests" className="res-title">
+                How many dinners?{" "}
+              </label>
+            </legend>
 
             <div className="styled-counter">
               <button
@@ -448,6 +451,7 @@ export default function BookingForm({
                 +
               </button>
             </div>
+            </fieldset>
             {isMinGuestNumber ? (
               <p className="error">You must have at least 1 guest.</p>
             ) : null}
@@ -457,10 +461,15 @@ export default function BookingForm({
               </p>
             ) : null}
 
-            <div className="span-container">
-              <span className="circle">4</span>
-            </div>
-            <legend className="res-title">Where would you like to sit?</legend>
+            <fieldset className="fieldset-sec1">
+              <legend className="legend-sec1">
+                <div className="span-container">
+                  <span className="circle">4</span>
+                </div>
+                <div className="res-title">
+                  Where would you like to sit?
+              </div>
+            </legend>
             <div className="content">
               <div className="radio-container">
                 <input
@@ -492,14 +501,17 @@ export default function BookingForm({
                 </label>
               </div>
             </div>
+            </fieldset>
 
-            <div className="span-container">
-              <span className="circle">5</span>
-            </div>
-            <label htmlFor="occasion" className="res-title">
-              Special ocasion?
-            </label>
-
+            <fieldset className="fieldset-sec1">
+              <legend className="legend-sec1">
+                <div className="span-container">
+                  <span className="circle">5</span>
+                </div>
+                <label htmlFor="occasion" className="res-title">
+                  Special ocasion?
+                </label>
+              </legend>
             <select
               className={`drop-down ${!!occasion ? "has-value-selected" : ""}`}
               id="occasion"
@@ -513,13 +525,17 @@ export default function BookingForm({
               <option value="engagement">Engagement</option>
               <option value="work party">Work party</option>
             </select>
+            </fieldset>
 
-            <div className="span-container">
-              <span className="circle">6</span>
-            </div>
-            <label htmlFor="specialRequirements" className="res-title">
-              Any special requirement?
-            </label>
+            <fieldset className="fieldset-sec1">
+              <legend className="legend-sec1">
+                <div className="span-container">
+                  <span className="circle">6</span>
+                </div>
+                <label htmlFor="specialRequirements" className="res-title">
+                  Any special requirement?
+                </label>
+              </legend>
 
             <textarea
               id="specialRequirements"
@@ -527,6 +543,7 @@ export default function BookingForm({
               rows="10"
               className="text-area"
             />
+            </fieldset>
 
             <div className="backbtn">
               <Button
