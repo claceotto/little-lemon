@@ -1,7 +1,7 @@
 import "./Specials.css";
 import Card from "../Card";
 
-export default function Specials() {
+export default function Specials({ isInnerpage }) {
   const specials = [
     {
       src: "../images/greek salad.jpg",
@@ -29,7 +29,7 @@ export default function Specials() {
   return (
     <article className="specials">
       <div className="specials-title">
-        <h1>Weekly specials</h1>
+        {isInnerpage ? <h2>Weekly specials</h2> : <h1>Weekly specials</h1>}
       </div>
       <div className="specials-cards">
         {specials.map((special, index) => {

@@ -1,7 +1,7 @@
 import "./Testimonials.css";
 import TestimonialCard from "./TestimonialCard";
 
-export default function Testimonials() {
+export default function Testimonials({ isInnerpage }) {
   const reviews = [
     {
       rating: 5,
@@ -32,7 +32,7 @@ export default function Testimonials() {
   return (
     <article className="testimonials">
       <div className="testimonials-title">
-        <h1>Testimonials</h1>
+        {isInnerpage ? <h2>Testimonials</h2> : <h1>Testimonials</h1>}
       </div>
       <div className="testimonials-cards">
         {reviews.map((review, index) => {

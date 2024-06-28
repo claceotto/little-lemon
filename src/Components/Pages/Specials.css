@@ -1,19 +1,24 @@
 .specials {
-    margin: 2rem;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
+  margin: 2rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .specials-title {
-  display: flex; 
+  display: flex;
   justify-content: flex-start;
-  color: #495E57;
+  color: #495e57;
 }
 
 .specials-title h1 {
-    font-size: 3rem;
-    margin-top: 0rem;
+  font-size: 3rem;
+  margin-top: 0rem;
+}
+
+.specials-title h2 {
+  font-size: 3rem;
+  margin-top: 0rem;
 }
 
 .specials-cards {
@@ -26,15 +31,14 @@
 }
 
 @media (max-width: 534px) {
-
-    .specials {
-        margin: 1rem;
-        padding: 1rem;
-    }
-    .specials-cards {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin-bottom: 2rem;
-    }
+  .specials {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  .specials-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
 }
