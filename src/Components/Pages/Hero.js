@@ -1,7 +1,11 @@
 import "./Hero.css";
 import Button from "./../Button";
 
-export default function Hero() {
+export default function Hero({ navigate }) {
+  const handleReservationClick = () => {
+    navigate("/reservation");
+  };
+
   return (
     <article className="hero-article">
       <div className="hero-text">
@@ -12,7 +16,12 @@ export default function Hero() {
           <br />
           focused on traditional recipes served with a modern twist.
         </p>
-        <Button btext={"Reserve a table"} />
+        <Button
+          type={"button"}
+          btext={"Reserve a table"}
+          disabled={false}
+          handleClick={handleReservationClick}
+        />
       </div>
       <div className="mobile-hero-image">
         <img
