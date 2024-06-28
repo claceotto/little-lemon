@@ -21,7 +21,7 @@ export default function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage navigate={navigate} />} />
         <Route path="/menu" element={<Specials />} />
         <Route
           path="/reservation/*"
