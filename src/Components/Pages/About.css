@@ -37,6 +37,7 @@
 .about-text {
   align-self: center;
   min-width: 50%;
+  margin: 0 0.5rem 0 1.5rem;
 }
 
 @media (max-width: 767px) {
