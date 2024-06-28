@@ -3,30 +3,37 @@
     background-color: #495E57;
     padding: 2rem;
     margin: 2rem 0; top and bottom | left and right */
-  /* } */
-  
-  .res-banner {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    background-color: #495E57;
-    padding: 2rem;
+/* } */
+
+.res-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #495e57;
+  padding: 2rem;
+}
+
+.banner-text {
+  margin: 0;
+}
+
+.banner-subtitle {
+  color: #ffffff;
+  font-size: 2rem;
+  margin: 0.4rem 0 0.8rem 0;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .res-banner .main-h1 {
+    font-size: 45px;
   }
 
-  .banner-text {
-    margin: 0;
-    } 
+  .res-banner .main-h2 {
+    font-size: 25px;
+  }
 
-    @media (max-width: 600px) {
-      .res-banner .main-h1 {
-        font-size: 45px;
-      }
-
-      .res-banner .main-h2 {
-        font-size: 25px;
-      }
-
-      .res-banner {
-        padding: 1rem;
-      }        
-    }
+  .res-banner {
+    padding: 1rem;
+  }
+}

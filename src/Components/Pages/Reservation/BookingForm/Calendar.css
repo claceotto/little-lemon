@@ -1,27 +1,27 @@
 .MuiDateCalendar-root {
-    margin: 0rem 0rem 0rem 0rem; /* top | right | bottom | left */
+  margin: 0rem 0rem 0rem 0rem; /* top | right | bottom | left */
 }
 
 .MuiPickersDay-root.Mui-selected {
-    background-color: #495E57;
+  background-color: #495e57;
 }
 
 .MuiPickersDay-root.Mui-selected:hover {
-    background-color: #495E57;
+  background-color: #495e57;
 }
 
 .MuiPickersDay-root.Mui-selected:focus {
-    background-color: #495E57;
+  background-color: #495e57;
 }
 
 .MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
-    background-color: #495E57;
+  background-color: #495e57;
 }
 
 .MuiButtonBase-root-MuiPickersDay-root.Mui-selected:hover {
-    background-color: #495E57;
+  background-color: #495e57;
 }
 
 .MuiPickersCalendarHeader-root {
-    margin-left: 0rem;
+  margin-left: 0rem;
 }

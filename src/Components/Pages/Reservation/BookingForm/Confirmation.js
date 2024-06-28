@@ -9,19 +9,21 @@ export default function Confirmation({
 }) {
   return (
     <div className="confirmation">
-      <h1>You are are all set {firstName}!</h1>
+      <p className="confirmation-title">You are are all set {firstName}!</p>
 
-      <h2>
+      <p className="confirmation-text">
         Your table for {numberOfGuests}{" "}
         {numberOfGuests > 1 ? "people" : "person"} is booked on {date}, at{" "}
         {time}, sitting {sitting}.
-      </h2>
-      <h2>
+      </p>
+      <p className="confirmation-text">
         {occasion !== ""
           ? `We look forward to celebrate your ${occasion} with you! `
           : "We look forward seeing you! "}
-      </h2>
-      <h2>A confirmation email has been sent to {email}.</h2>
+      </p>
+      <p className="confirmation-text">
+        A confirmation email has been sent to {email}.
+      </p>
     </div>
   );
 }
