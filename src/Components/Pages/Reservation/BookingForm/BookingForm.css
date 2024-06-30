@@ -277,13 +277,6 @@ input::-webkit-inner-spin-button {
   gap: 1rem;
 }
 
-/* Section 2 legend styling */
-.legend-sec2 {
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
 .section-2-title {
   font-size: 1.7rem;
   font-weight: bold;
@@ -297,6 +290,13 @@ input::-webkit-inner-spin-button {
   .section-2-title {
     grid-column: 1 / 5;
   }
+}
+
+/* Section 2 legend styling */
+.legend-sec2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 /* This section will style the log in side */
@@ -329,6 +329,13 @@ input::-webkit-inner-spin-button {
   }
 }
 
+.is-user {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 50%;
+}
+
+/* This section will style the guest side */
 .guest {
   grid-column: 8 /13;
   align-self: left;

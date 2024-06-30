@@ -27,7 +27,8 @@ export default function BookingForm({
   const [sittingPlace, setSittingPlace] = useState("inside");
   const [occasion, setOccasion] = useState("");
   const [isPartOneValid, setIsPartOneValid] = useState(false);
-  const [section, setSection] = useState(2);
+  const [section, setSection] = useState(1);
+  const [isUser, setIsUser] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [isfirstNameValid, setIsFirstNameValid] = useState(true);
   const [lastName, setLastName] = useState("");
@@ -317,14 +318,14 @@ export default function BookingForm({
         lastName: "Ceotto",
         email: "clatimponi@gmail.com",
         password: "1234",
-        telephone: "07624-111111",
+        telephone: "07624111111",
       },
       {
         firstName: "Felipe",
         lastName: "Ceotto",
         email: "ceottake@gmail.com",
         password: "1234",
-        telephone: "07624-222222",
+        telephone: "07624222222",
       },
     ];
 
@@ -339,8 +340,7 @@ export default function BookingForm({
       setLastName(userFound.lastName);
       setEmail(userFound.email);
       setTelephone(userFound.telephone);
-      // handleNextClick();
-      handleSubmit(e);
+      setIsUser(true);
     }
   };
 
@@ -571,54 +571,68 @@ export default function BookingForm({
               <p className="res-title">Tell us about you</p>
             </div>
             <div className="log-in">
-              <p className="res-title">Already registered?</p>
-              <fieldset className="fieldset-sec2">
-                <legend className="legend-sec2">Sign in</legend>
-                {showLogInError ? (
-                  <p className="error">
-                    Please provide valid email and password.
-                  </p>
-                ) : null}
-                <label htmlFor="user-email">E-mail:</label>
-                <input
-                  className="styled-input"
-                  type="email"
-                  id="user-email"
-                  name="user-email"
-                  value={inputEmail}
-                  onChange={handleInputEmail}
-                />
-                <label htmlFor="password">Passowrd:</label>
-                <input
-                  className="styled-input"
-                  type="password"
-                  id="password"
-                  name="password"
-                  value={inputPassword}
-                  onChange={handleInputPassword}
-                />
+              {!isUser ? (
+                <>
+                  <p className="res-title">Already registered?</p>
+                  <fieldset className="fieldset-sec2">
+                    <legend className="legend-sec2">Sign in</legend>
+                    {showLogInError ? (
+                      <p className="error">
+                        Please provide valid email and password.
+                      </p>
+                    ) : null}
+                    <label htmlFor="user-email">E-mail:</label>
+                    <input
+                      className="styled-input"
+                      type="email"
+                      id="user-email"
+                      name="user-email"
+                      value={inputEmail}
+                      onChange={handleInputEmail}
+                    />
+                    <label htmlFor="password">Passowrd:</label>
+                    <input
+                      className="styled-input"
+                      type="password"
+                      id="password"
+                      name="password"
+                      value={inputPassword}
+                      onChange={handleInputPassword}
+                    />
 
-                <div className="btn-container-left">
-                  <Button
-                    btext={"Back"}
-                    type={"button"}
-                    disabled={false}
-                    handleClick={handleBackClick}
-                  />
-                  <Button
-                    btext={"Log in"}
-                    type={"button"}
-                    disabled={false}
-                    handleClick={handleLogin}
-                  />
-                </div>
-              </fieldset>
+                    <div className="btn-container-left">
+                      <Button
+                        btext={"Back"}
+                        type={"button"}
+                        disabled={false}
+                        handleClick={handleBackClick}
+                      />
+                      <Button
+                        btext={"Log in"}
+                        type={"button"}
+                        disabled={false}
+                        handleClick={handleLogin}
+                      />
+                    </div>
+                  </fieldset>
+                </>
+              ) : (
+                <p className="is-user">
+                  Welcome back, {firstName}! Please review your details before
+                  proceeding to book a table.
+                </p>
+              )}
             </div>
 
             <div className="guest">
               <p className="res-title">Don't have an account?</p>
               <fieldset className="fieldset-sec2">
-                <legend className="legend-sec2">Continue as Guest</legend>
+                {!isUser ? (
+                  <legend className="legend-sec2">Continue as Guest</legend>
+                ) : (
+                  <legend className="legend-sec2">Your details</legend>
+                )}
+
                 <label htmlFor="first-name">First name:</label>
                 <input
                   className="styled-input"
@@ -697,7 +711,7 @@ export default function BookingForm({
                     handleClick={handleBackClick}
                   />
                   <Button
-                    btext={"Next"}
+                    btext={"Book a table"}
                     type={"submit"}
                     disabled={!isPartTwoValid}
                     dataTestId={"nextbtn"}
