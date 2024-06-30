@@ -5,6 +5,8 @@ import { useCallback, useState, useEffect } from "react";
 import dayjs from "dayjs";
 import ResNav from "../ResNav";
 import Confirmation from "./Confirmation";
+import ScrollToTopOnMount from "../../../ScrollToTopOnMount";
+import { ScrollRestoration } from "react-router-dom";
 /* global seededRandom, fetchAPI, submitAPI */
 
 //This can be improved by creating one object which will contain all the values
@@ -566,6 +568,7 @@ export default function BookingForm({
 
         {section === 2 ? (
           <>
+            <ScrollToTopOnMount />
             <div className="section-2-title">
               <p className="res-title">Tell us about you</p>
             </div>
@@ -706,22 +709,25 @@ export default function BookingForm({
         ) : null}
       </form>
       {section === 3 ? (
-        <div className="confirmation">
-          <Confirmation
-            firstName={firstName}
-            numberOfGuests={numberOfGuests}
-            date={dayjs(reservationDate).format("DD/MM/YYYY")}
-            time={reservationTime}
-            sitting={sittingPlace}
-            occasion={occasion}
-            email={email}
-          />
-          <Button
-            btext={"Back to home page"}
-            disabled={false}
-            handleClick={handleHomeClick}
-          />
-        </div>
+        <>
+          <ScrollToTopOnMount />
+          <div className="confirmation">
+            <Confirmation
+              firstName={firstName}
+              numberOfGuests={numberOfGuests}
+              date={dayjs(reservationDate).format("DD/MM/YYYY")}
+              time={reservationTime}
+              sitting={sittingPlace}
+              occasion={occasion}
+              email={email}
+            />
+            <Button
+              btext={"Back to home page"}
+              disabled={false}
+              handleClick={handleHomeClick}
+            />
+          </div>
+        </>
       ) : null}
     </>
   );
