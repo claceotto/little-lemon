@@ -13,10 +13,6 @@ import { useNavigate } from "react-router-dom";
 export default function App() {
   const navigate = useNavigate();
 
-  // const handleHomeClick = () => {
-  //   navigate("/");
-  // };
-
   return (
     <>
       <Header />
@@ -31,7 +27,7 @@ export default function App() {
         <Route path="/online-orders" element={<OnlineOrders />} />
         <Route path="/login" element={<Login />} />
       </Routes>
-      <Footer />
+      <Footer navigate={navigate} />
     </>
   );
 }

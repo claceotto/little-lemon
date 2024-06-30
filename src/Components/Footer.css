@@ -76,11 +76,6 @@ footer {
   font-weight: bold;
 }
 
-/* footer h3 {
-    color: #F4CE14;
-    text-transform: uppercase;
-  } */
-
 .footer-links {
   grid-area: naviation;
   display: flex;
@@ -88,6 +83,16 @@ footer {
   padding: 1rem 2rem;
   background-color: #495e57;
   line-height: 1.5rem;
+}
+
+.footer-links li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links ul {
+  padding: 0;
 }
 
 footer a {
