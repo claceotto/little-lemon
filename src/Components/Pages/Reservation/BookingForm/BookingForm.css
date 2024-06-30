@@ -209,6 +209,10 @@ option {
   max-width: 270px;
 }
 
+.number-counter-btn:active {
+  transform: scale(0.9);
+}
+
 .btn-left {
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;
