@@ -23,24 +23,28 @@ function Footer() {
       </div>
       <div className="footer-links">
         <p className="footer-heading">Navigation</p>
-        <a>
-          <Link to="/">Home</Link>
-        </a>
-        <a>
-          <Link to="/about">About</Link>
-        </a>
-        <a>
-          <Link to="/menu">Menu</Link>
-        </a>
-        <a>
-          <Link to="/reservation">Reservation</Link>
-        </a>
-        <a>
-          <Link to="/online-orders">Online orders</Link>
-        </a>
-        <a>
-          <Link to="/login">Login</Link>
-        </a>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/menu">Menu</Link>
+            </li>
+            <li>
+              <Link to="/reservation">Reservation</Link>
+            </li>
+            <li>
+              <Link to="/online-orders">Online orders</Link>
+            </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+          </ul>
+        </nav>
       </div>
       <div className="footer-contact">
         <p className="footer-heading">Contact</p>
