@@ -47,23 +47,22 @@ export default function ResNav({
     [isPartOneValid, handleCircleNav, partOneValidation]
   );
 
-  const handleCircleThreeClick = useCallback(
-    (circle) => () => {
-      if (isPartTwoValid) {
-        setActiveCircle(`circle${circle}`);
-        handleCircleNav(circle);
-      } else {
-        partTwoValidation();
-      }
-    },
-    [isPartTwoValid, handleCircleNav, partTwoValidation]
-  );
+  const handleCircleThreeClick = useCallback(() => {
+    alert(
+      "A confirmation of your booking will be provided once sections 1 and 2 are completed and your form is submitted successfully"
+    );
+    if (section === 1) {
+      partOneValidation();
+    } else {
+      partTwoValidation();
+    }
+  }, [section, partOneValidation, partTwoValidation]);
 
   return (
     <nav>
       <ul className="res-nav">
         <li className="nav-group">
-            <div className="circle-container">
+          <div className="circle-container">
             <CircleBtn
               activeClass={
                 activeCircle === "circle1" ? "active-circle" : "inactive-circle"
@@ -100,7 +99,7 @@ export default function ResNav({
               }
               btnNumber={"3"}
               disabled={false}
-              onClick={handleCircleThreeClick(3)}
+              onClick={handleCircleThreeClick}
             />
           </div>
           <div className="circle-label-container">
