@@ -47,8 +47,6 @@ export default function BookingForm({
   //navigation and next button control simpler?
 
   //To do:
-  //Fix issue with clicking on the circle 3 'Confimration' with section 2 completed. It navigates to confirmation but form does
-  //not submit. Perhaps this button should not be clickable?
   // Instead of having multiple constants for form control, amalgamete this into object
   //Look if it's possible to improve telephone number input
   //Improve email address validation

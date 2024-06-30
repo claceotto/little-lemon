@@ -48,13 +48,15 @@ export default function ResNav({
   );
 
   const handleCircleThreeClick = useCallback(() => {
-    alert(
-      "A confirmation of your booking will be provided once sections 1 and 2 are completed and your form is submitted successfully"
-    );
-    if (section === 1) {
-      partOneValidation();
-    } else {
-      partTwoValidation();
+    if (section !== 3) {
+      alert(
+        "A confirmation of your booking will be provided once sections 1 and 2 are completed and your form is submitted successfully"
+      );
+      if (section === 1) {
+        partOneValidation();
+      } else {
+        partTwoValidation();
+      }
     }
   }, [section, partOneValidation, partTwoValidation]);
 
@@ -98,7 +100,7 @@ export default function ResNav({
                 activeCircle === "circle3" ? "active-circle" : "inactive-circle"
               }
               btnNumber={"3"}
-              disabled={false}
+              disabled={isDisabled}
               onClick={handleCircleThreeClick}
             />
           </div>
