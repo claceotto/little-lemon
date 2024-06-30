@@ -27,7 +27,7 @@ export default function BookingForm({
   const [sittingPlace, setSittingPlace] = useState("inside");
   const [occasion, setOccasion] = useState("");
   const [isPartOneValid, setIsPartOneValid] = useState(false);
-  const [section, setSection] = useState(1);
+  const [section, setSection] = useState(2);
   const [firstName, setFirstName] = useState("");
   const [isfirstNameValid, setIsFirstNameValid] = useState(true);
   const [lastName, setLastName] = useState("");
@@ -290,7 +290,7 @@ export default function BookingForm({
 
   const handleTelephoneValidation = useCallback(
     (e) => {
-      if (telephone !== "") {
+      if (telephone.length === 11) {
         setIsTelephoneValid(true);
       } else {
         setIsTelephoneValid(false);
@@ -668,18 +668,20 @@ export default function BookingForm({
                 <input
                   className="styled-input"
                   type="tel"
-                  pattern="[0-9]{5}-[0-9]{6}"
+                  minLength={11}
+                  maxLength={11}
                   id="telephone"
                   data-testid="telephone"
                   name="telephone"
-                  placeholder="ex: 07624-000000"
+                  placeholder="ex: 07624000000"
                   value={telephone}
                   onChange={handleTelephoneChange}
                   onBlur={handleTelephoneValidation}
                 />
                 {!isTelephoneValid ? (
                   <p className="error">
-                    Please provide a valid telephone number.
+                    Please provide a valid telephone number in the format
+                    07624000000.
                   </p>
                 ) : null}
                 <small>
