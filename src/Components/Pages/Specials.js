@@ -1,5 +1,6 @@
 import "./Specials.css";
 import Card from "../Card";
+import ScrollToTopOnMount from "../ScrollToTopOnMount";
 
 export default function Specials({ isInnerpage }) {
   const specials = [
@@ -27,23 +28,26 @@ export default function Specials({ isInnerpage }) {
   ];
 
   return (
-    <article className="specials">
-      <div className="specials-title">
-        {isInnerpage ? <h2>Weekly specials</h2> : <h1>Weekly specials</h1>}
-      </div>
-      <div className="specials-cards">
-        {specials.map((special, index) => {
-          return (
-            <Card
-              key={index}
-              src={special.src}
-              title={special.title}
-              price={special.price}
-              description={special.description}
-            />
-          );
-        })}
-      </div>
-    </article>
+    <>
+      <ScrollToTopOnMount />
+      <article className="specials">
+        <div className="specials-title">
+          {isInnerpage ? <h2>Weekly specials</h2> : <h1>Weekly specials</h1>}
+        </div>
+        <div className="specials-cards">
+          {specials.map((special, index) => {
+            return (
+              <Card
+                key={index}
+                src={special.src}
+                title={special.title}
+                price={special.price}
+                description={special.description}
+              />
+            );
+          })}
+        </div>
+      </article>
+    </>
   );
 }
