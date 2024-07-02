@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/little-lemon/static/css/main.adb2db4d.css",
+    "main.js": "/little-lemon/static/js/main.f050df68.js",
+    "static/js/453.75e21181.chunk.js": "/little-lemon/static/js/453.75e21181.chunk.js",
+    "index.html": "/little-lemon/index.html",
+    "static/media/chevron-down-solid-green.svg": "/little-lemon/static/media/chevron-down-solid-green.cba17e7c37c9239e6a05.svg",
+    "static/media/chevron-down-solid-white.svg": "/little-lemon/static/media/chevron-down-solid-white.c0d6a7daba6a2282576a.svg",
+    "main.adb2db4d.css.map": "/little-lemon/static/css/main.adb2db4d.css.map",
+    "main.f050df68.js.map": "/little-lemon/static/js/main.f050df68.js.map",
+    "453.75e21181.chunk.js.map": "/little-lemon/static/js/453.75e21181.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.adb2db4d.css",
+    "static/js/main.f050df68.js"
+  ]
+}
