@@ -6,8 +6,6 @@ import dayjs from "dayjs";
 import ResNav from "../ResNav";
 import Confirmation from "./Confirmation";
 import ScrollToTopOnMount from "../../../ScrollToTopOnMount";
-import { ScrollRestoration } from "react-router-dom";
-/* global seededRandom, fetchAPI, submitAPI */
 
 //This can be improved by creating one object which will contain all the values
 //from the form and one object with all the validation for the form.

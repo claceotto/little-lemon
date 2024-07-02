@@ -2,8 +2,7 @@ import "./Reservation.css";
 import { useCallback, useReducer } from "react";
 import ResBanner from "./ResBanner";
 import BookingForm from "./BookingForm/BookingForm";
-
-/* global seededRandom, fetchAPI, submitAPI */
+import { fetchAPI, submitAPI } from "../../../api";
 
 export const updateTimes = (state, action) => {
   if (action.type === "dateChange") {
