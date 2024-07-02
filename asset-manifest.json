@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/little-lemon/static/css/main.adb2db4d.css",
-    "main.js": "/little-lemon/static/js/main.49af8cd4.js",
+    "main.js": "/little-lemon/static/js/main.563c626e.js",
     "static/js/453.75e21181.chunk.js": "/little-lemon/static/js/453.75e21181.chunk.js",
-    "static/media/Mario and Adrian b.jpg": "/little-lemon/static/media/Mario and Adrian b.6ba0e06bfa9c1ea75109.jpg",
-    "static/media/greek salad.jpg": "/little-lemon/static/media/greek salad.bed423a1fab5b210e347.jpg",
-    "static/media/waiter.jpg": "/little-lemon/static/media/waiter.e8abf5b772b6817189aa.jpg",
-    "static/media/Bruchetta.jpg": "/little-lemon/static/media/Bruchetta.cc98b69b023d1447eeba.jpg",
+    "static/media/Mario and Adrian b.jpg": "/little-lemon/static/media/Mario and Adrian b.28bf6b78d43c2e397928.jpg",
+    "static/media/waiter.jpg": "/little-lemon/static/media/waiter.f111d8054459cded498c.jpg",
+    "static/media/greek salad.jpg": "/little-lemon/static/media/greek salad.7ff47a5d5b299eba0ae1.jpg",
     "static/media/Vertical-logo.png": "/little-lemon/static/media/Vertical-logo.2c859235d6c57bb54176.png",
+    "static/media/Bruchetta.jpg": "/little-lemon/static/media/Bruchetta.d7c6d6f0aebb327ee2cd.jpg",
     "static/media/avataaars3.png": "/little-lemon/static/media/avataaars3.6499ef23f3d968a6004a.png",
     "static/media/Logo.jpg": "/little-lemon/static/media/Logo.d4cae6fac8384c2dae04.jpg",
     "static/media/avataaars1.png": "/little-lemon/static/media/avataaars1.c678a329a0c717cc7a4e.png",
@@ -20,11 +20,11 @@
     "static/media/chevron-down-solid-green.svg": "/little-lemon/static/media/chevron-down-solid-green.cba17e7c37c9239e6a05.svg",
     "static/media/chevron-down-solid-white.svg": "/little-lemon/static/media/chevron-down-solid-white.c0d6a7daba6a2282576a.svg",
     "main.adb2db4d.css.map": "/little-lemon/static/css/main.adb2db4d.css.map",
-    "main.49af8cd4.js.map": "/little-lemon/static/js/main.49af8cd4.js.map",
+    "main.563c626e.js.map": "/little-lemon/static/js/main.563c626e.js.map",
     "453.75e21181.chunk.js.map": "/little-lemon/static/js/453.75e21181.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.adb2db4d.css",
-    "static/js/main.49af8cd4.js"
+    "static/js/main.563c626e.js"
   ]
 }
