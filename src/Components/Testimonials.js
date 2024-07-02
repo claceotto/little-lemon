@@ -1,29 +1,33 @@
 import "./Testimonials.css";
 import TestimonialCard from "./TestimonialCard";
+import avatar1 from "../Images/avataaars1.png";
+import avatar2 from "../Images/avataaars2.png";
+import avatar3 from "../Images/avataaars3.png";
+import avatar4 from "../Images/avataaars4.png";
 
 export default function Testimonials({ isInnerpage }) {
   const reviews = [
     {
       rating: 5,
-      src: "../images/avataaars1.png",
+      src: avatar1,
       name: "Patricia",
       testimonial: "We had a fantastic meal.",
     },
     {
       rating: 4,
-      src: "../images/avataaars2.png",
+      src: avatar2,
       name: "Linda",
       testimonial: "Great dinner at Little Lemon.",
     },
     {
       rating: 4,
-      src: "../images/avataaars3.png",
+      src: avatar3,
       name: "Robert",
       testimonial: "Great food and lovely place!",
     },
     {
       rating: 5,
-      src: "../images/avataaars4.png",
+      src: avatar4,
       name: "Kevin",
       testimonial: "Best meal we had in a while.",
     },

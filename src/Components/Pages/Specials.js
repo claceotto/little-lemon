@@ -1,25 +1,28 @@
 import "./Specials.css";
 import Card from "../Card";
 import ScrollToTopOnMount from "../ScrollToTopOnMount";
+import greekSalad from "../../Images/greek salad.jpg";
+import bruschetta from "../../Images/Bruchetta.jpg";
+import lemonDessert from "../../Images/lemon dessert 2.jpg";
 
 export default function Specials({ isInnerpage }) {
   const specials = [
     {
-      src: "../images/greek salad.jpg",
+      src: greekSalad,
       title: "Greek salad",
       price: "£12.99",
       description:
         "The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons. ",
     },
     {
-      src: "../images/Bruchetta.jpg",
+      src: bruschetta,
       title: "Bruschetta",
       price: "£5.99",
       description:
         "Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil",
     },
     {
-      src: "../images/lemon dessert 2.jpg",
+      src: lemonDessert,
       title: "Lemon dessert",
       price: "£5.00",
       description:

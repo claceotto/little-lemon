@@ -1,5 +1,6 @@
 import "./About.css";
 import ScrollToTopOnMount from "../ScrollToTopOnMount";
+import marioAndAdrian from "../../Images/Mario and Adrian b.jpg";
 
 export default function About({ isInnerpage }) {
   return (
@@ -28,7 +29,7 @@ export default function About({ isInnerpage }) {
           <div className="about-image">
             <img
               className="about-image"
-              src="../images/Mario and Adrian b.jpg"
+              src={marioAndAdrian}
               alt="A chef and restaurant manager"
             />
           </div>

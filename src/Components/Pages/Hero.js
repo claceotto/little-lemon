@@ -1,5 +1,6 @@
 import "./Hero.css";
 import Button from "./../Button";
+import waiter from "../../Images/waiter.jpg";
 
 export default function Hero({ navigate }) {
   const handleReservationClick = () => {
@@ -24,16 +25,10 @@ export default function Hero({ navigate }) {
         />
       </div>
       <div className="mobile-hero-image">
-        <img
-          src="../images/waiter.jpg"
-          alt="waiter carring a tray of bruscheta"
-        />
+        <img src={waiter} alt="waiter carring a tray of bruscheta" />
       </div>
       <div className="desktop-hero-image">
-        <img
-          src="../images/waiter.jpg"
-          alt="waiter carring a tray of bruscheta"
-        />
+        <img src={waiter} alt="waiter carring a tray of bruscheta" />
       </div>
     </article>
   );

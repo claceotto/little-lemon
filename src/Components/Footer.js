@@ -3,23 +3,17 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import logo from "../Images/Logo.jpg";
+import verticalLogo from "../Images/Vertical-logo.png";
 
 function Footer() {
   return (
     <footer>
       <div className="bg-footer-logo">
-        <img
-          src="../images/Logo.jpg"
-          alt="Little Lemon Logo"
-          className="bg-logo"
-        />
+        <img src={logo} alt="Little Lemon Logo" className="bg-logo" />
       </div>
       <div className="sm-fotter-logo">
-        <img
-          src="../images/Vertical-logo.png"
-          alt="Little Lemon Logo"
-          className="sm-logo"
-        />
+        <img src={verticalLogo} alt="Little Lemon Logo" className="sm-logo" />
       </div>
       <div className="footer-links">
         <p className="footer-heading">Navigation</p>

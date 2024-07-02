@@ -127,7 +127,7 @@
   padding: 0.5rem 1rem 0.5rem 0; /* top | right | bottom | left */
   min-width: 180px;
   appearance: none; /*This will remove the standard arrow*/
-  background-image: url(../../../../../public/images/chevron-down-solid-green.svg);
+  background-image: url(../../../../Images/chevron-down-solid-green.svg);
   background-repeat: no-repeat;
   background-size: 17px;
   background-color: #edefee;

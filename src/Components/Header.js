@@ -2,6 +2,8 @@ import "./Header.css";
 import Nav from "./Nav";
 import Hamburger from "./Hamburger";
 import { useState } from "react";
+import smallLogo from "../Images/small-logo.jpg";
+import lemon from "../Images/Lemon.png";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,12 +17,12 @@ function Header() {
       <header className="header">
         <div>
           <img
-            src="../images/small-logo.jpg"
+            src={smallLogo}
             alt="Little Lemon logo"
             className="header-bg-image"
           />
           <img
-            src="../images/lemon.png"
+            src={lemon}
             alt="Little Lemon logo"
             className="header-sm-image"
           />
