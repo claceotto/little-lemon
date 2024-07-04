@@ -387,6 +387,12 @@ input::-webkit-inner-spin-button {
   margin: 1rem 1rem 3rem 1rem;
 }
 
+@media (max-width: 925px) {
+  .confirmation {
+    align-items: flex-start;
+  }
+}
+
 @media (max-width: 600px) {
   .confirmation {
     margin: 0 0 1.5rem 0;
