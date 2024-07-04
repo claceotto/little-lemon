@@ -290,7 +290,6 @@ input::-webkit-inner-spin-button {
   color: black;
   grid-column: 1 / 13;
   place-self: center;
-  margin: 2rem auto; /* top and bottom | left and right */
 }
 
 @media (max-width: 600px) {
