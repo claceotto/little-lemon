@@ -309,7 +309,6 @@ input::-webkit-inner-spin-button {
 /* This section will style the log in side */
 .log-in {
   grid-column: 1 / 5;
-  align-self: left;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -338,7 +337,7 @@ input::-webkit-inner-spin-button {
 .is-user {
   font-size: 1.5rem;
   font-weight: bold;
-  margin-top: 50%;
+  margin-top: 10rem;
 }
 
 @media (max-width: 600px) {
