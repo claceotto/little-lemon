@@ -9,7 +9,7 @@ export default function Confirmation({
 }) {
   return (
     <div className="confirmation">
-      <p className="confirmation-title">You are are all set {firstName}!</p>
+      <p className="confirmation-title">You are all set {firstName}!</p>
 
       <p className="confirmation-text">
         Your table for {numberOfGuests}{" "}

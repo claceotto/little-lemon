@@ -301,7 +301,6 @@ input::-webkit-inner-spin-button {
 }
 
 /* This section will style the log in side */
-
 .log-in {
   grid-column: 1 / 5;
   align-self: left;
@@ -334,6 +333,12 @@ input::-webkit-inner-spin-button {
   font-size: 1.5rem;
   font-weight: bold;
   margin-top: 50%;
+}
+
+@media (max-width: 600px) {
+  .is-user {
+    margin-top: 0rem;
+  }
 }
 
 /* This section will style the guest side */

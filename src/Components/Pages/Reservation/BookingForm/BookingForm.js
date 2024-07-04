@@ -623,7 +623,9 @@ export default function BookingForm({
             </div>
 
             <div className="guest">
-              <p className="res-title">Don't have an account?</p>
+              {!isUser ? (
+                <p className="res-title">Don't have an account?</p>
+              ) : null}
               <fieldset className="fieldset-sec2">
                 {!isUser ? (
                   <legend className="legend-sec2">Continue as Guest</legend>
