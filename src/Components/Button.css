@@ -1,8 +1,8 @@
 .styled-button {
   background-color: #f4ce14;
   border: none;
-  padding: 10px 32px;
-  text-align: center;
+  padding: 10px 22px;
+  /* text-align: center; */
   font-size: large;
   border-radius: 15px;
   font-weight: bold;
