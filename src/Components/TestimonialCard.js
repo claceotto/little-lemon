@@ -5,7 +5,7 @@ function TestimonialCard({ rating, src, name, testimonial }) {
   return (
     <div className="tcard-container">
       <div>
-        <h5 className="tcard-title">Rating:</h5>
+        <p className="tcard-title">Rating:</p>
       </div>
       <div className="tcard-rating">
         <Stars rating={rating} />

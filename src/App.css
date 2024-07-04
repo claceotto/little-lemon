@@ -31,12 +31,12 @@ h1 {
 
 /* This will style the drop downs for the website */
 
-.drop-down {
+/* .drop-down {
   margin: 1rem 0rem; /* top and bottom | left and right */
-  padding: 0.5rem 1rem 0.5rem 0; /* top | right | bottom | left */
-  min-width: 160px;
+/*padding: 0.5rem 1rem 0.5rem 0; /* top | right | bottom | left */
+/*min-width: 160px;
   appearance: none; /*This will remove the standard arrow*/
-  background-image: url(./Images/chevron-down-solid-green.svg);
+/*background-image: url(./Images/chevron-down-solid-green.svg);
   background-repeat: no-repeat;
   background-size: 17px;
   background-color: #edefee;
@@ -51,7 +51,7 @@ h1 {
   box-shadow: 4px 4px 4px #00000026;
   border-radius: 20px;
   max-width: 270px;
-}
+} */
 
 option {
   background-color: #edefee;

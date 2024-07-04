@@ -123,24 +123,30 @@
 
 .drop-down {
   display: flex;
-  margin: 1rem 0rem 1rem 0rem; /* top | right | bottom | left */
+  align-items: center;
+  margin: 1rem 0rem; /*top and bottom | left and right*/
   padding: 0.5rem 1rem 0.5rem 0; /* top | right | bottom | left */
-  min-width: 180px;
+
   appearance: none; /*This will remove the standard arrow*/
   background-image: url(../../../../Images/chevron-down-solid-green.svg);
+  /* background-image: url(./Images/chevron-down-solid-green.svg); */
   background-repeat: no-repeat;
   background-size: 17px;
   background-color: #edefee;
   background-position: 90%;
+
+  min-width: 160px;
+  max-width: 270px;
+
   color: #495e57;
   font-size: 18px;
   font-weight: bold;
   line-height: 24px;
-  text-align: center;
+  /* text-align: center; */
   border: none;
   border-radius: 20px;
   box-shadow: 4px 4px 4px #00000026;
-  max-width: 270px;
+
   grid-column-start: 2;
   grid-column-end: 4;
 }
@@ -162,7 +168,7 @@ option {
 
 .has-value-selected {
   background-color: #495e57;
-  background-image: url(../../../../../public/images/chevron-down-solid-white.svg);
+  background-image: url(../../../../Images/chevron-down-solid-white.svg);
   color: #ffffff;
 }
 
@@ -301,7 +307,6 @@ input::-webkit-inner-spin-button {
 }
 
 /* This section will style the log in side */
-
 .log-in {
   grid-column: 1 / 5;
   align-self: left;
@@ -334,6 +339,12 @@ input::-webkit-inner-spin-button {
   font-size: 1.5rem;
   font-weight: bold;
   margin-top: 50%;
+}
+
+@media (max-width: 600px) {
+  .is-user {
+    margin-top: 0rem;
+  }
 }
 
 /* This section will style the guest side */
