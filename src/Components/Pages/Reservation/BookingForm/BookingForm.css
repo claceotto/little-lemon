@@ -264,9 +264,15 @@ input::-webkit-inner-spin-button {
 
 .error {
   color: red;
-  grid-column-start: 2;
-  grid-column-end: 5;
+  grid-column: 2 / 4;
   margin-top: 0rem;
+  margin-left: 0.7rem;
+}
+
+@media (max-width: 600px) {
+  .error {
+    grid-column: 1 / 4;
+  }
 }
 
 /* ***Section 2 styling*** */
