@@ -588,7 +588,7 @@ export default function BookingForm({
                       value={inputEmail}
                       onChange={handleInputEmail}
                     />
-                    <label htmlFor="password">Passowrd:</label>
+                    <label htmlFor="password">Password:</label>
                     <input
                       className="styled-input"
                       type="password"
